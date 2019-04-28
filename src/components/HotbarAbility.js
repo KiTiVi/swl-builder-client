@@ -8,49 +8,22 @@ export default function AbilityComponent(props) {
   const handleMouseOver = () => setIsHovered(true)
   const handleMouseOut = () => setIsHovered(false)
 
-  // console.log(props)
+  console.log(props)
 
   return (
     <Tooltip
       trigger="click"
       interactive
-      style={{ flex: '1' }}
       html={
         <SlotSelectTooltip style={{ display: 'flex' }}>
-          <Slot
-            onClick={() => props.setAbility('firstAbility', { ...props })}
-          />
-          <Slot
-            onClick={() => props.setAbility('secondAbility', { ...props })}
-          />
-          <Slot
-            onClick={() => props.setAbility('thirdAbility', { ...props })}
-          />
-          <Slot
-            onClick={() => props.setAbility('fourthAbility', { ...props })}
-          />
-          <Slot
-            onClick={() => props.setAbility('fifthAbility', { ...props })}
-          />
-          <Slot
-            onClick={() => props.setAbility('sixthAbility', { ...props })}
-          />
+          <Slot onClick={() => props.removeAbility(props.slot, { ...props })} />
         </SlotSelectTooltip>
       }
     >
-      <Ability>
-        <p>{props.name}</p>
-        {props.image && (
-          <img
-            src={props.image}
-            onMouseEnter={handleMouseOver}
-            onMouseLeave={handleMouseOut}
-          />
-        )}
-        {isHovered && (
-          <AbilityTooltip>
-            <div>{props.description}</div>
-          </AbilityTooltip>
+      <Ability onMouseEnter={handleMouseOver} onMouseLeave={handleMouseOut}>
+        {props.image && <img src={props.image} />}
+        {isHovered && Object.keys(props).length > 0 && (
+          <AbilityTooltip>{props.description}</AbilityTooltip>
         )}
       </Ability>
     </Tooltip>
@@ -76,6 +49,11 @@ const Ability = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 54px;
+  width: 54px;
+  margin: 0 1px;
+  border: 2px solid #ddd;
+  /* margin: 1rem 5rem; */
 `
 
 const AbilityTooltip = styled.div`
