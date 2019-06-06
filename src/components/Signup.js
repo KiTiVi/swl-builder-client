@@ -1,10 +1,10 @@
 import React, { useState, useContext } from 'react'
 import styled from 'styled-components'
-import login from '../api/login'
+import signup from '../api/signup'
 import { UserContext } from '../UserContext'
 import Modal from './Modal'
 
-const Login = () => {
+const Signup = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const userContext = useContext(UserContext)
@@ -14,7 +14,7 @@ const Login = () => {
   const onSubmit = async event => {
     event.preventDefault()
 
-    const user = await login({
+    const user = await signup({
       username,
       password
     })
@@ -25,10 +25,10 @@ const Login = () => {
 
   return (
     <>
-      <Button onClick={() => setShowModal(true)}>LOG IN</Button>
+      <Button onClick={() => setShowModal(true)}>SIGN UP</Button>
 
       {showModal && (
-        <Modal setShowModal={setShowModal} header="Login">
+        <Modal setShowModal={setShowModal} header="Sign up">
           <Form onSubmit={onSubmit}>
             <input
               type="text"
@@ -46,7 +46,7 @@ const Login = () => {
               onChange={e => setPassword(e.target.value)}
               required
             />
-            <input type="submit" value="Login" />
+            <input type="submit" value="Sign up" />
           </Form>
         </Modal>
       )}
@@ -54,11 +54,11 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Signup
 
 const Button = styled.button`
   display: inline-block;
-  margin: 0;
+  margin-left: 10px;
   padding: 10px 20px;
   color: #ffffff;
   background: #333;

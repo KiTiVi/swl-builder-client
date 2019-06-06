@@ -4,6 +4,7 @@ import Login from './Login'
 import UserMenu from './UserMenu'
 import logo from '../images/SWL_LOGO_RASTER_DARKBKG_032717.png'
 import { UserContext } from '../UserContext'
+import Signup from './Signup'
 
 export default () => {
   const userContext = useContext(UserContext)
@@ -17,7 +18,14 @@ export default () => {
       </div>
       <h2>A FANMADE DECK BUILDER</h2>
       <div style={{ flex: '1', textAlign: 'right' }}>
-        {userContext.username ? <UserMenu /> : <Login />}
+        {userContext.username ? (
+          <UserMenu />
+        ) : (
+          <>
+            <Login />
+            <Signup />
+          </>
+        )}
       </div>
     </Header>
   )
