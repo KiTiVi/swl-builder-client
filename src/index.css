@@ -1,3 +1,7 @@
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -6,7 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #000;
+  background: #000 url('./images//TSW_PKF_AllSkus_HI-RES_NO_LOGO_TAG.png') center/cover no-repeat fixed;
   color: #fff;
 }
 

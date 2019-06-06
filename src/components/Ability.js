@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Tooltip } from 'react-tippy'
 
 export default function AbilityComponent(props) {
   const [isHovered, setIsHovered] = useState(false)
@@ -8,70 +7,27 @@ export default function AbilityComponent(props) {
   const handleMouseOver = () => setIsHovered(true)
   const handleMouseOut = () => setIsHovered(false)
 
-  // console.log(props)
-
   return (
-    <Tooltip
-      trigger="click"
-      interactive
-      style={{ flex: '1' }}
-      html={
-        <SlotSelectTooltip style={{ display: 'flex' }}>
-          <Slot
-            onClick={() => props.setAbility('firstAbility', { ...props })}
-          />
-          <Slot
-            onClick={() => props.setAbility('secondAbility', { ...props })}
-          />
-          <Slot
-            onClick={() => props.setAbility('thirdAbility', { ...props })}
-          />
-          <Slot
-            onClick={() => props.setAbility('fourthAbility', { ...props })}
-          />
-          <Slot
-            onClick={() => props.setAbility('fifthAbility', { ...props })}
-          />
-          <Slot
-            onClick={() => props.setAbility('sixthAbility', { ...props })}
-          />
-        </SlotSelectTooltip>
-      }
-    >
-      <Ability>
-        <p>{props.name}</p>
-        {props.image && (
-          <img
-            src={props.image}
-            onMouseEnter={handleMouseOver}
-            onMouseLeave={handleMouseOut}
-          />
-        )}
-        {isHovered && (
-          <AbilityTooltip>
-            <div>{props.description}</div>
-          </AbilityTooltip>
-        )}
-      </Ability>
-    </Tooltip>
+    <Ability onClick={() => props.setAbility({ ...props.ability })}>
+      <p>{props.ability.name}</p>
+      {props.ability.image && (
+        <img
+          src={props.ability.image}
+          onMouseEnter={handleMouseOver}
+          onMouseLeave={handleMouseOut}
+        />
+      )}
+      {isHovered && (
+        <AbilityTooltip>
+          <div>{props.ability.description}</div>
+        </AbilityTooltip>
+      )}
+    </Ability>
   )
 }
 
-const SlotSelectTooltip = styled.div`
-  display: flex;
-`
-
-const Slot = styled.div`
-  height: 15px;
-  width: 15px;
-  margin: 5px;
-  background: #eee;
-  &:hover {
-    background: #f00;
-  }
-`
-
 const Ability = styled.div`
+  flex: 1;
   position: relative;
   display: flex;
   flex-direction: column;

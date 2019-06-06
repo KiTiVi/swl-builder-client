@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { Draggable } from 'react-beautiful-dnd'
 import { Tooltip } from 'react-tippy'
 
 export default function AbilityComponent(props) {
@@ -8,25 +9,39 @@ export default function AbilityComponent(props) {
   const handleMouseOver = () => setIsHovered(true)
   const handleMouseOut = () => setIsHovered(false)
 
-  console.log(props)
+  // console.log(props)
 
   return (
-    <Tooltip
-      trigger="click"
-      interactive
-      html={
-        <SlotSelectTooltip style={{ display: 'flex' }}>
-          <Slot onClick={() => props.removeAbility(props.slot, { ...props })} />
-        </SlotSelectTooltip>
-      }
+    // <Tooltip
+    //   trigger="click"
+    //   interactive
+    //   html={
+    //     <SlotSelectTooltip style={{ display: 'flex' }}>
+    //       <Slot onClick={() => props.removeAbility(props.slot, { ...props })} />
+    //     </SlotSelectTooltip>
+    //   }
+    // >
+    <Draggable
+      key={props.draggableId}
+      draggableId={props.draggableId}
+      index={props.draggableIndex}
     >
-      <Ability onMouseEnter={handleMouseOver} onMouseLeave={handleMouseOut}>
-        {props.image && <img src={props.image} />}
-        {isHovered && Object.keys(props).length > 0 && (
-          <AbilityTooltip>{props.description}</AbilityTooltip>
-        )}
-      </Ability>
-    </Tooltip>
+      {provided => (
+        <Ability
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+          ref={provided.innerRef}
+          onMouseEnter={handleMouseOver}
+          onMouseLeave={handleMouseOut}
+        >
+          {props.image && <img src={props.image} />}
+          {isHovered && Object.keys(props).length > 0 && (
+            <AbilityTooltip>{props.description}</AbilityTooltip>
+          )}
+        </Ability>
+      )}
+    </Draggable>
+    // </Tooltip>
   )
 }
 
