@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from 'axios'
 
 export default async ({ username, password }) => {
   try {
@@ -10,11 +10,11 @@ export default async ({ username, password }) => {
         username,
         password
       }
-    });
+    })
 
-    return { ...data.user, token: data.token };
+    return { ...data.user, token: data.token }
   } catch (error) {
-    console.log(error);
-    return false;
+    console.log(error)
+    return false
   }
-};
+}

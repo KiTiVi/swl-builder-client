@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Header from './components/Header'
 import 'react-tippy/dist/tippy.css'
 import Home from './pages/Home'
@@ -16,10 +16,13 @@ const App = () => {
 
   return (
     <UserContext>
-      <Header />
       <Router>
-        <Route path="/" exact component={Home} />
-        <Route path="/profile" exact component={Profile} />
+        <Header />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/profile" exact component={Profile} />
+          <Route component={Home} />
+        </Switch>
       </Router>
     </UserContext>
   )

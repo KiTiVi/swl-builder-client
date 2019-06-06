@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext, useRef } from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import logout from '../api/logout'
 import { UserContext } from '../UserContext'
 
@@ -29,7 +30,9 @@ export default () => {
       {userContext.username}
       {visible && (
         <ul className="user-menu-links">
-          <li>PROFILE</li>
+          <li>
+            <Link to="/profile">Profile</Link>
+          </li>
           <li
             onClick={() => {
               logout()
