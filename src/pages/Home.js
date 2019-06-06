@@ -96,7 +96,7 @@ export default class Home extends Component {
               )
             })}
           </Container>
-          {/* <SearchContainer>SEARCH</SearchContainer> */}
+          <SearchContainer>SEARCH</SearchContainer>
         </SelectContainer>
         <DragDropContext onDragEnd={this.onDragEnd}>
           <Droppable droppableId={1} direction="horizontal">
@@ -134,7 +134,7 @@ const SelectContainer = styled.div`
 `
 
 const Container = styled.div`
-  flex: 1;
+  flex: 0 1 70%;
 
   .path:not(:last-child) {
     margin-bottom: 25px;
@@ -151,7 +151,10 @@ const Container = styled.div`
   }
 `
 
-const SearchContainer = styled.div``
+const SearchContainer = styled.div`
+  flex: 0 1 30%;
+  border: 1px solid rgba(70, 70, 70, 0.75);
+`
 
 const HotbarAbilityContainer = styled.div`
   width: min-content;
