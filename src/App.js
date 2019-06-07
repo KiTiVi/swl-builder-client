@@ -14,6 +14,8 @@ const App = () => {
     })
   }
 
+  // test()
+
   return (
     <UserContext>
       <Router>

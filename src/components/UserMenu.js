@@ -31,6 +31,7 @@ export default () => {
       {visible && (
         <ul className="user-menu-links">
           <li>
+            <i class="fas fa-user-alt" />
             <Link to="/profile">Profile</Link>
           </li>
           <li
@@ -40,6 +41,7 @@ export default () => {
               userContext.setUser(false)
             }}
           >
+            <i className="fas fa-sign-out-alt" />
             LOGOUT
           </li>
         </ul>
@@ -57,9 +59,16 @@ const UserMenu = styled.div`
     position: absolute;
     top: 30px;
     right: 0;
+    width: 150px;
+    padding: 10px;
+    list-style: none;
     background: #000;
 
     li {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+
       &:hover {
         color: red;
       }

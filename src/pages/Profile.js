@@ -51,8 +51,8 @@ export default () => {
 }
 
 const Container = styled.main`
-  width: 800px;
-  margin: 40px auto;
+  width: 1366px;
+  margin: 30px auto;
   padding: 40px 60px;
   background: rgba(0, 0, 0, 0.75);
 
