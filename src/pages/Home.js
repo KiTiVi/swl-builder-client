@@ -4,6 +4,7 @@ import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import WeaponMenu from '../components/WeaponMenu'
 import Ability from '../components/Ability'
 import HotbarAbility from '../components/HotbarAbility'
+import Search from '../components/Search'
 // import HotbarAbilityContainer from '../components/HotbarAbilityContainer'
 import { shotgun_abilities } from '../data/shotgun/abilities'
 
@@ -68,54 +69,59 @@ const Home = () => {
 
   return (
     <>
-      <Builder>
-        <Menu>
-          <button
-            onClick={() => setMenuOption('actives')}
-            className={menuOption === 'actives' ? 'active' : ''}
-          >
-            ACTIVE ABILITIES
-          </button>
-          <button
-            onClick={() => setMenuOption('passives')}
-            className={menuOption === 'passives' ? 'active' : ''}
-          >
-            PASSIVE ABILITIES
-          </button>
-        </Menu>
-        <BuilderHeader>
+      <Content>
+        <Builder>
+          <Menu>
+            <button
+              onClick={() => setMenuOption('actives')}
+              className={menuOption === 'actives' ? 'active' : ''}
+            >
+              ACTIVE ABILITIES
+            </button>
+            <button
+              onClick={() => setMenuOption('passives')}
+              className={menuOption === 'passives' ? 'active' : ''}
+            >
+              PASSIVE ABILITIES
+            </button>
+          </Menu>
+
           <SelectedWeapon>{selectedWeapon}</SelectedWeapon>
-        </BuilderHeader>
-        <SelectContainer>
-          <WeaponMenu
-            selectWeapon={selectWeapon}
-            selectedWeapon={selectedWeapon}
-          />
-          <Container>
-            {shotgun_abilities.map((path, i) => {
-              return (
-                <div key={i} className="path">
-                  <h3 className="pathname">{path.pathName}</h3>
-                  <Abilites>
-                    {path.abilities.map((ability, i) => {
-                      return (
-                        <Ability
-                          key={i}
-                          ability={ability}
-                          setAbility={setAbility}
-                        />
-                      )
-                    })}
-                  </Abilites>
-                </div>
-              )
-            })}
-          </Container>
-          <SearchContainer>
-            {clickedAbility && clickedAbility.name}
-          </SearchContainer>
-        </SelectContainer>
-      </Builder>
+
+          <SelectContainer>
+            <WeaponMenu
+              selectWeapon={selectWeapon}
+              selectedWeapon={selectedWeapon}
+            />
+            {menuOption === 'actives' && (
+              <Container>
+                {shotgun_abilities.map((path, i) => {
+                  return (
+                    <div key={i} className="path">
+                      <h3 className="pathname">{path.pathName}</h3>
+                      <Abilites>
+                        {path.abilities.map((ability, i) => {
+                          return (
+                            <Ability
+                              key={i}
+                              ability={ability}
+                              setAbility={setAbility}
+                            />
+                          )
+                        })}
+                      </Abilites>
+                    </div>
+                  )
+                })}
+              </Container>
+            )}
+          </SelectContainer>
+        </Builder>
+
+        <Search />
+
+        {/* <HotbarAbilityContainer /> */}
+      </Content>
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="list" direction="horizontal">
           {provided => (
@@ -135,20 +141,23 @@ const Home = () => {
           )}
         </Droppable>
       </DragDropContext>
-      {/* <HotbarAbilityContainer /> */}
     </>
   )
 }
 
 export default Home
 
-const Builder = styled.main`
-  margin-top: 30px;
-  margin-bottom: 30px;
+const Content = styled.main`
+  display: flex;
+  max-width: 1366px;
+  margin: 30px auto;
   padding: 20px;
   background: rgba(0, 0, 0, 0.75);
-  width: 1366px;
-  margin: 30px auto;
+`
+
+const Builder = styled.div`
+  flex: 0 1 70%;
+  margin-right: 7px;
 `
 
 const Menu = styled.div`
@@ -182,27 +191,21 @@ const Menu = styled.div`
   }
 `
 
-const BuilderHeader = styled.header`
-  width: 70%;
-  margin-left: 50px;
-  padding: 14px 14px 10px;
+const SelectedWeapon = styled.h2`
+  margin: 0 0 0 50px;
+  padding: 14px 0 14px 14px;
   background: linear-gradient(to bottom, #444 20%, #222);
   border-radius: 20px 20px 0 0;
-`
-
-const SelectedWeapon = styled.h2`
-  margin: 0;
-  padding-bottom: 5px;
   position: relative;
 
   &::after {
     content: '';
     height: 2px;
-    width: 100%;
     background: yellow;
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: 5px;
+    left: 14px;
+    right: 14px;
   }
 `
 
@@ -211,7 +214,7 @@ const SelectContainer = styled.div`
 `
 
 const Container = styled.div`
-  flex: 0 0 70%;
+  flex: 1;
 
   .path:not(:last-child) {
     margin-bottom: 25px;
@@ -226,11 +229,6 @@ const Container = styled.div`
       rgba(44, 44, 44, 0.75)
     );
   }
-`
-
-const SearchContainer = styled.div`
-  flex: 0 1 30%;
-  border: 1px solid rgba(70, 70, 70, 0.75);
 `
 
 const HotbarAbilityContainer = styled.div`

@@ -9,12 +9,31 @@ import UserContext from './UserContext'
 
 const App = () => {
   const test = () => {
-    data.forEach(element => {
-      console.log(element)
-    })
+    const blade = data.slice(0, 29)
+
+    const hammer = data.slice(29, 58)
+
+    const fist = data.slice(58, 86)
+
+    const blood = data.slice(86, 114)
+
+    const chaos = data.slice(114, 146)
+
+    const elemental = data.slice(146, 174)
+
+    const shotgun = data.slice(174, 202)
+    console.log(shotgun)
+
+    const pistol = data.slice(202, 229)
+
+    const rifle = data.slice(229, 253)
+
+    // blade.forEach(ability => {
+    //   console.log(ability)
+    // })
   }
 
-  // test()
+  test()
 
   return (
     <UserContext>
