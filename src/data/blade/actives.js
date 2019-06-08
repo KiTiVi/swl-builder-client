@@ -64,7 +64,7 @@ export const blade_actives = [
     cooldown: 0,
     coefficient: 5.19,
     type: 'ability',
-    abilityType: 'Special Ability',
+    abilityType: 'Power Ability',
     recommendedPassive: 'Storm Surge'
   },
   {
@@ -275,4 +275,4 @@ export const blade_actives = [
     recommendedPassive: 'Torrent',
     tags: ['dmg']
   }
-];
+]

@@ -2,39 +2,39 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import AbilityTooltip from './AbilityTooltip'
 import IconPlaceholder from './IconPlaceholder'
-import { colors } from '../variables/colors'
+import PassiveTooltip from './PassiveTooltip'
 
-export default function AbilityComponent(props) {
-  const color = colors[props.ability.abilityType]
-
+export default ({ passive }) => {
   const [isHovered, setIsHovered] = useState(false)
 
   const handleMouseOver = () => setIsHovered(true)
   const handleMouseOut = () => setIsHovered(false)
 
   return (
-    <Ability onClick={() => props.setAbility({ ...props.ability })}>
-      <p style={{ color: color }}>{props.ability.name}</p>
-      {props.ability.image ? (
+    <Passive>
+      <p>{passive.name}</p>
+      {passive.image ? (
         <img
-          src={props.ability.image}
+          src={passive.image}
           onMouseEnter={handleMouseOver}
           onMouseLeave={handleMouseOut}
         />
       ) : (
         <div onMouseEnter={handleMouseOver} onMouseLeave={handleMouseOut}>
-          <IconPlaceholder name={props.ability.name} color={color} />
+          <IconPlaceholder name={passive.name} />
         </div>
       )}
-      {isHovered && <AbilityTooltip ability={props.ability} />}
-    </Ability>
+      {isHovered && <PassiveTooltip ability={passive} />}
+    </Passive>
   )
 }
 
-const Ability = styled.div`
-  flex: 1;
+const Passive = styled.div`
+  flex: 0 1 25%;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
 `
+
+// onClick={() => props.setAbility({ ...props.ability })}

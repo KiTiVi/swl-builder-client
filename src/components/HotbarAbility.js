@@ -1,30 +1,24 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Draggable } from 'react-beautiful-dnd'
-import { Tooltip } from 'react-tippy'
 
-export default function AbilityComponent(props) {
+export default function AbilityComponent({
+  draggableIndex,
+  draggableId,
+  ability
+}) {
   const [isHovered, setIsHovered] = useState(false)
 
   const handleMouseOver = () => setIsHovered(true)
   const handleMouseOut = () => setIsHovered(false)
 
-  // console.log(props)
+  console.log(ability)
 
   return (
-    // <Tooltip
-    //   trigger="click"
-    //   interactive
-    //   html={
-    //     <SlotSelectTooltip style={{ display: 'flex' }}>
-    //       <Slot onClick={() => props.removeAbility(props.slot, { ...props })} />
-    //     </SlotSelectTooltip>
-    //   }
-    // >
     <Draggable
-      key={props.draggableId}
-      draggableId={props.draggableId}
-      index={props.draggableIndex}
+      key={draggableId}
+      draggableId={draggableId}
+      index={draggableIndex}
     >
       {provided => (
         <Ability
@@ -34,30 +28,15 @@ export default function AbilityComponent(props) {
           onMouseEnter={handleMouseOver}
           onMouseLeave={handleMouseOut}
         >
-          {props.image && <img src={props.image} />}
-          {isHovered && Object.keys(props).length > 0 && (
-            <AbilityTooltip>{props.description}</AbilityTooltip>
+          {ability.image && <img src={ability.image} />}
+          {isHovered && Object.keys(ability).length > 0 && (
+            <AbilityTooltip>{ability.description}</AbilityTooltip>
           )}
         </Ability>
       )}
     </Draggable>
-    // </Tooltip>
   )
 }
-
-const SlotSelectTooltip = styled.div`
-  display: flex;
-`
-
-const Slot = styled.div`
-  height: 15px;
-  width: 15px;
-  margin: 5px;
-  background: #eee;
-  &:hover {
-    background: #f00;
-  }
-`
 
 const Ability = styled.div`
   position: relative;
@@ -73,7 +52,7 @@ const Ability = styled.div`
 
 const AbilityTooltip = styled.div`
   position: absolute;
-  top: 100%;
+  bottom: 100%;
   left: 0;
   width: 300px;
   padding: 20px 10px;

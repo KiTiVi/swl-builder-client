@@ -1,7 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Header from './components/Header'
-import 'react-tippy/dist/tippy.css'
 import Home from './pages/Home'
 import Profile from './pages/Profile'
 import data from './words.json'

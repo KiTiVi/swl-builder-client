@@ -1,32 +1,86 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import WeaponMenu from '../components/WeaponMenu'
 import Ability from '../components/Ability'
 import HotbarAbility from '../components/HotbarAbility'
 import Search from '../components/Search'
-// import HotbarAbilityContainer from '../components/HotbarAbilityContainer'
-import { shotgun_abilities } from '../data/shotgun/abilities'
+import Passive from '../components/Passive'
+import { blade_actives } from '../data/blade/actives'
+import { blade_passives } from '../data/blade/passives'
 
 const Home = () => {
   const [menuOption, setMenuOption] = useState('actives')
-  const [selectedWeapon, setSelectedWeapon] = useState('Shotgun')
+  const [selectedWeapon, setSelectedWeapon] = useState('Blade')
   const [clickedAbility, setClickedAbility] = useState(null)
-  const [selectedAbilities, setSelectedAbilities] = useState([])
+  const [selectedActives, setSelectedActives] = useState([
+    { placeholder: true, name: 'ph1' },
+    { placeholder: true, name: 'ph2' },
+    { placeholder: true, name: 'ph3' },
+    { placeholder: true, name: 'ph4' },
+    { placeholder: true, name: 'ph5' },
+    { placeholder: true, name: 'ph6' }
+  ])
 
   const selectWeapon = weaponName => {
     setSelectedWeapon(weaponName)
   }
 
+  useEffect(() => {
+    const actives = groupBy(blade_actives, 'path')
+    console.log(blade_passives)
+  }, [])
+
+  const groupBy = (objectArray, property) => {
+    return objectArray.reduce(function(acc, obj) {
+      var key = obj[property]
+
+      const alreadyCreated = acc.map(obj => obj[property])
+
+      if (!alreadyCreated.includes(key)) {
+        acc.push({ path: key, actives: [] })
+      }
+
+      const path = acc.find(obj => obj.path === key)
+      path.actives.push(obj)
+
+      return acc
+    }, [])
+  }
+
   const setAbility = ability => {
+    setClickedAbility(ability)
+
+    console.log(selectedActives)
     if (
-      !selectedAbilities.some(
+      selectedActives.some(
         selectedAbility => selectedAbility.name === ability.name
-      ) &&
-      selectedAbilities.length < 6
+      )
     ) {
-      setClickedAbility(ability)
-      setSelectedAbilities([...selectedAbilities, ability])
+      return
+    }
+
+    const placeholders = selectedActives.filter(
+      active => active.placeholder === true
+    )
+
+    if (placeholders.length > 0) {
+      // const replaceOnePlaceholder = selectedActives.map(active => {
+      //   if (active.placeholder) {
+      //     return ability
+      //   }
+      //   return active
+      // })
+      let replaced = false
+      selectedActives.forEach((active, i) => {
+        if (!replaced && active.placeholder) {
+          selectedActives[i] = ability
+          replaced = true
+          return
+        }
+      })
+
+      setSelectedActives(selectedActives)
     }
   }
 
@@ -43,11 +97,11 @@ const Home = () => {
     console.log(result)
 
     if (!destination) {
-      const newList = selectedAbilities.filter(
+      const newList = selectedActives.filter(
         ability => ability.name !== draggableId
       )
 
-      setSelectedAbilities([...newList])
+      setSelectedActives([...newList])
       return
     }
 
@@ -59,12 +113,12 @@ const Home = () => {
     }
 
     const newList = reorder(
-      selectedAbilities,
+      selectedActives,
       result.source.index,
       result.destination.index
     )
 
-    setSelectedAbilities([...newList])
+    setSelectedActives([...newList])
   }
 
   return (
@@ -95,12 +149,12 @@ const Home = () => {
             />
             {menuOption === 'actives' && (
               <Container>
-                {shotgun_abilities.map((path, i) => {
+                {groupBy(blade_actives, 'path').map((path, i) => {
                   return (
                     <div key={i} className="path">
-                      <h3 className="pathname">{path.pathName}</h3>
+                      <h3 className="pathname">{path.path}</h3>
                       <Abilites>
-                        {path.abilities.map((ability, i) => {
+                        {path.actives.map((ability, i) => {
                           return (
                             <Ability
                               key={i}
@@ -115,13 +169,25 @@ const Home = () => {
                 })}
               </Container>
             )}
+            {menuOption === 'passives' && (
+              <PassivesContainer>
+                {blade_passives.map((passive, i) => {
+                  return (
+                    <Passive
+                      key={i}
+                      passive={passive}
+                      // setAbility={setAbility}
+                    />
+                  )
+                })}
+              </PassivesContainer>
+            )}
           </SelectContainer>
         </Builder>
 
-        <Search />
-
-        {/* <HotbarAbilityContainer /> */}
+        <Search clickedAbility={clickedAbility} />
       </Content>
+
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="list" direction="horizontal">
           {provided => (
@@ -129,11 +195,11 @@ const Home = () => {
               ref={provided.innerRef}
               {...provided.droppableProps}
             >
-              {selectedAbilities.map((ability, i) => (
+              {selectedActives.map((ability, i) => (
                 <HotbarAbility
                   draggableIndex={i}
                   draggableId={ability.name}
-                  {...ability}
+                  ability={ability}
                 />
               ))}
               {provided.placeholder}
@@ -248,4 +314,10 @@ const Abilites = styled.div`
     rgba(70, 70, 70, 0.75),
     rgba(13, 13, 13, 0.75)
   );
+`
+
+const PassivesContainer = styled.div`
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
 `
