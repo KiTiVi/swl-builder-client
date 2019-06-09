@@ -1,9 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import { colors } from '../variables/colors'
 
-export default ({ name, color }) => {
+export default ({ name, type, activeType }) => {
   return (
-    <IconPlaceholder color={color}>
+    <IconPlaceholder
+      color={type === 'active' ? colors[activeType] : ''}
+      passive={type === 'passive' && true}
+    >
       {name
         .match(/\b\w/g)
         .slice(0, 3)
@@ -18,6 +22,9 @@ const IconPlaceholder = styled.div`
   align-items: center;
   height: 54px;
   width: 54px;
+  font-size: 20px;
+  font-weight: bold;
   color: ${({ color }) => color};
-  border: 1px solid #ddd;
+  background: ${({ passive }) => (passive ? '#7b3266' : 'none')};
+  border: 2px solid #ddd;
 `

@@ -5,103 +5,95 @@ import WeaponMenu from '../components/WeaponMenu'
 import Ability from '../components/Ability'
 import HotbarAbility from '../components/HotbarAbility'
 import Search from '../components/Search'
-import Passive from '../components/Passive'
 import { blade_actives } from '../data/blade/actives'
 import { blade_passives } from '../data/blade/passives'
+import { reorder } from '../utils/reorder'
+import { generateId } from '../utils/generateId'
+import { groupBy } from '../utils/groupBy'
+import createBuild from '../api/createBuild'
 
 const Home = () => {
   const [menuOption, setMenuOption] = useState('actives')
   const [selectedWeapon, setSelectedWeapon] = useState('Blade')
   const [clickedAbility, setClickedAbility] = useState(null)
   const [selectedActives, setSelectedActives] = useState([
-    { placeholder: true, name: 'ph1' },
-    { placeholder: true, name: 'ph2' },
-    { placeholder: true, name: 'ph3' },
-    { placeholder: true, name: 'ph4' },
-    { placeholder: true, name: 'ph5' },
-    { placeholder: true, name: 'ph6' }
+    { empty: true, name: 'active1' },
+    { empty: true, name: 'active2' },
+    { empty: true, name: 'active3' },
+    { empty: true, name: 'active4' },
+    { empty: true, name: 'active5' },
+    { empty: true, name: 'active6' }
+  ])
+  const [selectedPassives, setSelectedPassives] = useState([
+    { empty: true, name: 'passive1' },
+    { empty: true, name: 'passive2' },
+    { empty: true, name: 'passive3' },
+    { empty: true, name: 'passive4' },
+    { empty: true, name: 'passive5' }
   ])
 
   const selectWeapon = weaponName => {
     setSelectedWeapon(weaponName)
   }
 
-  useEffect(() => {
-    const actives = groupBy(blade_actives, 'path')
-    console.log(blade_passives)
-  }, [])
-
-  const groupBy = (objectArray, property) => {
-    return objectArray.reduce(function(acc, obj) {
-      var key = obj[property]
-
-      const alreadyCreated = acc.map(obj => obj[property])
-
-      if (!alreadyCreated.includes(key)) {
-        acc.push({ path: key, actives: [] })
-      }
-
-      const path = acc.find(obj => obj.path === key)
-      path.actives.push(obj)
-
-      return acc
-    }, [])
-  }
-
   const setAbility = ability => {
     setClickedAbility(ability)
 
-    console.log(selectedActives)
     if (
       selectedActives.some(
+        selectedAbility => selectedAbility.name === ability.name
+      ) ||
+      selectedPassives.some(
         selectedAbility => selectedAbility.name === ability.name
       )
     ) {
       return
     }
 
-    const placeholders = selectedActives.filter(
-      active => active.placeholder === true
-    )
+    if (ability.type === 'active') {
+      const freeSlots = selectedActives.filter(active => active.empty === true)
 
-    if (placeholders.length > 0) {
-      // const replaceOnePlaceholder = selectedActives.map(active => {
-      //   if (active.placeholder) {
-      //     return ability
-      //   }
-      //   return active
-      // })
-      let replaced = false
-      selectedActives.forEach((active, i) => {
-        if (!replaced && active.placeholder) {
-          selectedActives[i] = ability
-          replaced = true
-          return
-        }
-      })
+      if (freeSlots.length > 0) {
+        let replaced = false
+        selectedActives.forEach((active, i) => {
+          if (!replaced && active.empty) {
+            selectedActives[i] = ability
+            replaced = true
+            return
+          }
+        })
 
-      setSelectedActives(selectedActives)
+        setSelectedActives(selectedActives)
+      }
+    } else if (ability.type === 'passive') {
+      const freeSlots = selectedPassives.filter(active => active.empty === true)
+
+      if (freeSlots.length > 0) {
+        let replaced = false
+        selectedPassives.forEach((active, i) => {
+          if (!replaced && active.empty) {
+            selectedPassives[i] = ability
+            replaced = true
+            return
+          }
+        })
+
+        setSelectedPassives(selectedPassives)
+      }
     }
   }
 
-  const reorder = (list, startIndex, endIndex) => {
-    const result = Array.from(list)
-    const [removed] = result.splice(startIndex, 1)
-    result.splice(endIndex, 0, removed)
-
-    return result
-  }
-
-  const onDragEnd = result => {
-    const { destination, source, draggableId } = result
+  const onActiveDragEnd = result => {
+    const { destination, source } = result
     console.log(result)
 
     if (!destination) {
-      const newList = selectedActives.filter(
-        ability => ability.name !== draggableId
-      )
+      selectedActives.splice(source.index, 1, {
+        empty: true,
+        name: generateId(25)
+      })
 
-      setSelectedActives([...newList])
+      setSelectedActives(selectedActives)
       return
     }
 
@@ -112,13 +104,53 @@ const Home = () => {
       return
     }
 
-    const newList = reorder(
+    const newSelectedActives = reorder(
       selectedActives,
-      result.source.index,
-      result.destination.index
+      source.index,
+      destination.index
     )
+    setSelectedActives([...newSelectedActives])
+  }
 
-    setSelectedActives([...newList])
+  const onPassiveDragEnd = result => {
+    const { destination, source } = result
+    console.log(result)
+
+    if (!destination) {
+      selectedPassives.splice(source.index, 1, {
+        empty: true,
+        name: generateId(25)
+      })
+
+      setSelectedPassives(selectedPassives)
+      return
+    }
+
+    if (
+      destination.droppableId === source.droppableId &&
+      destination.index === source.index
+    ) {
+      return
+    }
+
+    const newSelectedPassives = reorder(
+      selectedPassives,
+      source.index,
+      destination.index
+    )
+    setSelectedPassives([...newSelectedPassives])
+  }
+
+  const onSave = async () => {
+    console.log(selectedActives, selectedPassives)
+    const build = await createBuild({
+      name: 'build',
+      description: 'sllslsl',
+      actives: selectedActives,
+      passives: selectedPassives
+    })
+
+    console.log(build)
   }
 
   return (
@@ -173,10 +205,10 @@ const Home = () => {
               <PassivesContainer>
                 {blade_passives.map((passive, i) => {
                   return (
-                    <Passive
+                    <Ability
                       key={i}
-                      passive={passive}
-                      // setAbility={setAbility}
+                      ability={passive}
+                      setAbility={setAbility}
                     />
                   )
                 })}
@@ -188,8 +220,28 @@ const Home = () => {
         <Search clickedAbility={clickedAbility} />
       </Content>
 
-      <DragDropContext onDragEnd={onDragEnd}>
-        <Droppable droppableId="list" direction="horizontal">
+      <DragDropContext onDragEnd={onPassiveDragEnd}>
+        <Droppable droppableId="selected-passives" direction="horizontal">
+          {provided => (
+            <HotbarAbilityContainer
+              ref={provided.innerRef}
+              {...provided.droppableProps}
+            >
+              {selectedPassives.map((ability, i) => (
+                <HotbarAbility
+                  draggableIndex={i}
+                  draggableId={ability.name}
+                  ability={ability}
+                />
+              ))}
+              {provided.placeholder}
+            </HotbarAbilityContainer>
+          )}
+        </Droppable>
+      </DragDropContext>
+
+      <DragDropContext onDragEnd={onActiveDragEnd}>
+        <Droppable droppableId="selected-actives" direction="horizontal">
           {provided => (
             <HotbarAbilityContainer
               ref={provided.innerRef}
@@ -207,6 +259,7 @@ const Home = () => {
           )}
         </Droppable>
       </DragDropContext>
+      <button onClick={onSave}>SAVE</button>
     </>
   )
 }
@@ -301,7 +354,7 @@ const HotbarAbilityContainer = styled.div`
   width: min-content;
   display: flex;
   justify-content: center;
-  margin: 0 auto 40px;
+  margin: 0 auto 10px;
   padding: 15px;
   background: rgba(0, 0, 0, 0.75);
 `

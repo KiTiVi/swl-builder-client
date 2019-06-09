@@ -12,8 +12,8 @@ export const blade_actives = [
     castTime: 0,
     cooldown: 0,
     coefficient: null,
-    type: 'ability',
-    abilityType: 'Basic Ability',
+    type: 'active',
+    activeType: 'Basic Ability',
     recommendedPassive: null
   },
   {
@@ -29,8 +29,8 @@ export const blade_actives = [
     castTime: 0,
     cooldown: 0,
     coefficient: null,
-    type: 'ability',
-    abilityType: 'Power Ability',
+    type: 'active',
+    activeType: 'Power Ability',
     recommendedPassive: 'Eye of the Storm'
   },
   {
@@ -46,8 +46,8 @@ export const blade_actives = [
     castTime: 0,
     cooldown: 20,
     coefficient: null,
-    type: 'ability',
-    abilityType: 'Special Ability',
+    type: 'active',
+    activeType: 'Special Ability',
     recommendedPassive: 'Keen Edge'
   },
   {
@@ -63,8 +63,8 @@ export const blade_actives = [
     castTime: 2.5,
     cooldown: 0,
     coefficient: 5.19,
-    type: 'ability',
-    abilityType: 'Power Ability',
+    type: 'active',
+    activeType: 'Power Ability',
     recommendedPassive: 'Storm Surge'
   },
   {
@@ -81,8 +81,8 @@ export const blade_actives = [
     castTime: 2.5,
     cooldown: 0,
     coefficient: 7.58,
-    type: 'ability',
-    abilityType: 'Elite Ability',
+    type: 'active',
+    activeType: 'Elite Ability',
     recommendedPassive: 'Soulforged Blade'
   },
   {
@@ -105,8 +105,8 @@ export const blade_actives = [
     castTime: 0,
     cooldown: 1,
     coefficient: null,
-    type: 'ability',
-    abilityType: 'Special Ability',
+    type: 'active',
+    activeType: 'Special Ability',
     recommendedPassive: 'Masterpiece'
   },
   {
@@ -123,8 +123,8 @@ export const blade_actives = [
     castTime: 0,
     cooldown: 20,
     coefficient: null,
-    type: 'ability',
-    abilityType: 'Special Ability',
+    type: 'active',
+    activeType: 'Special Ability',
     recommendedPassive: 'Meditate',
     heal: true,
     tags: ['cleanse']
@@ -142,8 +142,8 @@ export const blade_actives = [
     castTime: 0,
     cooldown: 20,
     coefficient: null,
-    type: 'ability',
-    abilityType: 'Special Ability',
+    type: 'active',
+    activeType: 'Special Ability',
     recommendedPassive: 'Reversal',
     tags: ['stun']
   },
@@ -160,8 +160,8 @@ export const blade_actives = [
     castTime: 0,
     cooldown: 20,
     coefficient: null,
-    type: 'ability',
-    abilityType: 'Special Ability',
+    type: 'active',
+    activeType: 'Special Ability',
     recommendedPassive: 'Waterfall',
     tags: ['dash']
   },
@@ -180,8 +180,8 @@ export const blade_actives = [
     castTime: 0,
     cooldown: 20,
     coefficient: null,
-    type: 'ability',
-    abilityType: 'Elite Ability',
+    type: 'active',
+    activeType: 'Elite Ability',
     recommendedPassive: "Master's Focus",
     heal: true,
     tags: ['dmg', 'speed', 'cleanse']
@@ -199,8 +199,8 @@ export const blade_actives = [
     castTime: 0,
     cooldown: 0,
     coefficient: 2.525,
-    type: 'ability',
-    abilityType: 'Power Ability',
+    type: 'active',
+    activeType: 'Power Ability',
     recommendedPassive: 'Hardened Blade'
   },
   {
@@ -215,8 +215,8 @@ export const blade_actives = [
     energy: 0,
     castTime: 0,
     cooldown: 0,
-    type: 'ability',
-    abilityType: 'Basic Ability'
+    type: 'active',
+    activeType: 'Basic Ability'
   },
   {
     index: 113,
@@ -230,8 +230,8 @@ export const blade_actives = [
     energy: 5,
     castTime: 0,
     cooldown: 0,
-    type: 'ability',
-    abilityType: 'Power Ability',
+    type: 'active',
+    activeType: 'Power Ability',
     recommendedPassive: 'Whirlwind',
     tags: ['dot']
   },
@@ -251,8 +251,8 @@ export const blade_actives = [
     energy: 2,
     castTime: 0,
     cooldown: 20,
-    type: 'ability',
-    abilityType: 'Special Ability',
+    type: 'active',
+    activeType: 'Special Ability',
     recommendedPassive: 'Sunder Spirit',
     tags: ['hinder', 'dot', 'exposed']
   },
@@ -270,8 +270,8 @@ export const blade_actives = [
     castTime: 0,
     cooldown: 20,
     coefficient: 1.28,
-    type: 'ability',
-    abilityType: 'Elite Ability',
+    type: 'active',
+    activeType: 'Elite Ability',
     recommendedPassive: 'Torrent',
     tags: ['dmg']
   }

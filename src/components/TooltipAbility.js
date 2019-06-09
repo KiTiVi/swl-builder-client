@@ -24,22 +24,48 @@ const image = {
 }
 
 export default ({ ability, search }) => {
-  const { name, description, weapon, recommendedActive } = ability
+  const {
+    name,
+    activeType,
+    description,
+    weapon,
+    energy,
+    castTime,
+    cooldown,
+    type,
+    recommendedPassive
+  } = ability
 
   return (
     <AbilityTooltip className={search && 'search'}>
       <header className="AbilityTooltip--header">
         <div className="AbilityTooltip--type-and-weapon">
           <h3>{name}</h3>
-          <p>Passive skill</p>
+          <p>
+            {weapon} {activeType}
+          </p>
         </div>
         <WeaponIcon src={image[weapon]} alt={weapon} />
       </header>
+
+      <section className="AbilityTooltip--stats">
+        {energy > 0 && (
+          <i className="fas fa-bolt AbilityTooltip--icon">
+            <span>{energy}</span>
+          </i>
+        )}
+        <i className="fas fa-clock AbilityTooltip--icon">
+          {castTime > 0 ? <span>{castTime}</span> : <span>Instant</span>}
+        </i>
+        <i className="fas fa-redo-alt AbilityTooltip--icon">
+          {cooldown > 0 ? <span>{cooldown}</span> : <span>Instant</span>}
+        </i>
+      </section>
       <p>{description}</p>
-      {search && recommendedActive && (
+      {search && recommendedPassive && (
         <div>
-          <p>Connected active: {recommendedActive}</p>
-          <IconPlaceholder name={recommendedActive} />
+          <p>Connected passive: {recommendedPassive}</p>
+          <IconPlaceholder name={recommendedPassive} type={type} />
         </div>
       )}
     </AbilityTooltip>

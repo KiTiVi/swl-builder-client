@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import AbilityTooltip from './AbilityTooltip'
+import TooltipAbility from './TooltipAbility'
 
 export default ({ clickedAbility }) => {
   return (
@@ -10,7 +10,7 @@ export default ({ clickedAbility }) => {
         <input type="text" placeholder="Search..." className="Search-input" />
       </label>
 
-      {clickedAbility && <AbilityTooltip ability={clickedAbility} search />}
+      {clickedAbility && <TooltipAbility ability={clickedAbility} search />}
     </Search>
   )
 }
