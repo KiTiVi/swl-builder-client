@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import TooltipAbility from './TooltipAbility'
-import IconPlaceholder from './IconPlaceholder'
-import { colors } from '../variables/colors'
-import TooltipPassive from './TooltipPassive'
+import TooltipAbility from '../../../../components/TooltipAbility'
+import IconPlaceholder from '../../../../components/IconPlaceholder'
+import { colors } from '../../../../variables/colors'
+import TooltipPassive from '../../../../components/TooltipPassive'
 
 export default function AbilityComponent({ ability, setAbility }) {
   const [isHovered, setIsHovered] = useState(false)
@@ -22,6 +22,7 @@ export default function AbilityComponent({ ability, setAbility }) {
           src={ability.image}
           onMouseEnter={handleMouseOver}
           onMouseLeave={handleMouseOut}
+          alt={ability.name}
         />
       ) : (
         <div onMouseEnter={handleMouseOver} onMouseLeave={handleMouseOut}>

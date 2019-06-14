@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import TooltipAbility from './TooltipAbility'
+import TooltipAbility from '../../../../components/TooltipAbility'
 
 export default ({ clickedAbility }) => {
   return (

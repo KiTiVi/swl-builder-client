@@ -1,28 +1,17 @@
 import axios from 'axios'
 
-export default async ({
-  name,
-  description,
-  actives,
-  passives,
-  queryString
-}) => {
+export default async ({ id }) => {
+  console.log(id)
+
   try {
     const { data } = await axios({
-      method: 'post',
+      method: 'delete',
       baseURL: process.env.REACT_APP_DEV_API_URL,
-      url: '/builds',
+      url: `/builds/${id}`,
       headers: {
         Authorization: `Bearer ${
           JSON.parse(localStorage.getItem('user')).token
         }`
-      },
-      data: {
-        name,
-        description,
-        actives,
-        passives,
-        queryString
       }
     })
 

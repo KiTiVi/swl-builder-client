@@ -1,18 +1,25 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
-import WeaponMenu from '../components/WeaponMenu'
-import Ability from '../components/Ability'
-import HotbarAbility from '../components/HotbarAbility'
-import Search from '../components/Search'
-import { blade_actives } from '../data/blade/actives'
-import { blade_passives } from '../data/blade/passives'
-import { reorder } from '../utils/reorder'
-import { generateId } from '../utils/generateId'
-import { groupBy } from '../utils/groupBy'
-import createBuild from '../api/createBuild'
+import WeaponMenu from './WeaponMenu'
+import Ability from './Ability'
+import HotbarAbility from './HotbarAbility'
+import SaveBuild from './SaveBuild'
+import Search from './Search'
+import { blade_actives } from './data/blade/actives'
+import { blade_passives } from './data/blade/passives'
+import { reorder } from '../../../../utils/reorder'
+import { generateId } from '../../../../utils/generateId'
+import { groupBy } from '../../../../utils/groupBy'
+import { updateBuildURL } from '../../../../utils/updateBuildURL'
 
-const Home = () => {
+export default ({
+  preselectedActives,
+  preselectedPassives,
+  queryString,
+  buildID,
+  history
+}) => {
   const [menuOption, setMenuOption] = useState('actives')
   const [selectedWeapon, setSelectedWeapon] = useState('Blade')
   const [clickedAbility, setClickedAbility] = useState(null)
@@ -31,6 +38,22 @@ const Home = () => {
     { empty: true, name: 'passive4' },
     { empty: true, name: 'passive5' }
   ])
+
+  useEffect(() => {
+    if (preselectedActives) {
+      setSelectedActives(preselectedActives)
+    }
+  }, [preselectedActives])
+
+  useEffect(() => {
+    if (preselectedPassives) {
+      setSelectedPassives(preselectedPassives)
+    }
+  }, [preselectedPassives])
+
+  useEffect(() => {
+    updateBuildURL({ selectedActives, selectedPassives, history })
+  }, [selectedActives, selectedPassives])
 
   const selectWeapon = weaponName => {
     setSelectedWeapon(weaponName)
@@ -63,7 +86,7 @@ const Home = () => {
           }
         })
 
-        setSelectedActives(selectedActives)
+        setSelectedActives([...selectedActives])
       }
     } else if (ability.type === 'passive') {
       const freeSlots = selectedPassives.filter(active => active.empty === true)
@@ -78,14 +101,13 @@ const Home = () => {
           }
         })
 
-        setSelectedPassives(selectedPassives)
+        setSelectedPassives([...selectedPassives])
       }
     }
   }
 
   const onActiveDragEnd = result => {
     const { destination, source } = result
-    console.log(result)
 
     if (!destination) {
       selectedActives.splice(source.index, 1, {
@@ -93,7 +115,7 @@ const Home = () => {
         name: generateId(25)
       })
 
-      setSelectedActives(selectedActives)
+      setSelectedActives([...selectedActives])
       return
     }
 
@@ -114,7 +136,6 @@ const Home = () => {
 
   const onPassiveDragEnd = result => {
     const { destination, source } = result
-    console.log(result)
 
     if (!destination) {
       selectedPassives.splice(source.index, 1, {
@@ -122,7 +143,7 @@ const Home = () => {
         name: generateId(25)
       })
 
-      setSelectedPassives(selectedPassives)
+      setSelectedPassives([...selectedPassives])
       return
     }
 
@@ -140,19 +161,6 @@ const Home = () => {
     )
     setSelectedPassives([...newSelectedPassives])
   }
-
-  const onSave = async () => {
-    console.log(selectedActives, selectedPassives)
-    const build = await createBuild({
-      name: 'build',
-      description: 'sllslsl',
-      actives: selectedActives,
-      passives: selectedPassives
-    })
-
-    console.log(build)
-  }
-
   return (
     <>
       <Content>
@@ -229,6 +237,7 @@ const Home = () => {
             >
               {selectedPassives.map((ability, i) => (
                 <HotbarAbility
+                  key={i}
                   draggableIndex={i}
                   draggableId={ability.name}
                   ability={ability}
@@ -246,9 +255,11 @@ const Home = () => {
             <HotbarAbilityContainer
               ref={provided.innerRef}
               {...provided.droppableProps}
+              actives={true}
             >
               {selectedActives.map((ability, i) => (
                 <HotbarAbility
+                  key={i}
                   draggableIndex={i}
                   draggableId={ability.name}
                   ability={ability}
@@ -259,12 +270,15 @@ const Home = () => {
           )}
         </Droppable>
       </DragDropContext>
-      <button onClick={onSave}>SAVE</button>
+      <SaveBuild
+        actives={selectedActives}
+        passives={selectedPassives}
+        queryString={queryString}
+        buildID={buildID}
+      />
     </>
   )
 }
-
-export default Home
 
 const Content = styled.main`
   display: flex;
@@ -357,6 +371,10 @@ const HotbarAbilityContainer = styled.div`
   margin: 0 auto 10px;
   padding: 15px;
   background: rgba(0, 0, 0, 0.75);
+
+  div:nth-child(5) {
+    margin-left: ${({ actives }) => (actives ? '15px' : '0')};
+  }
 `
 
 const Abilites = styled.div`

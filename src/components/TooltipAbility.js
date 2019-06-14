@@ -23,7 +23,7 @@ const image = {
   Rifle: AssaultRiflesIcon
 }
 
-export default ({ ability, search }) => {
+export default ({ ability, search, up }) => {
   const {
     name,
     activeType,
@@ -37,7 +37,7 @@ export default ({ ability, search }) => {
   } = ability
 
   return (
-    <AbilityTooltip className={search && 'search'}>
+    <AbilityTooltip className={`${search ? 'search' : ''} ${up ? '-up' : ''}`}>
       <header className="AbilityTooltip--header">
         <div className="AbilityTooltip--type-and-weapon">
           <h3>{name}</h3>
@@ -126,6 +126,11 @@ const AbilityTooltip = styled.div`
     padding: 20px;
     border: none;
     border-radius: 0;
+  }
+
+  &.-up {
+    top: auto;
+    bottom: 100%;
   }
 `
 

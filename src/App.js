@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Header from './components/Header'
-import Home from './pages/Home'
+import Home from './pages/Home/Home'
 import Profile from './pages/Profile'
 import data from './words.json'
 import UserContext from './UserContext'
@@ -21,7 +21,6 @@ const App = () => {
     const elemental = data.slice(146, 174)
 
     const shotgun = data.slice(174, 202)
-    console.log(shotgun)
 
     const pistol = data.slice(202, 229)
 

@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Draggable } from 'react-beautiful-dnd'
-import TooltipAbility from '../components/TooltipAbility'
-import TooltipPassive from '../components/TooltipPassive'
-import IconPlaceholder from '../components/IconPlaceholder'
+import TooltipAbility from '../../../../components/TooltipAbility'
+import TooltipPassive from '../../../../components/TooltipPassive'
+import IconPlaceholder from '../../../../components/IconPlaceholder'
 
 export default function AbilityComponent({
   draggableIndex,
@@ -40,11 +40,11 @@ export default function AbilityComponent({
             />
           )}
           {isHovered && ability.type === 'active' && (
-            <TooltipAbility ability={ability} />
+            <TooltipAbility ability={ability} up />
           )}
 
           {isHovered && ability.type === 'passive' && (
-            <TooltipPassive ability={ability} />
+            <TooltipPassive ability={ability} up />
           )}
         </Ability>
       )}
@@ -61,19 +61,4 @@ const Ability = styled.div`
   width: 54px;
   margin: 0 1px;
   border: 2px solid #ddd;
-  /* margin: 1rem 5rem; */
-`
-
-const AbilityTooltip = styled.div`
-  position: absolute;
-  bottom: 100%;
-  left: 0;
-  width: 300px;
-  padding: 20px 10px;
-  z-index: 1000;
-  white-space: pre-line;
-
-  background: #000;
-  border: 2px solid #fff;
-  border-radius: 5px;
 `

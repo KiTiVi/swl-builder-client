@@ -31,7 +31,7 @@ export default () => {
       {visible && (
         <ul className="user-menu-links">
           <li>
-            <i class="fas fa-user-alt" />
+            <i className="fas fa-user-alt" />
             <Link to="/profile">Profile</Link>
           </li>
           <li

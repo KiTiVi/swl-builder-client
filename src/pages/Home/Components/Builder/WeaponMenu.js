@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
-import BladesIcon from '../images/weapons/BladesIcon.png'
-import HammersIcon from '../images/weapons/HammersIcon.png'
-import FistsIcon from '../images/weapons/FistsIcon.png'
-import BloodIcon from '../images/weapons/BloodIcon.png'
-import ChaosIcon from '../images/weapons/ChaosIcon.png'
-import ElementalsIcon from '../images/weapons/ElementalsIcon.png'
-import ShotgunsIcon from '../images/weapons/ShotgunsIcon.png'
-import PistolsIcon from '../images/weapons/PistolsIcon.png'
-import AssaultRiflesIcon from '../images/weapons/AssaultRiflesIcon.png'
+import BladesIcon from '../../../../images/weapons/BladesIcon.png'
+import HammersIcon from '../../../../images/weapons/HammersIcon.png'
+import FistsIcon from '../../../../images/weapons/FistsIcon.png'
+import BloodIcon from '../../../../images/weapons/BloodIcon.png'
+import ChaosIcon from '../../../../images/weapons/ChaosIcon.png'
+import ElementalsIcon from '../../../../images/weapons/ElementalsIcon.png'
+import ShotgunsIcon from '../../../../images/weapons/ShotgunsIcon.png'
+import PistolsIcon from '../../../../images/weapons/PistolsIcon.png'
+import AssaultRiflesIcon from '../../../../images/weapons/AssaultRiflesIcon.png'
 
 export default function WeaponMenu({ selectWeapon, selectedWeapon }) {
   return (
