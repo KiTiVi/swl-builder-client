@@ -12,6 +12,7 @@ import { reorder } from '../../../../utils/reorder'
 import { generateId } from '../../../../utils/generateId'
 import { groupBy } from '../../../../utils/groupBy'
 import { updateBuildURL } from '../../../../utils/updateBuildURL'
+import readBuild from '../../../../api/readBuild'
 
 export default ({
   preselectedActives,
@@ -22,7 +23,12 @@ export default ({
 }) => {
   const [menuOption, setMenuOption] = useState('actives')
   const [selectedWeapon, setSelectedWeapon] = useState('Blade')
+
   const [clickedAbility, setClickedAbility] = useState(null)
+
+  const [name, setName] = useState('')
+  const [description, setDescription] = useState('')
+  const [weapons, setWeapons] = useState([])
   const [selectedActives, setSelectedActives] = useState([
     { empty: true, name: 'active1' },
     { empty: true, name: 'active2' },
@@ -52,7 +58,30 @@ export default ({
   }, [preselectedPassives])
 
   useEffect(() => {
+    if (buildID) {
+      const fetchBuild = async () => {
+        const build = await readBuild({ id: buildID })
+        setName(build.name)
+        setDescription(build.description)
+      }
+      fetchBuild()
+    }
+  }, [buildID])
+
+  useEffect(() => {
     updateBuildURL({ selectedActives, selectedPassives, history })
+    const abilities = [...selectedActives, ...selectedPassives]
+
+    const allWeapons = []
+
+    abilities.forEach(ability => {
+      if (ability.weapon) {
+        allWeapons.push(ability.weapon)
+      }
+    })
+
+    const weapons = [...new Set(allWeapons)]
+    setWeapons(weapons)
   }, [selectedActives, selectedPassives])
 
   const selectWeapon = weaponName => {
@@ -228,54 +257,67 @@ export default ({
         <Search clickedAbility={clickedAbility} />
       </Content>
 
-      <DragDropContext onDragEnd={onPassiveDragEnd}>
-        <Droppable droppableId="selected-passives" direction="horizontal">
-          {provided => (
-            <HotbarAbilityContainer
-              ref={provided.innerRef}
-              {...provided.droppableProps}
-            >
-              {selectedPassives.map((ability, i) => (
-                <HotbarAbility
-                  key={i}
-                  draggableIndex={i}
-                  draggableId={ability.name}
-                  ability={ability}
-                />
-              ))}
-              {provided.placeholder}
-            </HotbarAbilityContainer>
-          )}
-        </Droppable>
-      </DragDropContext>
+      <Build>
+        {name && <h3>{name}</h3>}
+        {description && <p>{description}</p>}
+        <Flex>
+          <SelectedAbilities>
+            <DragDropContext onDragEnd={onPassiveDragEnd}>
+              <Droppable droppableId="selected-passives" direction="horizontal">
+                {provided => (
+                  <HotbarAbilityContainer
+                    ref={provided.innerRef}
+                    {...provided.droppableProps}
+                  >
+                    {selectedPassives.map((ability, i) => (
+                      <HotbarAbility
+                        key={i}
+                        draggableIndex={i}
+                        draggableId={ability.name}
+                        ability={ability}
+                      />
+                    ))}
+                    {provided.placeholder}
+                  </HotbarAbilityContainer>
+                )}
+              </Droppable>
+            </DragDropContext>
 
-      <DragDropContext onDragEnd={onActiveDragEnd}>
-        <Droppable droppableId="selected-actives" direction="horizontal">
-          {provided => (
-            <HotbarAbilityContainer
-              ref={provided.innerRef}
-              {...provided.droppableProps}
-              actives={true}
-            >
-              {selectedActives.map((ability, i) => (
-                <HotbarAbility
-                  key={i}
-                  draggableIndex={i}
-                  draggableId={ability.name}
-                  ability={ability}
-                />
-              ))}
-              {provided.placeholder}
-            </HotbarAbilityContainer>
-          )}
-        </Droppable>
-      </DragDropContext>
-      <SaveBuild
-        actives={selectedActives}
-        passives={selectedPassives}
-        queryString={queryString}
-        buildID={buildID}
-      />
+            <DragDropContext onDragEnd={onActiveDragEnd}>
+              <Droppable droppableId="selected-actives" direction="horizontal">
+                {provided => (
+                  <HotbarAbilityContainer
+                    ref={provided.innerRef}
+                    {...provided.droppableProps}
+                    actives={true}
+                  >
+                    {selectedActives.map((ability, i) => (
+                      <HotbarAbility
+                        key={i}
+                        draggableIndex={i}
+                        draggableId={ability.name}
+                        ability={ability}
+                      />
+                    ))}
+                    {provided.placeholder}
+                  </HotbarAbilityContainer>
+                )}
+              </Droppable>
+            </DragDropContext>
+          </SelectedAbilities>
+          <Buttons>
+            <SaveBuild
+              weapons={weapons}
+              actives={selectedActives}
+              passives={selectedPassives}
+              queryString={queryString}
+              buildID={buildID}
+              oldName={name}
+              oldDescription={description}
+            />
+          </Buttons>
+        </Flex>
+      </Build>
     </>
   )
 }
@@ -368,7 +410,6 @@ const HotbarAbilityContainer = styled.div`
   width: min-content;
   display: flex;
   justify-content: center;
-  margin: 0 auto 10px;
   padding: 15px;
   background: rgba(0, 0, 0, 0.75);
 
@@ -391,4 +432,28 @@ const PassivesContainer = styled.div`
   flex: 1;
   display: flex;
   flex-wrap: wrap;
+`
+
+const Build = styled.div`
+  max-width: 724px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.75);
+`
+
+const SelectedAbilities = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+const Buttons = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+const Flex = styled.div`
+  display: flex;
 `

@@ -4,8 +4,8 @@ import Builder from './Components/Builder/Builder'
 
 const Home = ({ history, location }) => {
   const [buildID, setBuildID] = useState(null)
-  const [preselectedActives, setPreselectedActives] = useState([])
-  const [preselectedPassives, setPreselectedPassives] = useState([])
+  const [preselectedActives, setPreselectedActives] = useState(null)
+  const [preselectedPassives, setPreselectedPassives] = useState(null)
 
   useEffect(() => {
     const params = new URLSearchParams(location.search)

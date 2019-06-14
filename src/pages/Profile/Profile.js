@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import readProfile from '../api/readProfile'
-import readBuilds from '../api/readBuilds'
-import deleteBuild from '../api/deleteBuild'
+import readProfile from '../../api/readProfile'
+import readBuilds from '../../api/readBuilds'
+import deleteBuild from '../../api/deleteBuild'
+import weapons from '../../images/weapons/index'
 
 export default () => {
   const [user, setUser] = useState(null)
@@ -50,18 +51,24 @@ export default () => {
       {builds.length > 0 && (
         <section className="profile-builds">
           <h3>Builds</h3>
-          <ul>
+          <Builds>
             {builds.map((build, i) => (
-              <li key={i}>
-                <Link to={`/${build.queryString}&id=${build._id}`}>
-                  {build.name}
+              <li className="--list-item" key={i}>
+                <Link
+                  to={`/${build.queryString}&id=${build._id}`}
+                  className="name"
+                >
+                  <h4>{build.name}</h4>
                 </Link>
+                {build.weapons.map(weapon => (
+                  <img src={weapons[weapon]} />
+                ))}
                 <button onClick={() => deleteBuild({ id: build._id })}>
                   del
                 </button>
               </li>
             ))}
-          </ul>
+          </Builds>
         </section>
       )}
     </Container>
@@ -69,7 +76,7 @@ export default () => {
 }
 
 const Container = styled.main`
-  max-width: 1366px;
+  max-width: 991px;
   margin: 30px auto;
   padding: 40px 60px;
   background: rgba(0, 0, 0, 0.75);
@@ -98,6 +105,21 @@ const Container = styled.main`
 
     h3 {
       font-size: 28px;
+    }
+  }
+`
+
+const Builds = styled.ul`
+  list-style: none;
+
+  .--list-item {
+    display: flex;
+    justify-content: space-between;
+
+    .name {
+      flex: 1;
+      font-size: 20px;
+      color: #fff;
     }
   }
 `

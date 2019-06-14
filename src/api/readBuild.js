@@ -1,30 +1,15 @@
 import axios from 'axios'
 
-export default async ({
-  name,
-  description,
-  weapons,
-  actives,
-  passives,
-  queryString
-}) => {
+export default async ({ id }) => {
   try {
     const { data } = await axios({
-      method: 'post',
+      method: 'get',
       baseURL: process.env.REACT_APP_DEV_API_URL,
-      url: '/builds',
+      url: `/builds/${id}`,
       headers: {
         Authorization: `Bearer ${
           JSON.parse(localStorage.getItem('user')).token
         }`
-      },
-      data: {
-        name,
-        description,
-        weapons,
-        actives,
-        passives,
-        queryString
       }
     })
 

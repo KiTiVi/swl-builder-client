@@ -1,11 +1,32 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import createBuild from '../../../../api/createBuild'
 import Modal from '../../../../components/Modal'
+import updateBuild from '../../../../api/updateBuild'
 
-const Save = ({ actives, passives, queryString, buildID }) => {
+const Save = ({
+  weapons,
+  actives,
+  passives,
+  queryString,
+  buildID,
+  oldName,
+  oldDescription
+}) => {
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
+
+  useEffect(() => {
+    if (oldName) {
+      setName(oldName)
+    }
+  }, [oldName])
+
+  useEffect(() => {
+    if (oldDescription) {
+      setDescription(oldDescription)
+    }
+  }, [oldDescription])
 
   const [showModal, setShowModal] = useState(false)
 
@@ -14,17 +35,30 @@ const Save = ({ actives, passives, queryString, buildID }) => {
 
     if (buildID) {
       console.log(buildID)
+      console.log(name, description, actives, passives, queryString)
+      const build = await updateBuild({
+        buildID,
+        name,
+        description,
+        weapons,
+        actives,
+        passives,
+        queryString
+      })
+
+      console.log(build)
+    } else {
+      const build = await createBuild({
+        name,
+        description,
+        weapons,
+        actives,
+        passives,
+        queryString
+      })
+
+      console.log(build)
     }
-
-    const build = await createBuild({
-      name,
-      description,
-      actives,
-      passives,
-      queryString
-    })
-
-    console.log(build)
   }
   console.log(buildID)
 

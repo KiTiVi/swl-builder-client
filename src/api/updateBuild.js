@@ -1,6 +1,7 @@
 import axios from 'axios'
 
 export default async ({
+  buildID,
   name,
   description,
   weapons,
@@ -10,9 +11,9 @@ export default async ({
 }) => {
   try {
     const { data } = await axios({
-      method: 'post',
+      method: 'patch',
       baseURL: process.env.REACT_APP_DEV_API_URL,
-      url: '/builds',
+      url: `/builds/${buildID}`,
       headers: {
         Authorization: `Bearer ${
           JSON.parse(localStorage.getItem('user')).token
