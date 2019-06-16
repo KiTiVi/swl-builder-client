@@ -177,8 +177,8 @@ export default [
     index: 122,
     weapon: 'Blade',
     name: "Warrior's Spirit",
-    description: `Your`,
+    description: `Your unyielding warrior spirit endures on even as your Spirit Blade shatters. Whenever your Spirit Blade shatters, you gain 1 Chi and deal 5 physical damage to nearby enemies.`,
     type: 'passive',
     tags: ['chi']
   }
-]
+];

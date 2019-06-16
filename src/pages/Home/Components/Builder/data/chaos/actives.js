@@ -14,7 +14,7 @@ import {
   winds_of_change,
   evulsion,
   immutable
-} from '../../../../../../images/abilities/chaos/actives/index'
+} from '../../../../../../images/abilities/chaos/actives/index';
 
 export default [
   {
@@ -24,12 +24,12 @@ export default [
     name: 'Deconstruct',
     description:
       'Charge your hands with chaotic energy and strike your target 3 times, dealing 3 magical damage per hit.',
-    targetType: 'Target',
+    targetType: 'single',
     damageType: 'magic',
     energy: 0,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 0,
+    cooldown: 0,
+    coefficient: 1.175,
     type: 'active',
     activeType: 'Basic Ability',
     recommendedPassive: null,
@@ -42,15 +42,15 @@ export default [
     name: 'Schism',
     description:
       'Affects up to 6 enemies in a 5 metre radius around you.\nSplit matter from energy in an area around you, dealing 10 magical damage.',
-    targetType: 'Point blank area of effect',
+    targetType: 'pbaoe',
     damageType: 'magic',
     energy: 3,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 0,
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: null,
+    recommendedPassive: 'Paradox Control',
     image: schism
   },
   {
@@ -60,16 +60,17 @@ export default [
     name: 'Entropy',
     description:
       'Increases your damage, critical damage, and causes your attacks to purge for a short time.\nYour Chaos attacks are fueled with the energy that brings all things to their end, increasing all Chaos damage dealt by 10% and Critical Power by 8.6%. Also, your Chaos attacks purge 1 beneficial effect from each target hit.\nThis effect lasts 8 seconds.',
-    targetType: 'Self',
+    targetType: 'self',
     damageType: 'magic',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 20,
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
-    image: entropy
+    recommendedPassive: 'Dissolution',
+    image: entropy,
+    tags: ['dmg', 'critPower', 'purge']
   },
   {
     index: 504,
@@ -78,15 +79,15 @@ export default [
     name: 'Breakdown',
     description:
       "Focus your chaotic energy into a series of 4 hits. Each hit breaks down the target's corporeal form dealing 7 magical damage.",
-    targetType: 'Target',
+    targetType: 'single',
     damageType: 'magic',
     energy: 5,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 0,
+    cooldown: 0,
+    coefficient: 3.425,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: null,
+    recommendedPassive: 'Disintegrate',
     image: breakdown
   },
   {
@@ -96,16 +97,17 @@ export default [
     name: 'Pandemonium',
     description:
       'Affects up to 6 enemies in up to a 7 metre area around you.\nUnfurl the full extent of the chaotic power that resides in all things. Nearby enemies are caught up in the swell of power and are dealt 43 magical damage as they are flung to the ground.',
-    targetType: 'Point blank area of effect',
+    targetType: 'pbaoe',
     damageType: 'magic',
     energy: 4,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 0,
+    cooldown: 20,
+    coefficient: 5.8,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: null,
-    image: pandemonium
+    recommendedPassive: 'Fractured Existence',
+    image: pandemonium,
+    tags: ['knock']
   },
   {
     index: 506,
@@ -116,16 +118,17 @@ export default [
       'Affects up to 6 enemies in a 2 metre wide by 10 metre long area in front of you.\nLet loose a wave of entropic power, withering and decaying enemies in front of you dealing 4 magical damage. Affected enemies are purged of 1 beneficial effect.',
     effect:
       'The damage dealt by this attack will always be divisible by eight, resulting in 2 - 4 Paradoxes',
-    targetType: 'Column',
+    targetType: 'column',
     damageType: 'magic',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 0,
+    cooldown: 20,
+    coefficient: 0.45,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
-    image: tumultuous_whisper
+    recommendedPassive: 'Duality',
+    image: tumultuous_whisper,
+    tags: ['purge']
   },
   {
     index: 507,
@@ -134,16 +137,17 @@ export default [
     name: 'Rewind',
     description:
       'Your mastery of chaos allows you to warp reality and undo harm directed at you. For the next 3 seconds, all damage dealt to you is tallied. When the 3 seconds end, you are healed for every point of damage you took during that time.',
-    targetType: 'Self',
+    targetType: 'self',
     damageType: 'magic',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 20,
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
-    image: rewind
+    recommendedPassive: 'Flash-back',
+    image: rewind,
+    heal: true
   },
   {
     index: 508,
@@ -153,16 +157,17 @@ export default [
     description:
       'Affects up to 6 enemies in a 5 metre radius around you.\nLeap into the air and shatter the barrier between realities and cause chaotic energy to burst forth in an area around you dealing 8 magical damage.\nApplies Exposed.',
     effect: 'If this attack hits 3 or more enemies, it generates 1 Paradox',
-    targetType: 'Point blank area of effect',
+    targetType: 'pbaoe',
     damageType: 'magic',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 0,
+    cooldown: 20,
+    coefficient: 1.02,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
-    image: reality_fracture
+    recommendedPassive: 'Rend Space',
+    image: reality_fracture,
+    tags: ['exposed']
   },
   {
     index: 509,
@@ -171,15 +176,15 @@ export default [
     name: 'Twist Fate',
     description:
       'Twist probability and chance causing any incoming blows to land less effectively, increasing your Protection by 20300 for 7 seconds.',
-    targetType: 'Self',
+    targetType: 'self',
     damageType: 'magic',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 20,
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
+    recommendedPassive: 'Backlash',
     image: twist_fate
   },
   {
@@ -191,16 +196,17 @@ export default [
       'Every second for 3 seconds.\nAffects up to 6 enemies in a 10 metre radius around you.\nCreate a localised anomaly within the palm of your hands. Each twist of your hands sends out waves of destructive energy dealing 9 magical damage and sending targets flying into the air.\nApplies Exposed.\nYour Evade Chance is increased by 25% while channeling this ability.',
     effect:
       'Damage dealt by this ability has a 20% chance to generate 1 Paradox',
-    targetType: 'Channelled point blank area of effect',
+    targetType: 'pbaoe',
     damageType: 'magic',
     energy: 4,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 3,
+    cooldown: 20,
+    coefficient: 3.42,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: null,
-    image: anomaly
+    recommendedPassive: 'Disorientation',
+    image: anomaly,
+    tags: ['exposed', 'evade']
   },
   {
     index: 511,
@@ -209,16 +215,17 @@ export default [
     name: 'Distortion',
     description:
       'Cause a ripple in the fabric of reality within your target dealing 19 magical damage.\nThis attack generates a large amount of hate.',
-    targetType: 'Target',
+    targetType: 'single',
     damageType: 'magic',
     energy: 3,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 0,
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: null,
-    image: distortion
+    recommendedPassive: 'Veil of Deformity',
+    image: distortion,
+    tags: ['hate']
   },
   {
     index: 512,
@@ -227,11 +234,11 @@ export default [
     name: 'Turmoil',
     description:
       'Affects up to 6 enemies in a 5 metre radius around you.\nExecute a spinning kick charged with a torrent of chaotic power dealing 5 magical damage.\nThis attack generates a large amount of hate.',
-    targetType: 'Point blank area of effect',
+    targetType: 'pbaoe',
     damageType: 'magic',
     energy: 0,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 0,
     coefficient: null,
     type: 'active',
     activeType: 'Basic Ability',
@@ -245,16 +252,17 @@ export default [
     name: 'Winds of Change',
     description:
       'Affects up to 6 enemies in a 5 metre radius around you.\nSend the destructive winds of change to wreak havoc on nearby enemies dealing 13 magical damage.\nThis attack generates a large amount of hate.',
-    targetType: 'Point blank area of effect',
+    targetType: 'pbaoe',
     damageType: 'magic',
     energy: 5,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 0,
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: null,
-    image: winds_of_change
+    recommendedPassive: 'Contradiction',
+    image: winds_of_change,
+    tags: ['hate']
   },
   {
     index: 514,
@@ -263,16 +271,17 @@ export default [
     name: 'Evulsion',
     description:
       'Forcibly tear out a portion of the chaotic energy in your target dealing 22 magical damage. The force of the extraction causes the target to be pulled toward you and purges 1 beneficial effect.\nAdditionally, the target is forced to attack you for 5 seconds.\nThis ability has a 15 metre range.',
-    targetType: 'Target',
+    targetType: 'single',
     damageType: 'magic',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 20,
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
-    image: evulsion
+    recommendedPassive: 'Mass Evulsion',
+    image: evulsion,
+    tags: ['purge']
   },
   {
     index: 515,
@@ -281,15 +290,16 @@ export default [
     name: 'Immutable',
     description:
       'The swirling torrent of chaotic energy within you mends and unmakes even fatal wounds. For the next 5 seconds you generate more hate and cannot be defeated by normal means. When this effect expires, you heal for 40% of your maximum health.',
-    targetType: 'Self',
+    targetType: 'self',
     damageType: 'magic',
     energy: 4,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 20,
     coefficient: null,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: null,
-    image: immutable
+    recommendedPassive: 'Incongruity',
+    image: immutable,
+    heal: true
   }
-]
+];

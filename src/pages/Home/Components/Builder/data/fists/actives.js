@@ -14,7 +14,7 @@ import {
   feral_regrowth,
   invigorating_wrath,
   regeneration
-} from '../../../../../../images/abilities/fists/actives/index'
+} from '../../../../../../images/abilities/fists/actives/index';
 
 export default [
   {
@@ -25,12 +25,12 @@ export default [
     description:
       'Lash out at your target with your claws, striking 2 times for 4 physical damage.',
     effect: '+ 2 Fury per target hit',
-    targetType: 'Target',
+    targetType: 'single',
     damageType: 'melee',
     energy: 0,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 0,
+    cooldown: 0,
+    coefficient: 1.175,
     type: 'active',
     activeType: 'Basic Ability',
     recommendedPassive: null,
@@ -44,15 +44,15 @@ export default [
     description:
       'Affects up to 6 enemies in a 5 metre radius around you.\nRip and tear at nearby enemies dealing 92 physical damage.',
     effect: '+ 3 Fury per target hit',
-    targetType: 'Point blank area of effect',
+    targetType: 'pbaoe',
     damageType: 'melee',
     energy: 3,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 0,
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: null,
+    recommendedPassive: 'Rip',
     image: savage_sweep
   },
   {
@@ -63,15 +63,15 @@ export default [
     description:
       'Tap into your Fury to enter a state of unbridled wrath for a short time and cleanse 2 detrimental effects from yourself. During this time your entire ability bar is changed into a set of new abilities. \nRequires at least 60 Fury to activate.\n\nRavage:\nTear flesh from bone causing horrific wounds dealing 10 physical damage and 5 physical damage every second for 5 seconds.\n\nShred:\nYour razor sharp claws shred nearby enemies dealing 8 physical damage and 1 physical damage every second for 5 seconds. If the target has the "Maim" effect active, nearby enemies are dealt an additional 4 physical damage.\n\nMaim:\nTear open wounds on your target dealing 2 physical damage and 3 physical damage every second for 15 seconds.',
     effect: '- All Fury',
-    targetType: 'Self',
+    targetType: 'self',
     damageType: 'melee',
-    energy: 'Ravage: 0\nShred: 0\nMaim: 4',
-    castTime: 999999999,
-    cooldown: 999999999,
+    energy: 0,
+    castTime: 0,
+    cooldown: 5,
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
+    recommendedPassive: 'Gore',
     image: frenzied_wrath
   },
   {
@@ -82,15 +82,15 @@ export default [
     description:
       'Mutilate your target with a series of 3 strikes with your claws dealing 9 physical damage per hit.',
     effect: '+ 4 Fury',
-    targetType: 'Target',
+    targetType: 'single',
     damageType: 'melee',
     energy: 5,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 0,
+    cooldown: 0,
+    coefficient: 3.425,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: null,
+    recommendedPassive: 'Maul',
     image: mangle
   },
   {
@@ -101,16 +101,17 @@ export default [
     description:
       'Every 0.25 seconds for 2.5 seconds.\nFly into a berserk rage and unleash a flurry of attacks that deal 6 physical damage per hit.\nApplies Exposed.\nWhile channelling, you and your target are rooted to the ground and unable to move.',
     effect: '+ 2 Fury per target hit',
-    targetType: 'Channelled target',
+    targetType: 'channelled',
     damageType: 'melee',
     energy: 4,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 2.5,
+    cooldown: 20,
+    coefficient: 7.1,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: null,
-    image: berserk
+    recommendedPassive: 'Rampage',
+    image: berserk,
+    tags: ['exposed']
   },
   {
     index: 306,
@@ -120,16 +121,18 @@ export default [
     description:
       'Impale your target with your claws and tear at their insides dealing 20 physical damage and stunning them for 3 seconds.\nApplies Exposed.\nIf this ability successfully interrupts a target, you and your group members are healed for 1 every second for 5 seconds.',
     effect: '+ 3 Fury',
-    targetType: 'Target',
+    targetType: 'single',
     damageType: 'melee',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 0,
+    cooldown: 20,
+    coefficient: 2.7,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
-    image: eviscerate
+    recommendedPassive: 'Bloodbath',
+    image: eviscerate,
+    heal: true,
+    tags: ['exposed']
   },
   {
     index: 307,
@@ -139,16 +142,17 @@ export default [
     description:
       'Unleash your ferociousness and empower your next Fist Weapon attack or healing ability. \n\nYour next Fist Weapon attack will remove all Fist Weapon damage over time effects from your target and cause them to immediately deal their remaining damage to the target plus an additional 22 physical damage.\n\nYour next Fist Weapon healing ability will remove all Fist Weapon heal over time effects from your defensive target and cause them to immediately heal for their remaining healing plus an additional 20.',
     effect: '+ 3 Fury',
-    targetType: 'Self',
+    targetType: 'self',
     damageType: 'melee',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 0,
+    cooldown: 20,
+    coefficient: 2.9,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
-    image: ferocity
+    recommendedPassive: 'Brutality',
+    image: ferocity,
+    heal: true
   },
   {
     index: 308,
@@ -158,15 +162,15 @@ export default [
     description:
       'Create a surge of wild power at the targeted point that lasts 10 seconds. Every second it restores 1 health and cleanses 1 detrimental effect from allies in the area and deals 1 physical damage to enemies in the area. Enemies hit will also have their movement slowed.',
     effect: '+ 3 Fury',
-    targetType: 'Area of effect',
+    targetType: 'taoe',
     damageType: 'melee',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 20,
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
+    recommendedPassive: 'Wild Burst',
     image: wild_surge
   },
   {
@@ -177,16 +181,17 @@ export default [
     description:
       'Draw out the inner savage nature of your defensive target, increasing the strength of their attacks and healing effects by 15% for 6 seconds. This ability does not trigger and is not affected by global recharge time.',
     effect: '+ 8 Fury',
-    targetType: 'Self/Ally',
+    targetType: 'target/self',
     damageType: 'melee',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 20,
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
-    image: savagery
+    recommendedPassive: 'Furious Inspiration',
+    image: savagery,
+    tags: ['dmg']
   },
   {
     index: 310,
@@ -196,16 +201,17 @@ export default [
     description:
       'Give in to your animal instict for a short time, allowing you to both mend and destroy more effictively. For the next 6 seconds, all of your Fist Weapon heal over time and damage over time effects are 215% more powerful.',
     effect: '+ 18 Fury',
-    targetType: 'Self',
+    targetType: 'self',
     damageType: 'melee',
     energy: 0,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 0,
+    cooldown: 20,
+    coefficient: 12.39,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: null,
-    image: primal_instinct
+    recommendedPassive: 'Killer Instinct',
+    image: primal_instinct,
+    tags: ['dmg', 'heal']
   },
   {
     index: 311,
@@ -215,16 +221,17 @@ export default [
     description:
       'Call forth a resurgence of vigour which heals your defensive target 3 times for 46.',
     effect: '+ 9 Fury',
-    targetType: 'Self/Ally',
+    targetType: 'single',
     damageType: 'melee',
     energy: 3,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 0,
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: null,
-    image: renewal
+    recommendedPassive: 'Recuperate',
+    image: renewal,
+    heal: true
   },
   {
     index: 312,
@@ -234,16 +241,18 @@ export default [
     description:
       'Your restorative power seeks out and heals the member of your group with the lowest percentage remaining health for 52 and gives them a heal over time effect that heals for 2 every second for 3 seconds. The heal over time effect can stack up to 3 times.',
     effect: '+ 3 Fury',
-    targetType: 'Ally',
+    targetType: 'single',
     damageType: 'melee',
     energy: 0,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 0,
     coefficient: null,
     type: 'active',
     activeType: 'Basic Ability',
     recommendedPassive: null,
-    image: nurture
+    image: nurture,
+    heal: true,
+    tags: ['hot']
   },
   {
     index: 313,
@@ -253,16 +262,18 @@ export default [
     description:
       'Call forth the natural recuperative forces in your defensive target, healing them for 2 and for an additional 3 every second for 6 seconds.',
     effect: '+ 12 Fury',
-    targetType: 'Self/Ally',
+    targetType: 'single',
     damageType: 'melee',
     energy: 5,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 0,
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: null,
-    image: feral_regrowth
+    recommendedPassive: 'Outgrowth',
+    image: feral_regrowth,
+    heal: true,
+    tags: ['hot']
   },
   {
     index: 314,
@@ -272,16 +283,17 @@ export default [
     description:
       'Tap into your Fury to enter a state of reinvigoration for a short time and cleanse 2 detrimental effects from yourself. During this time your entire ability bar is changed into a set of new abilities.\n\nRevitalise:\nMend the wounds of your group members, restoring 115 health.\n\nInvigorate:\nYour fury invigorates your group members, restoring 133 health.\n\nRevivify:\nConsumes 4 Fist Weapon Energy.\nHarness the natural restorative power around you and your group members healing them for 55 every second for 6 seconds.',
     effect: '- All Fury',
-    targetType: 'Self',
+    targetType: 'self',
     damageType: 'melee',
     energy: 'Revitalise: 0\nInvigorate: 0\nRevivify: 4',
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 5,
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
-    image: invigorating_wrath
+    recommendedPassive: 'Serenity',
+    image: invigorating_wrath,
+    heal: true
   },
   {
     index: 315,
@@ -291,15 +303,17 @@ export default [
     description:
       'Cause the wounds suffered by you and your group members to seal up and mend, restoring 16 health and cleansing 2 detrimental effects. The mending process continues afterward, restoring 6 health every second for 4 seconds.',
     effect: '+ 18 Fury',
-    targetType: 'Self/Ally',
+    targetType: 'group',
     damageType: 'melee',
     energy: 4,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 0,
+    cooldown: 20,
+    coefficient: 5.81,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: null,
-    image: regeneration
+    recommendedPassive: 'Natural Remedy',
+    image: regeneration,
+    heal: true,
+    tags: ['cleanse', 'hot']
   }
-]
+];

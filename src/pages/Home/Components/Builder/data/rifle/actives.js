@@ -14,7 +14,7 @@ import {
   unveil_essence,
   energise,
   anima_suffusion
-} from '../../../../../../images/abilities/rifle/actives/index'
+} from '../../../../../../images/abilities/rifle/actives/index';
 
 export default [
   {
@@ -25,12 +25,12 @@ export default [
     description:
       'Take aim and fire a single shot at your target dealing 9 physical damage.',
     effect: 'undefined\n\nundefined',
-    targetType: 'Target',
+    targetType: 'single',
     damageType: 'ranged',
     energy: 0,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 0,
+    cooldown: 0,
+    coefficient: 1.175,
     type: 'active',
     activeType: 'Basic Ability',
     recommendedPassive: null,
@@ -44,15 +44,15 @@ export default [
     description:
       'Affects up to 6 enemies in a 5 metre radius around the target.\nUnload a hail of bullets at your target and nearby enemies. Affected targets are hit 4 times for 3 physical damage each time.',
     effect: '37.5% chance to load a grenade upon ability use\n\nundefined',
-    targetType: 'Target area of effect',
+    targetType: 'taoe',
     damageType: 'ranged',
     energy: 3,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 0,
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: null,
+    recommendedPassive: 'Extended Magazine',
     image: full_auto
   },
   {
@@ -62,15 +62,15 @@ export default [
     name: 'Lock & Load',
     description: 'Harness your energy and gain 4 Assault Rifle Energy.',
     effect: 'undefined\n\nundefined',
-    targetType: 'Self',
+    targetType: 'self',
     damageType: 'ranged',
     energy: 0,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 20,
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
+    recommendedPassive: 'Heavy Payload',
     image: lock_and_load
   },
   {
@@ -81,15 +81,15 @@ export default [
     description:
       'Switch your rifle to burst mode and fire at your target, hitting 3 times, dealing 19 physical damage per hit.',
     effect: '65% chance to load a grenade upon ability use\n\nundefined',
-    targetType: 'Target',
+    targetType: 'single',
     damageType: 'ranged',
     energy: 5,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 0,
+    cooldown: 0,
+    coefficient: 3.425,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: null,
+    recommendedPassive: 'Stability',
     image: burst_fire
   },
   {
@@ -100,15 +100,15 @@ export default [
     description:
       'Take aim at your target and fire a powerful shot at their vitals dealing 51 physical damage and slowing its movement.',
     effect: 'undefined\n\nundefined',
-    targetType: 'Target',
+    targetType: 'single',
     damageType: 'ranged',
     energy: 4,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 2,
+    cooldown: 20,
+    coefficient: 6.97,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: null,
+    recommendedPassive: 'Unerring Accuracy',
     image: red_mist
   },
   {
@@ -120,16 +120,17 @@ export default [
       'Affects up to 6 enemies in a 5 metre radius around the targeted point.\nLaunch a grenade filled with a highly potent mixture of thermite and anima dealing 1 physical damage to enemies in the targeted area. Affected targets are set on fire, are purged of 2 beneficial effects, and are dealt 1 damage every second for 8 seconds.\n\nRequires a grenade to activate.',
     effect:
       'undefined\n\nThe initial damage is improved to 3 physical damage and the damage over time effect is improved to deal 4 physical damage every second',
-    targetType: 'Ground target area of effect',
+    targetType: 'gtaoe',
     damageType: 'ranged',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 0,
+    cooldown: 2,
+    coefficient: 8.186,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
-    image: incendiary_grenade
+    recommendedPassive: 'Slow Burn',
+    image: incendiary_grenade,
+    tags: ['purge', 'dot']
   },
   {
     index: 907,
@@ -140,16 +141,17 @@ export default [
       'Affects up to 6 friends in a 5 metre radius around the target.\nLaunch a canister of revitalizing anima at your target healing all nearby allies for 1. The healing energies also spread to your group, healing all group members for 1.\n\nRequires a grenade to activate.',
     effect:
       'undefined\n\nThe target area of effect healing is improved to 1 and the group healing is improved to 1',
-    targetType: 'Target area of effect',
+    targetType: 'taoe',
     damageType: 'ranged',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 2,
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
-    image: anima_canister
+    recommendedPassive: 'Enlarged Canister',
+    image: anima_canister,
+    heal: true
   },
   {
     index: 908,
@@ -159,16 +161,17 @@ export default [
     description:
       'Dash backward 5 metres.\nPut some distance between you and your enemies by quickly moving backwards.\n\nIf you have a grenade, the dash distance is increased to 10 metres and the cooldown time is reduced to 4 seconds. This cooldown reduction can only happen once every 15 seconds.\nThe grenade is left at the start location, exploding 1 second after the dash, affecting up to 6 enemies and dealing 8 physical damage in an area around it. \nAffected targets have their movement speed slowed by 70% for 4 seconds.',
     effect: 'undefined\n\nThe damage dealt is improved to 30 physical damage.',
-    targetType: 'Column Dash',
+    targetType: 'column dash',
     damageType: 'ranged',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 15,
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
-    image: tactical_retreat
+    recommendedPassive: 'Withdrawal',
+    image: tactical_retreat,
+    tags: ['movement']
   },
   {
     index: 909,
@@ -179,16 +182,18 @@ export default [
       'Affects up to 6 enemies and allies in a 5 metre radius around your target.\nLaunch a pair of grenades at the target, each one exploding in a burst of energy. One grenade deals 2 physical damage and applies Debilitated. The other grenade heals friendly targets for 1.\n\nRequires a grenade to activate.',
     effect:
       'undefined\n\nThe damage is improved to 6 physical damage and the healing is improved to 25',
-    targetType: 'Target area of effect',
+    targetType: 'taoe',
     damageType: 'ranged',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 0,
+    cooldown: 2,
+    coefficient: 1.637,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
-    image: essence_grenades
+    recommendedPassive: 'Lingering Essence',
+    image: essence_grenades,
+    heal: true,
+    tags: ['debilitated']
   },
   {
     index: 910,
@@ -199,16 +204,17 @@ export default [
       'Affects up to 6 enemies in a 5 metre radius around the target.\nBlast the target and nearby enemies with a powerful high explosive grenade dealing 34 physical damage.\nApplies Debilitated and affected targets are stunned for 3 seconds. Also the area at the targeted point erupts into flames that last 8 seconds. Every second it will deal 2 physical damage to up to 6 enemies in a 5 metre radius.\n\nRequires a grenade to activate.',
     effect:
       "undefined\n\nThe initial blast's damage is improved to 79 physical damage",
-    targetType: 'Target area of effect',
+    targetType: 'taoe',
     damageType: 'ranged',
     energy: 4,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 0,
+    cooldown: 20,
+    coefficient: 11.9,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: null,
-    image: high_explosive_grenade
+    recommendedPassive: 'Auto-loader',
+    image: high_explosive_grenade,
+    tags: ['debilitated', 'dot']
   },
   {
     index: 911,
@@ -218,16 +224,17 @@ export default [
     description:
       'Fire a draining blast of energy at your target dealing 4 physical damage. The drained energy heals your defensive target for 14 and additionally for 1.2% of the damage dealt.',
     effect: '37.5% chance to load a grenade upon ability use\n\nundefined',
-    targetType: 'Target',
+    targetType: 'single',
     damageType: 'ranged',
     energy: 3,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0.5,
+    cooldown: 0,
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: null,
-    image: vital_shot
+    recommendedPassive: 'Bolstering Shot',
+    image: vital_shot,
+    heal: true
   },
   {
     index: 912,
@@ -237,16 +244,17 @@ export default [
     description:
       "Sap your target's energy with an enervating beam of energy from your rifle. This attack hits 3 times, dealing 3 physical damage per hit. A portion of the stolen energy heals your defensive target for 0.2% of the damage dealt. The remaining energy seeks out the member of your group with the lowest percentage remaining health and heals them for 7.",
     effect: 'undefined\n\nundefined',
-    targetType: 'Target',
+    targetType: 'single',
     damageType: 'ranged',
     energy: 0,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0.5,
+    cooldown: 0,
     coefficient: null,
     type: 'active',
     activeType: 'Basic Ability',
     recommendedPassive: null,
-    image: leeching_ray
+    image: leeching_ray,
+    heal: true
   },
   {
     index: 913,
@@ -256,16 +264,17 @@ export default [
     description:
       "Fire a bolt of energy at the target, revealing their inner essence for all to see. The target is dealt 4 physical damage and your group is healed for 14. The target's essence becomes available for any attackers to steal for 6 seconds causing everyone who attacks them to be healed for 0.1% of the damage dealt.",
     effect: '65% chance to load a grenade upon ability use\n\nundefined',
-    targetType: 'Target/Group',
+    targetType: 'group',
     damageType: 'ranged',
     energy: 5,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 1,
+    cooldown: 0,
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: null,
-    image: unveil_essence
+    recommendedPassive: 'Reap Essence',
+    image: unveil_essence,
+    heal: true
   },
   {
     index: 914,
@@ -275,16 +284,17 @@ export default [
     description:
       'Tap into your inner energy, increasing the effectiveness of all Assault Rifle healing abilities by 24% for 6 seconds. During this time, all of your Assault Rifle attacks purge 1 beneficial effect from enemy targets.',
     effect: 'undefined\n\nundefined',
-    targetType: 'Self',
+    targetType: 'self',
     damageType: 'ranged',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 20,
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
-    image: energise
+    recommendedPassive: 'Vivify',
+    image: energise,
+    tags: ['heal', 'purge']
   },
   {
     index: 915,
@@ -294,15 +304,16 @@ export default [
     description:
       "Every 0.3 seconds for 1.5 seconds.\nInfuse the target's entire being with anima, healing them for 1 each interval. While channeling this ability, your target is unable to be killed. When this ability finishes channeling, you gain a beneficial effect which increases the effectiveness of all Assault Rifle healing abilities by 14% for 4 seconds.",
     effect: 'undefined\n\nundefined',
-    targetType: 'Channelled target ally',
+    targetType: 'channelled',
     damageType: 'ranged',
     energy: 4,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 1.5,
+    cooldown: 20,
     coefficient: null,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: null,
-    image: anima_suffusion
+    recommendedPassive: 'Permeate',
+    image: anima_suffusion,
+    tags: ['heal']
   }
-]
+];

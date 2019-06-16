@@ -14,7 +14,7 @@ import {
   convalesce,
   redemption,
   communion
-} from '../../../../../../images/abilities/blood/actives/index'
+} from '../../../../../../images/abilities/blood/actives/index';
 
 export default [
   {
@@ -25,15 +25,14 @@ export default [
     description:
       'Invoke a ritual of pain on your target dealing 9 magical damage.',
     effect: 'Corruption + 2',
-    targetType: 'Target',
+    targetType: 'single',
     damageType: 'ranged',
     energy: 0,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 0,
+    cooldown: 0,
+    coefficient: 1.175,
     type: 'active',
     activeType: 'Basic Ability',
-    recommendedPassive: null,
     image: torment
   },
   {
@@ -44,15 +43,15 @@ export default [
     description:
       'Affects 6 enemies in a 5 metre radius around the target.\nEtch a blood-forged sigil of dread on the ground underneath your target dealing 10 magical damage to the target and nearby enemies.',
     effect: 'Corruption + 8',
-    targetType: 'Target area of effect',
+    targetType: 'taoe',
     damageType: 'ranged',
     energy: 3,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 0,
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: null,
+    recommendedPassive: 'Lingering Curse',
     image: dread_sigil
   },
   {
@@ -63,16 +62,18 @@ export default [
     description:
       'Replenish yourself by feasting on a flood of power from your target. The target is left bleeding, causing 2 magical damage every second for 7 seconds. The stolen power restores 25% of your missing health and cleanses you of 1 detrimental effect.\nYour Corruption level must be higher than 10 to use this ability.',
     effect: 'Corruption - 50',
-    targetType: 'Target/Self',
+    targetType: 'target/self',
     damageType: 'ranged',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 0,
+    cooldown: 20,
+    coefficient: 2.1,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
-    image: reap
+    recommendedPassive: 'Contaminate',
+    image: reap,
+    heal: true,
+    tags: ['dot', 'cleanse']
   },
   {
     index: 404,
@@ -82,15 +83,15 @@ export default [
     description:
       'Every 0.5 seconds for 2.5 seconds.\nConjure a series of baleful runes which inflict 8 magical damage per hit.',
     effect: 'Corruption + 3 per hit',
-    targetType: 'Target Channel',
+    targetType: 'channelled',
     damageType: 'ranged',
     energy: 5,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 2.5,
+    cooldown: 0,
+    coefficient: 5.19,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: null,
+    recommendedPassive: 'Flay',
     image: maleficium
   },
   {
@@ -101,16 +102,18 @@ export default [
     description:
       'Your blood coalesces to form a barrier around you that absorbs 100% of incoming damage and is destroyed after absorbing 8 damage. The strength of the barrier scales based on your Combat Power.\nWhen the barrier either expires or is destroyed, your blood violenty erupts outwards dealing 38 magical damage to all enemies within 5 metres of you.',
     effect: 'Corruption + 3 when cast\nCorruption - 20 when barrier expires',
-    targetType: 'Point blank area of effect',
+    targetType: 'pbaoe',
     damageType: 'ranged',
     energy: 4,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 0,
+    cooldown: 20,
+    coefficient: 5.22,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: null,
-    image: sanguine_coalescence
+    recommendedPassive: 'Convergence',
+    heal: true,
+    image: sanguine_coalescence,
+    tags: ['barrier']
   },
   {
     index: 406,
@@ -120,16 +123,17 @@ export default [
     description:
       'A single target blood magic attack that deals 22 damage and stuns the target.',
     effect: 'Corruption/Martyrdom - 50',
-    targetType: 'Target',
+    targetType: 'single',
     damageType: 'ranged',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 0,
+    cooldown: 20,
+    coefficient: 5.77,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
-    image: rupture
+    recommendedPassive: 'Blood Flow',
+    image: rupture,
+    tags: ['stun']
   },
   {
     index: 407,
@@ -139,16 +143,17 @@ export default [
     description:
       'Afflict your target with the corruption that flows through your veins dealing 3 magical damage every second for 6 seconds.\nYour Corruption level must be higher than 10 to use this ability.',
     effect: 'During this time you do not take damage from Corruption',
-    targetType: 'Target',
+    targetType: 'single',
     damageType: 'ranged',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 1,
+    cooldown: 20,
+    coefficient: 2.28,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
-    image: desecrate
+    recommendedPassive: 'Defilement',
+    image: desecrate,
+    tags: ['dot']
   },
   {
     index: 408,
@@ -158,15 +163,16 @@ export default [
     description:
       'Refocus and replenish your energy, restoring 3 health every second for 6 seconds.\nYour Martyrdom level must be higher than 10 to use this ability.',
     effect: 'During this time you do not take damage from Martyrdom',
-    targetType: 'Self',
+    targetType: 'self',
     damageType: 'ranged',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 20,
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
+    recommendedPassive: 'Resurgence',
+    heal: true,
     image: rejuvenate
   },
   {
@@ -177,16 +183,18 @@ export default [
     description:
       "Carve a withering hex onto your target's soul which deals 2 magical damage every second for 6 seconds and slows its movement.\nApplies Debilitated.\nDuring this time the target's attacks restore 3 health to whomever they attack.\nThe hex explodes violently when it expires, dealing 7 magical damage to nearby enemies and healing nearby allies for 6.",
     effect: 'Corruption/Martyrdom - 50',
-    targetType: 'Target',
+    targetType: 'target/self',
     damageType: 'ranged',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 1.5,
+    cooldown: 20,
+    coefficient: 1.5,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
-    image: runic_hex
+    recommendedPassive: 'Paroxysm',
+    image: runic_hex,
+    heaL: true,
+    tags: ['dot', 'debilitated']
   },
   {
     index: 410,
@@ -196,16 +204,18 @@ export default [
     description:
       "Recite a blasphemous invocation which twists and defiles the very being of your target. The destructive energy contained in this magic causes the target to take 4 magical damage every second for 6 seconds.\nApplies Debilitated.\n\nDuring this time the defilement spreads to nearby enemies causing them to take 92 magical damage every second for 3 seconds.\nApplies Debilitated.\n\nIn addition, the original target's essence is separated from their body to heal your nearby allies, restoring 0 health every second for 3 seconds.",
     effect: 'Corruption/Martyrdom + 50',
-    targetType: 'Target area of effect',
+    targetType: 'taoe',
     damageType: 'ranged',
     energy: 4,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 1.5,
+    cooldown: 20,
+    coefficient: 4.11,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: null,
-    image: eldritch_scourge
+    recommendedPassive: 'Desolate',
+    image: eldritch_scourge,
+    heaL: true,
+    tags: ['dot', 'debilitated']
   },
   {
     index: 411,
@@ -215,16 +225,18 @@ export default [
     description:
       'Call forth a shimmering ward on your defensive target which absorbs 100% of incoming damage and dissipates after absorbing 18 damage.\nIf your defensive target already has a barrier, they are instead healed for 18.',
     effect: 'Martyrdom + 8',
-    targetType: 'Target ally',
+    targetType: 'single',
     damageType: 'ranged',
     energy: 3,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 1,
+    cooldown: 0,
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: null,
-    image: sanctuary
+    recommendedPassive: 'Restorative Ward',
+    image: sanctuary,
+    heaL: true,
+    tags: ['barrier']
   },
   {
     index: 412,
@@ -234,16 +246,17 @@ export default [
     description:
       'Spill your blood to restore 8 health to the member of your group with the lowest percentage remaining health.',
     effect: 'Martyrdom + 2',
-    targetType: 'Ally',
+    targetType: 'self',
     damageType: 'ranged',
     energy: 0,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 0,
     coefficient: null,
     type: 'active',
     activeType: 'Basic Ability',
     recommendedPassive: null,
-    image: mend
+    image: mend,
+    heaL: true
   },
   {
     index: 413,
@@ -253,16 +266,18 @@ export default [
     description:
       'Trace runes in the air to invoke a powerful restorative spell which heals your group for 11. Any group member with less than 35% remaining health gains a barrier which absorbs 100% of incoming damage and dissipates after absorbing 6 damage.',
     effect: 'Martyrdom + 12',
-    targetType: 'Ally/Group',
+    targetType: 'group',
     damageType: 'ranged',
     energy: 5,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 1,
+    cooldown: 0,
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: null,
-    image: convalesce
+    recommendedPassive: 'Soothe',
+    image: convalesce,
+    heaL: true,
+    tags: ['barrier']
   },
   {
     index: 414,
@@ -272,16 +287,18 @@ export default [
     description:
       'Recite an incantation to restore and assuage your defensive target, healing them for 20 and cleansing them of 1 detrimental effect.',
     effect: 'Martyrdom + 50',
-    targetType: 'Target ally',
+    targetType: 'single',
     damageType: 'ranged',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 20,
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
-    image: redemption
+    recommendedPassive: 'Mercy',
+    image: redemption,
+    heaL: true,
+    tags: ['cleanse']
   },
   {
     index: 415,
@@ -291,15 +308,17 @@ export default [
     description:
       'Every 0.5 seconds for 2 seconds.\nShare your lifeblood with your group members to shield them from harm and restore their health.\nFirst, each group member receives a barrier which absorbs 100% of incoming damage and dissipates after absorbing 12 damage.\nThe remaining power of the spell restores 12 health and cleanses 1 detrimental effect per tick.\nYou do not receive the barrier or healing effects from this spell.',
     effect: 'Martyrdom + 4 per tick',
-    targetType: 'Channelled Group',
+    targetType: 'channelled',
     damageType: 'ranged',
     energy: 4,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 2,
+    cooldown: 20,
+    coefficient: 8.313,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: null,
-    image: communion
+    recommendedPassive: 'Sacrament',
+    image: communion,
+    heaL: true,
+    tags: ['barrier', 'cleanse']
   }
-]
+];

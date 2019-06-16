@@ -21,7 +21,7 @@ import {
   unerring_accuracy,
   vivify,
   withdrawal
-} from '../../../../../../images/abilities/rifle/passives'
+} from '../../../../../../images/abilities/rifle/passives';
 
 export default [
   {
@@ -41,7 +41,7 @@ export default [
     description:
       'An extended magazine allows you to fire more shots when you use "Full Auto," increasing the number of hits to 5.',
     type: 'passive',
-    recommendedActive: null,
+    recommendedActive: 'Full Auto',
     image: extended_magazine
   },
   {
@@ -51,7 +51,7 @@ export default [
     description:
       'You keep your explosives at the ready. When you use "Lock & Load" you have a 41% to load a grenade.',
     type: 'passive',
-    recommendedActive: null,
+    recommendedActive: 'Lock & Load',
     image: heavy_payload
   },
   {
@@ -61,7 +61,7 @@ export default [
     description:
       'You keep your aim steady when using "Burst Fire," causing each successive hit to deal 25% more base damage.',
     type: 'passive',
-    recommendedActive: null,
+    recommendedActive: 'Burst Fire',
     image: stability
   },
   {
@@ -71,7 +71,7 @@ export default [
     description:
       'Your "Red Mist" always hits its mark. This ability can no longer glance or be evaded and critical hits deal 68% more damage.',
     type: 'passive',
-    recommendedActive: null,
+    recommendedActive: 'Red Mist',
     image: unerring_accuracy
   },
   {
@@ -81,7 +81,7 @@ export default [
     description:
       'Your "Incendiary Grenade" is loaded with slower burning, longer lasting fuel, increasing the duration to 10 seconds.',
     type: 'passive',
-    recommendedActive: null,
+    recommendedActive: 'Incendiary Grenade',
     image: slow_burn
   },
   {
@@ -91,7 +91,7 @@ export default [
     description:
       'Your "Anima Canister" is expanded in size allowing you to load more anima energy. All group members healed by this ability will also gain a beneficial effect for 4 seconds which causes their attacks to heal them for a portion of the damage dealt.',
     type: 'passive',
-    recommendedActive: null,
+    recommendedActive: 'Anima Canister',
     image: enlarged_canister
   },
   {
@@ -101,7 +101,7 @@ export default [
     description:
       'Your "Tactical Retreat" grants you better positioning. When used you always dash 10 metres. In addition, when you leave a grenade the damage is increased to 7 physical damage or 20 physical damage for fully cooked grenades.',
     type: 'passive',
-    recommendedActive: null,
+    recommendedActive: 'Tactical Retreat',
     image: withdrawal
   },
   {
@@ -111,7 +111,7 @@ export default [
     description:
       'Your "Essence Grenades" leave a lingering mist of restorative energy, healing allies in the area for 1 every second for 5 seconds.',
     type: 'passive',
-    recommendedActive: null,
+    recommendedActive: 'Essence Grenades',
     image: lingering_essence
   },
   {
@@ -121,7 +121,7 @@ export default [
     description:
       'After launching your "High Explosive Grenade" your auto-loader kicks in, causing your next grenade generating ability to have a 100% chance to load a grenade.',
     type: 'passive',
-    recommendedActive: null,
+    recommendedActive: 'High Explosive Grenade',
     image: auto_loader
   },
   {
@@ -131,7 +131,7 @@ export default [
     description:
       'Your "Vital Shot" bolsters your ally\'s energy, causing them to draw strength from their foes. For the next 4 seconds after being healed by this ability, your defensive target gains a beneficial effect which causes their attacks to restore their health.',
     type: 'passive',
-    recommendedActive: null,
+    recommendedActive: 'Vital Shot',
     image: bolstering_shot
   },
   {
@@ -141,7 +141,7 @@ export default [
     description:
       'Unveil Essence reveals even more energy for your allies to reap. Whenever an attack critically hits a target affected by your "Unveil Essence" the attacker is instead healed for 0% of the damage they dealt.',
     type: 'passive',
-    recommendedActive: null,
+    recommendedActive: 'Unveil Essence',
     image: reap_essence
   },
   {
@@ -151,7 +151,7 @@ export default [
     description:
       'When you use "Energise" you awaken the latent energy in your group members. For the next 5 seconds, all healing effects on your group members are 5% more effective.',
     type: 'passive',
-    recommendedActive: null,
+    recommendedActive: 'Energise',
     image: vivify
   },
   {
@@ -161,7 +161,7 @@ export default [
     description:
       'After using "Anima Suffusion" your target is left imbued with some anima residue, granting a beneficial effect for 4 seconds which causes their attacks to heal them for a portion of the damage dealt. The amount the target is healed for with each attack scales based on your Healing Power.',
     type: 'passive',
-    recommendedActive: null,
+    recommendedActive: 'Anima Suffusion',
     image: permeate
   },
   {
@@ -244,4 +244,4 @@ export default [
     recommendedActive: null,
     image: anima_dispersal
   }
-]
+];

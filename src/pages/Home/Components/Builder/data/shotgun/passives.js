@@ -15,7 +15,7 @@ export default [
     description:
       'Concentrate additional power into your "Both Barrels" ability, causing this ability to perform an additional hit dealing 2 physical damage to each target.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Both Barrels'
   },
   {
     index: 703,
@@ -24,7 +24,7 @@ export default [
     description:
       'Keep firing! When you activate "Opening Shot" you gain a beneficial effect that causes your Shotgun attacks to deal 1 additional physical damage until an enemy deals damage to you. Also, when you critically hit with a Shotgun ability while "Opening Shot" is active you reload 1 shell.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Opening Shot'
   },
   {
     index: 704,
@@ -33,7 +33,7 @@ export default [
     description:
       'Get up close and personal with "Raging Shot," increasing the damage dealt to 18 physical damage to targets within 3 metres.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Raging Shot'
   },
   {
     index: 705,
@@ -42,7 +42,7 @@ export default [
     description:
       'Pour your full force into your "Full Salvo" ability, causing each successive hit to deal 40% more base damage.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Full Salvo'
   },
   {
     index: 706,
@@ -51,7 +51,7 @@ export default [
     description:
       'Fortify yourself and your group members with your "Reconstituting Shells" ability, improving Protection by 2045 for 10 seconds. This bonus stacks for each shell spent and group members receive half that amount.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Reconstituting Shells'
   },
   {
     index: 707,
@@ -60,7 +60,7 @@ export default [
     description:
       'While "Glutton for Punishment" is active, your enemies failed attacks strengthen your resolve. Attacks which glance you heal you for 10% of your maximum health.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Glutton for Punishment'
   },
   {
     index: 708,
@@ -69,7 +69,7 @@ export default [
     description:
       'When using "Shell Salvage," your expertise at salvaging allows you to cause this ability to always offer the option to reload the same type of shell you just salvaged. In addition, you also gain 5 Energy for your other weapon.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Shell Salvage'
   },
   {
     index: 709,
@@ -78,7 +78,7 @@ export default [
     description:
       'Whenever "Cleanup" purifies you or a group member of a detrimental effect, they are empowered. For the next 6 seconds, all of their attacks deal an additional 2 physical damage.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Cleanup'
   },
   {
     index: 710,
@@ -87,7 +87,7 @@ export default [
     description:
       'When the shells you launched with "Bombardment" strike an enemy, they break off randomly into 3 additional smaller explosives dealing 2 physical damage.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Bombardment'
   },
   {
     index: 711,
@@ -96,7 +96,7 @@ export default [
     description:
       'Whenever you fire a "Rocket Pod" you also bolster your defences, increasing your Protection by 2860 for 5 seconds. This effect can stack up to 3 times.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Rocket Pod'
   },
   {
     index: 712,
@@ -105,7 +105,7 @@ export default [
     description:
       'When launching your "HEAT Round" at enemies, you draw strength from those affected by the blast. You gain 140 Protection for each enemy caught in the blast.\nAdditionally, any allies within the blast radius gain 140 Protection. This effect lasts 10 seconds and can stack up to 10 times.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'HEAT Round'
   },
   {
     index: 713,
@@ -114,7 +114,7 @@ export default [
     description:
       'Your mastery of "CQC" allows you to deal with crowds more effectively. Enemies within 5 metres of the target are also fully affected by this ability. Additionally, any target who is successfully interrupted by this attack is dealt 5 physical damage.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'CQC'
   },
   {
     index: 714,
@@ -123,7 +123,7 @@ export default [
     description:
       'When using "Kneecapper" your sturdy footing allows you to improve the duration of the effect to 10 seconds. In addition, the bonus granted is always the maximum possible, regardless of the number of shells consumed.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Kneecapper'
   },
   {
     index: 715,
@@ -197,4 +197,4 @@ export default [
     type: 'passive',
     recommendedActive: null
   }
-]
+];

@@ -15,7 +15,7 @@ export default [
     description:
       'Your "Controlled Shooting" rolls through enemies and becomes even stronger for each enemy it hits, increasing the base damage by 10% on each successive enemy.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Controlled Shooting'
   },
   {
     index: 803,
@@ -24,7 +24,7 @@ export default [
     description:
       'Your "Flourish" allows you focus your aim to deadly effect. For the next 6 seconds after use, your Pistol abilites deal 15% more damage and cannot be evaded or glance.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Flourish'
   },
   {
     index: 804,
@@ -33,7 +33,7 @@ export default [
     description:
       'You hold out as long as you can when you finish using "Unload," granting you a 33% chance to not spin your chambers if you already have a matched set.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Unload'
   },
   {
     index: 805,
@@ -42,7 +42,7 @@ export default [
     description:
       'You know the best time to go "All In" causing this ability to have additional effects if you have a set of matching chambers.\n  •Double White: The target and nearby enemies are dealt an additional 2 physical damage. Applies Exposed. Applies Debilitated.\n  •Double Blue: The target and nearby enemies are dealt an additional 2 physical damage.\n  •Double Red: The target and nearby enemies are dealt an additional 4 physical damage.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'All In'
   },
   {
     index: 806,
@@ -51,7 +51,7 @@ export default [
     description:
       'Stack the odds even further in your favor, increasing the duration of "Full House" to 5 seconds.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Full House'
   },
   {
     index: 807,
@@ -60,7 +60,7 @@ export default [
     description:
       'Your "Clean Slate" helps your allies recover more efficiently. If "Clean Slate" cleanses an ally of a detrimental effect, the healing output is increased to 12.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Clean Slate'
   },
   {
     index: 808,
@@ -69,7 +69,7 @@ export default [
     description:
       'If you don\'t get a Double Red set during "Six Line" you get a second chance, resetting the cooldown.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Six Line'
   },
   {
     index: 809,
@@ -78,7 +78,7 @@ export default [
     description:
       'When you use "Kill Blind" you prepare for your next move. If you do not have a locked set of matching chambers, you gain a Double White set. Additionally, the damage of "Kill Blind" is increased to 15 physical damage.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Kill Blind'
   },
   {
     index: 810,
@@ -87,7 +87,7 @@ export default [
     description:
       'Your "Trick Shot" disables and confuses the enemies it damages causing them to become stunned, rooted, or snared.\nStunned enemies take an additional 2 physical damage when they are damaged by you or your allies.\nRooted enemies are dealt 11 physical damage when the root effect expires.\nSnared enemies and other enemies near them are dealt 2 physical damage every second.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Trick Shot'
   },
   {
     index: 811,
@@ -96,7 +96,7 @@ export default [
     description:
       'Your critical hits with "Dual Shot" are more potent, dealing an additional 4 physical damage.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Dual Shot'
   },
   {
     index: 812,
@@ -105,7 +105,7 @@ export default [
     description:
       'Your "Charged Blast" detonation is so powerful it cause enemies who remain in the blast radius to take 1 physical damage every second they remain in the area. Enemies damaged by this effect have their movement speed slowed.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Charged Blast'
   },
   {
     index: 813,
@@ -114,7 +114,7 @@ export default [
     description:
       'When your "Ricochet" expires you retain traces of the bounding energy for 4 seconds, causing your Pistol attacks to chain to nearby enemies dealing 2 physical damage.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Ricochet'
   },
   {
     index: 814,
@@ -197,4 +197,4 @@ export default [
     type: 'passive',
     recommendedActive: null
   }
-]
+];

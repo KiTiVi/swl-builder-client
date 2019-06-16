@@ -15,7 +15,7 @@ export default [
     description:
       'Your "Chain Lightning" charges targets with static energy for 3 seconds. The next time you damage a static-charged target with "Chain Lightning" the static energy is discharged dealing 4 magical damage to the target and enemies near the target.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Chain Lightning'
   },
   {
     index: 603,
@@ -24,7 +24,7 @@ export default [
     description:
       'Enemies damaged by your "Flash Freeze" experience an even deeper chill, freezing them in place for 4 seconds. In addition if "Flash Freeze" is used when your heat level is above 30, you harness the heat energy lost, turning it into a beneficial effect which increases your Elemental damage by 20% for 5 seconds.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Flash Freeze'
   },
   {
     index: 604,
@@ -33,7 +33,7 @@ export default [
     description:
       'Increase the conductivity of your "Mjolnir" causing it to strike unerringly and with devastating effect. "Mjolnir" can no longer glance and its critical hits deal 32% more damage.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Mjolnir'
   },
   {
     index: 605,
@@ -42,7 +42,7 @@ export default [
     description:
       'Ice Beam freezes the target, causing them to become brittle for 5 seconds. Attacks against the brittle target deal an additional 3 magical damage.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Ice Beam'
   },
   {
     index: 606,
@@ -51,7 +51,7 @@ export default [
     description:
       'You attune yourself to your "Crystallised Frost" causing it to follow you wherever you go. In addition, the amount of heat reduction is increased to 15 per pulse and each pulse also immobilises targets for 2 seconds.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Crystallised Frost'
   },
   {
     index: 607,
@@ -60,7 +60,7 @@ export default [
     description:
       'Empower your "Crystallised Flame" with a wildly whirling blaze, causing it to slow the movement speed of all enemies in the targeted area and instead deal 3 magical damage every 0.5 seconds to all targets in the affected area.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Crystallised Flame'
   },
   {
     index: 608,
@@ -69,7 +69,7 @@ export default [
     description:
       'When "Crystallised Storm" purges a beneficial effect from a target, the magical energy is discharged violently dealing 3 magical damage to the target and nearby enemies. This effect has a 33% chance to trigger on targets who do not have any beneficial effects.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Crystallised Storm'
   },
   {
     index: 609,
@@ -78,7 +78,7 @@ export default [
     description:
       'You reappear with a blast of electrical energy when using "Flicker." Immediately after arriving at your destination, you stun any nearby enemies for 3 seconds and deal 6 magical damage.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Flicker'
   },
   {
     index: 610,
@@ -87,7 +87,7 @@ export default [
     description:
       'The frozen winds of your "Blizzard" chill enemies to their core, increasing the damage dealt by 21%. In addition, enemies damaged by "Blizzard" are instantly immobilised and standing in your "Blizzard" reduces your heat level by 2 every 0.5 seconds.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Blizzard'
   },
   {
     index: 611,
@@ -96,7 +96,7 @@ export default [
     description:
       'Your "Fire Bolt" grows hotter and more powerful with each successive use. Each time you use "Fire Bolt" your next "Fire Bolt" generates 1 additional heat and deals 5% more damage. This effect can stack up to 4 times. Using any ability other than "Fire Bolt" removes this effect.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Fire Bolt'
   },
   {
     index: 612,
@@ -105,7 +105,7 @@ export default [
     description:
       'The heat of your "Inferno" burns hot enough to ignite the ground. If your heat level is above 30, "Inferno" leaves a damaging area which deals 1 magical damage every second for 10 seconds.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Inferno'
   },
   {
     index: 613,
@@ -114,7 +114,7 @@ export default [
     description:
       'When "Flashpoint" expires, you expel the increased heat from your body dealing 7 - 13 magical damage to nearby enemies. The damage dealt increases based on your heat level when"Flashpoint" expires.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Flashpoint'
   },
   {
     index: 614,
@@ -123,7 +123,7 @@ export default [
     description:
       'Harness the force of the elements when you use "Overload." The cold portion of this attack\'s Heat reduction is increased to 50, the electrical portion causes enemies in the area take an additional 4 magical damage, and the fire portion knocks down enemies for 3 seconds and sets them ablaze dealing 1 magical damage every second for 6 seconds.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Overload'
   },
   {
     index: 615,
@@ -197,4 +197,4 @@ export default [
     type: 'passive',
     recommendedActive: null
   }
-]
+];

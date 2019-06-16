@@ -14,7 +14,7 @@ import {
   heat_round,
   cqc,
   kneecapper
-} from '../../../../../../images/abilities/shotgun/actives/index'
+} from '../../../../../../images/abilities/shotgun/actives/index';
 
 export default [
   {
@@ -25,12 +25,12 @@ export default [
     description:
       'Blast an enemy with a shot from your shotgun dealing 9 physical damage.\nRequires a Shotgun in your Primary Weapon slot.',
     effect: '1 Shell',
-    targetType: 'Basic',
+    targetType: 'single',
     damageType: 'ranged',
     energy: 0,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 0,
+    cooldown: 0,
+    coefficient: 1.175,
     type: 'active',
     activeType: 'Basic Ability',
     recommendedPassive: null,
@@ -44,15 +44,15 @@ export default [
     description:
       'Affects up to 6 enemies in a 60 degree 7 metre cone in front of you.\nUnleash a deadly diffused blast from your shotgun dealing 10 physical damage to enemies in front of you.',
     effect: '1 Shell',
-    targetType: 'Cone',
+    targetType: 'cone',
     damageType: 'ranged',
     energy: 3,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 0,
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: null,
+    recommendedPassive: 'Blast Barrels',
     image: both_barrels
   },
   {
@@ -63,16 +63,17 @@ export default [
     description:
       "Fire a shot into the air to signal it is time to open fire. For the next 8 seconds, you and your group members' Critical Power is increased by 30%. A target can only gain this bonus once every 20 seconds. This ability does not trigger and is not affected by global recharge time.",
     effect: '1 Shell',
-    targetType: 'Self/Group',
+    targetType: 'group',
     damageType: 'ranged',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 20,
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
-    image: opening_shot
+    recommendedPassive: 'Fire at Will',
+    image: opening_shot,
+    tags: ['critPower']
   },
   {
     index: 704,
@@ -82,15 +83,15 @@ export default [
     description:
       'Concentrate your power into a full-force shotgun blast dealing 25 physical damage.',
     effect: '1 Shell',
-    targetType: 'Target',
+    targetType: 'single',
     damageType: 'ranged',
     energy: 5,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 0,
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: null,
+    recommendedPassive: 'Point Blank Shot',
     image: raging_shot
   },
   {
@@ -101,15 +102,15 @@ export default [
     description:
       'Every 0.5 seconds for 2.5 seconds.\nAffects up to 6 enemies in a 9 metre long 60 degree cone in front of you.\nLay waste to all who stand before you with repeated blasts from your shotgun dealing 12 physical damage per hit.',
     effect: '5 Shells',
-    targetType: 'Channelled Cone',
+    targetType: 'channelled',
     damageType: 'ranged',
     energy: 4,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 2.5,
+    cooldown: 20,
+    coefficient: 7.55,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: null,
+    recommendedPassive: 'Withering Salvo',
     image: full_salvo
   },
   {
@@ -120,16 +121,18 @@ export default [
     description:
       'Repurpose some of your power from your shotgun shells to cleanse 1 detrimental effect from yourself and heal yourself and your group members for 16% - 26% of their maximum health. The amount of health restored is based on how many shells were repurposed. This ability does not trigger and is not affected by global recharge time.',
     effect: '6 Shells',
-    targetType: 'Self/Group',
+    targetType: 'group',
     damageType: 'ranged',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 20,
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
-    image: reconstituting_shells
+    recommendedPassive: 'Fortifying Shells',
+    image: reconstituting_shells,
+    heal: true,
+    tags: ['cleanse']
   },
   {
     index: 707,
@@ -139,15 +142,15 @@ export default [
     description:
       'Affects up to 6 enemies in a 5 metre radius around you.\nGoad nearby enemies into attacking you for 6 seconds. During this time, your Protection is increased by 23700. Additionally, gain bonus hate on goaded enemies based on the number of shells consumed. This ability does not trigger and is not affected by global recharge time.',
     effect: '6 Shells',
-    targetType: 'Point blank area of effect',
+    targetType: 'pbaoe',
     damageType: 'ranged',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 20,
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
+    recommendedPassive: 'Hurt Me More',
     image: glutton_for_punishment
   },
   {
@@ -158,15 +161,15 @@ export default [
     description:
       'Salvage some of your power from your shotgun shells to gain 3 - 8 Shotgun Energy. The amount gained is based on how many shells were salvaged. This ability does not trigger and is not affected by global recharge time.',
     effect: '6 Shells',
-    targetType: 'Self',
+    targetType: 'self',
     damageType: 'ranged',
     energy: 0,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 20,
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
+    recommendedPassive: 'Salvage Expert',
     image: shell_salvage
   },
   {
@@ -177,16 +180,17 @@ export default [
     description:
       'Isolate the purifying elements in your shotgun shells and disperse it to all of your group members. For the next 9 seconds, each group member is cleansed of 1 detrimental effect every 1.5 seconds. This ability does not trigger and is not affected by global recharge time.',
     effect: '6 Shells',
-    targetType: 'Self/Group',
+    targetType: 'group',
     damageType: 'ranged',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 20,
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
-    image: cleanup
+    recommendedPassive: 'Cleanup Crew',
+    image: cleanup,
+    tags: ['cleanse']
   },
   {
     index: 710,
@@ -196,16 +200,17 @@ export default [
     description:
       'Fire all of your shells into the air and cause them to rain down at the targeted point. A shell will strike a random enemy within 7 metres every 1.25 seconds for 10 seconds.\n\nAffected enemies are dealt 6 physical damage and are Exposed. Other enemies within 3 metres of the target are dealt 3 physical damage.',
     effect: '6 Shells',
-    targetType: 'Target area of effect',
+    targetType: 'taoe',
     damageType: 'ranged',
     energy: 4,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 20,
     coefficient: null,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: null,
-    image: bombardment
+    recommendedPassive: 'Cluster Bombs',
+    image: bombardment,
+    tags: ['dot', 'exposed']
   },
   {
     index: 711,
@@ -215,16 +220,17 @@ export default [
     description:
       'Launch a miniaturised rocket at your target dealing 19 physical damage. This attack generates a large amount of hate.',
     effect: '1 Shell',
-    targetType: 'Target',
+    targetType: 'single',
     damageType: 'ranged',
     energy: 3,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 0,
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: null,
-    image: rocket_pod
+    recommendedPassive: 'Reinforced Rockets',
+    image: rocket_pod,
+    tags: ['hate']
   },
   {
     index: 712,
@@ -234,16 +240,17 @@ export default [
     description:
       'Affects up to 6 enemies in a 60 degree 7 metre cone in front of you.Fire a blast of shot from your shotgun at enemies in front of you dealing 5 physical damage. This attack generates a large amount of hate.\nRequires a Shotgun in your Primary Weapon slot.',
     effect: '1 Shell',
-    targetType: 'Cone/Basic',
+    targetType: 'cone',
     damageType: 'ranged',
     energy: 0,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 0,
     coefficient: null,
     type: 'active',
     activeType: 'Basic Ability',
     recommendedPassive: null,
-    image: scattershot
+    image: scattershot,
+    tags: ['hate']
   },
   {
     index: 713,
@@ -253,16 +260,17 @@ export default [
     description:
       'Affects up to 6 enemies in a 5 metre radius around the target.\nLaunch a high-explosive anti-tank round at your target dealing 13 physical damage to any enemies caught in the blast. This attack generates a large amount of hate.',
     effect: '1 Shell',
-    targetType: 'Target area of effect',
+    targetType: 'taoe',
     damageType: 'ranged',
     energy: 5,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 0,
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: null,
-    image: heat_round
+    recommendedPassive: 'Controlled Blasts',
+    image: heat_round,
+    tags: ['hate']
   },
   {
     index: 714,
@@ -272,16 +280,17 @@ export default [
     description:
       'Bash an enemy with the stock of your shotgun, knocking them down. Follow up with a close-range shotgun blast dealing 22 physical damage.\nThis ability has a 3 metre range.',
     effect: '1 Shell',
-    targetType: 'Target',
+    targetType: 'single',
     damageType: 'ranged',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 20,
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
-    image: cqc
+    recommendedPassive: 'Fatal Funnel',
+    image: cqc,
+    tags: ['knock']
   },
   {
     index: 715,
@@ -291,15 +300,16 @@ export default [
     description:
       'Affects up to 6 enemies in a 60 degree 9 metre cone in front of you.\nFire a concentrated shot of power from your shotgun towards the ground creating a blast wave in front of you, knocking enemies down, dealing 34 physical damage, and slowing their movement. This attack generates a large amount of hate.\n\nFor 8 seconds afterward, all attacks against you are 42% - 49% more likely to glance. This bonus increases based on the number of shotgun shells consumed.',
     effect: '6 Shells',
-    targetType: 'Cone',
+    targetType: 'cone',
     damageType: 'ranged',
     energy: 4,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 0,
+    cooldown: 20,
+    coefficient: 4.65,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: null,
-    image: kneecapper
+    recommendedPassive: 'Stand Firm',
+    image: kneecapper,
+    tags: ['knock', 'hate']
   }
-]
+];

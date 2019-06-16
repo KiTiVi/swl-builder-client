@@ -15,7 +15,7 @@ export default [
     description:
       'Each time you use "Razor Shards" you gather your strength, increasing the power of the next "Razor Shards" by 6%. This effect can stack up to 5 times.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Razor Shards'
   },
   {
     index: 203,
@@ -24,7 +24,7 @@ export default [
     description:
       'Using "Seethe" causes your Rage to spill over, generating 38 Rage.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Seethe'
   },
   {
     index: 204,
@@ -33,7 +33,7 @@ export default [
     description:
       'Your critical hits with "Demolish" are brutally devastating, dealing 30% more damage.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Demolish'
   },
   {
     index: 205,
@@ -42,7 +42,7 @@ export default [
     description:
       'Your Rage knows no limits. When Enraged, "Eruption" will no longer generate Rage. Instead it will spend 50 Rage and increase the damage dealt to 93 physical damage.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Eruption'
   },
   {
     index: 206,
@@ -51,7 +51,7 @@ export default [
     description:
       'You embrace pain, growing stronger from it. While "Pain Suppression" is active, enemy attacks heal you for 113% of the damage they deal.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Pain Suppression'
   },
   {
     index: 207,
@@ -60,7 +60,7 @@ export default [
     description:
       'You are experienced in brawls. The reactive damage dealt by "Enter the Fray" is increased to 2 physical damage and you and allies near the target gain 10000 Protection for 6 seconds.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Enter the Fray'
   },
   {
     index: 208,
@@ -69,7 +69,7 @@ export default [
     description:
       'Your rage surges when you go on a "Rampage." If using "Rampage" causes you to become Enraged, the base damage of your next Rage spending ability is increased by:\n   • Razor Shards: 200%\n   • Demolish: 30%\n   • Pulverise: 100%\n   • Burning Wrath: 160%\n   • Eruption with Annihilate Passive: 20%',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Rampage'
   },
   {
     index: 209,
@@ -78,7 +78,7 @@ export default [
     description:
       'Your rage shields you from harm. When using "Thick Skin" you also gain a damage absorbing barrier for 5 seconds. This barrier absorbs damage up to 150% of your maximum health.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Thick Skin'
   },
   {
     index: 210,
@@ -87,7 +87,7 @@ export default [
     description:
       'Become a hulking Juggernaut. While "Unstoppable Force" is active, you take 38% less damage.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Unstoppable Force'
   },
   {
     index: 211,
@@ -96,7 +96,7 @@ export default [
     description:
       'Your Rage fueled blows from "Pulverise" provide you a degree of comfort. When refreshing the duration of the maximum health bonus of "Pulverise" you also heal yourself for 6% of your maximum health.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Pulverise'
   },
   {
     index: 212,
@@ -105,7 +105,7 @@ export default [
     description:
       'Your "Burning Wrath" bolsters your defenses, granting 140 Protection per target hit by the initial blast of rage for 6 seconds. This effect can stack up to 10 times. In addition, the pulsing damage generates increased hate.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Burning Wrath'
   },
   {
     index: 213,
@@ -114,7 +114,7 @@ export default [
     description:
       'When your "Blindside" ability successfully interrupts a target, you mark the target to get a beatdown for 6 seconds. Every time the target is hit by you or any of your allies, they have a 75% chance to generate 1 energy for the weapon they used.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Blindside'
   },
   {
     index: 214,
@@ -123,7 +123,7 @@ export default [
     description:
       'Clad yourself with molten armor as you damage enemies with "Raging Volcano" for 10 seconds. While your armor endures, you take 20% less damage. Taking damage in excess of 2% of your maximum health chips away at the armor.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Raging Volcano'
   },
   {
     index: 215,
@@ -197,4 +197,4 @@ export default [
     type: 'passive',
     recommendedActive: null
   }
-]
+];

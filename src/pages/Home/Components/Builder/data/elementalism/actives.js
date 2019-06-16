@@ -14,7 +14,7 @@ import {
   inferno,
   flashpoint,
   overload
-} from '../../../../../../images/abilities/elementalism/actives/index'
+} from '../../../../../../images/abilities/elementalism/actives/index';
 
 export default [
   {
@@ -25,12 +25,12 @@ export default [
     description:
       'Launch a ball of flame at your target dealing 9 magical damage.',
     effect: 'Heat + 6',
-    targetType: 'Target',
+    targetType: 'single',
     damageType: 'magic',
     energy: 0,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 0.5,
+    cooldown: 0,
+    coefficient: 1.175,
     type: 'active',
     activeType: 'Basic Ability',
     recommendedPassive: null,
@@ -44,15 +44,15 @@ export default [
     description:
       'Jumps up to 8 metres 5 times, hitting up to 6 enemies.\nSend a crackling bolt of lightning through your target which then leaps to nearby enemies. Affected targets are dealt 10 magical damage.',
     effect: 'Heat + 20',
-    targetType: 'Target chain',
+    targetType: 'chain',
     damageType: 'magic',
     energy: 3,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 1,
+    cooldown: 0,
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: null,
+    recommendedPassive: 'Static Charge',
     image: chain_lightning
   },
   {
@@ -63,16 +63,17 @@ export default [
     description:
       'Affects up to 6 enemies in a 5 metre range around you.\nInstantly freeze the area around you dealing 11 magical damage.\nApplies Debilitated.\nCan be used while Overheated to remove the Overheated effect.',
     effect: 'Heat - 30',
-    targetType: 'Point blank area of effect',
+    targetType: 'pbaoe',
     damageType: 'magic',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 0,
+    cooldown: 20,
+    coefficient: 1.45,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
-    image: flash_freeze
+    recommendedPassive: 'Cryoblast',
+    image: flash_freeze,
+    tags: ['debilitated']
   },
   {
     index: 604,
@@ -82,15 +83,15 @@ export default [
     description:
       'Harness the power of the mythical hammer to send devastating bolts of lightning at your target dealing 25 magical damage.',
     effect: 'Heat + 30',
-    targetType: 'Target',
+    targetType: 'single',
     damageType: 'magic',
     energy: 5,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 1,
+    cooldown: 0,
+    coefficient: 3.425,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: null,
+    recommendedPassive: 'Superconductor',
     image: mjolnir
   },
   {
@@ -101,16 +102,17 @@ export default [
     description:
       'Focus your energy to unleash a gelid beam of frost at your target dealing 51 magical damage and slowing its movement.\nApplies Debilitated.\nCan be used while Overheated to remove the Overheated effect.',
     effect: 'Heat - 30',
-    targetType: 'Target',
+    targetType: 'single',
     damageType: 'magic',
     energy: 4,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 2,
+    cooldown: 20,
+    coefficient: 6.98,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: null,
-    image: ice_beam
+    recommendedPassive: 'Glaciate',
+    image: ice_beam,
+    tags: ['movement', 'debilitated']
   },
   {
     index: 606,
@@ -120,16 +122,17 @@ export default [
     description:
       'Summon a crystallised manifestation of ice at your location that lasts 9 seconds. Every 3 seconds it will hit up to 6 enemies in a 5 metre radius, dealing 3 magical damage.\nApplies Debilitated.\nCan be used while Overheated.',
     effect: 'Heat - 8 upon summon\nHeat - 8 if the pulse hits you',
-    targetType: 'Summon on self',
+    targetType: 'pbaoe',
     damageType: 'magic',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 1,
+    cooldown: 20,
+    coefficient: 1.08,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
-    image: crystallised_frost
+    recommendedPassive: 'Icy Steps',
+    image: crystallised_frost,
+    tags: ['dot', 'debilitated']
   },
   {
     index: 607,
@@ -139,16 +142,17 @@ export default [
     description:
       'Summon a crystallised manifestation of fire at the targeted point that lasts 10 seconds. Every 2.5 seconds it will deal 5 magical damage to the closest enemy within a 5 metre radius.',
     effect: 'Heat + 25',
-    targetType: 'Summon on target',
+    targetType: 'taoe',
     damageType: 'magic',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 1,
+    cooldown: 20,
+    coefficient: 3.4,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
-    image: crystallised_flame
+    recommendedPassive: 'Crystallised Blaze',
+    image: crystallised_flame,
+    tags: ['dot']
   },
   {
     index: 608,
@@ -158,16 +162,17 @@ export default [
     description:
       'Summon a crystallised manifestation of lightning at the targeted point that lasts 10 seconds. Every second, it deals 1 magical damage to nearby enemies as lightning jumps between them. If your heat level is above 25, affected enemies have 1 beneficial effect purged from them.',
     effect: 'Heat + 25',
-    targetType: 'Summon on target',
+    targetType: 'taoe',
     damageType: 'magic',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 1,
+    cooldown: 20,
+    coefficient: 1.3,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
-    image: crystallised_storm
+    recommendedPassive: 'Discharge',
+    image: crystallised_storm,
+    tags: ['dot']
   },
   {
     index: 609,
@@ -177,15 +182,15 @@ export default [
     description:
       'You vanish with a flicker of electricity and teleport 10 metres forward. When you arrive at your destination, the area becomes electrified. Enemies standing in the area are dealt 2 magical damage every second. This ability can be activated a second time within 5 seconds of the first use.\nCan be used while Overheated to remove the Overheated effect.',
     effect: 'First activation: Heat - 30\nFollow-up activation: Heat +25',
-    targetType: 'Self',
+    targetType: 'self',
     damageType: 'magic',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 20,
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
+    recommendedPassive: 'Volatile Current',
     image: flicker
   },
   {
@@ -196,16 +201,17 @@ export default [
     description:
       'Create an intense blizzard at the targeted point that lasts 8 seconds. Every 0.5 seconds it will deal 3 magical damage to up to 6 enemies in a 5 metre radius. Applies Debilitated. Targets that are hit 5 times are rooted to the ground for 4 seconds.\nCan be used while Overheated to remove the Overheated effect.',
     effect: 'Heat - 30',
-    targetType: 'Target area of effect',
+    targetType: 'taoe',
     damageType: 'magic',
     energy: 4,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 1,
+    cooldown: 20,
+    coefficient: 5.44,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: null,
-    image: blizzard
+    recommendedPassive: 'Frigid Tempest',
+    image: blizzard,
+    tags: ['dot', 'debilitated']
   },
   {
     index: 611,
@@ -215,15 +221,15 @@ export default [
     description:
       'Fling a flaming bolt at your target dealing 19 magical damage.',
     effect: 'Heat + 20',
-    targetType: 'Target',
+    targetType: 'single',
     damageType: 'magic',
     energy: 3,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 1,
+    cooldown: 0,
+    coefficient: 2.525,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: null,
+    recommendedPassive: 'Blazing Bolts',
     image: fire_bolt
   },
   {
@@ -234,11 +240,11 @@ export default [
     description:
       'Jumps up to 8 metres 5 times, hitting up to 6 enemies.Send a shock of electricity through your target which chains to other nearby targets. Affected targets are dealt 5 magical damage.',
     effect: 'Heat + 6',
-    targetType: 'Target chain',
+    targetType: 'chain',
     damageType: 'magic',
     energy: 0,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 1,
+    cooldown: 0,
     coefficient: null,
     type: 'active',
     activeType: 'Basic Ability',
@@ -253,15 +259,15 @@ export default [
     description:
       "Affects up to 6 enemies in a 5 metre radius around the target.\nCreate a blazing inferno at the target's location that deals 13 magical damage.",
     effect: 'Heat + 30',
-    targetType: 'Target area of effect',
+    targetType: 'taoe',
     damageType: 'magic',
     energy: 5,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 1,
+    cooldown: 0,
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: null,
+    recommendedPassive: 'Scorched Earth',
     image: inferno
   },
   {
@@ -272,15 +278,15 @@ export default [
     description:
       'You harness the destructive forces of Elementalism for 4 seconds. During this time, all of your Elementalism abilities function and deal damage as if you were at the maximum heat level. Your heat level neither increases nor decreases for the duration of this beneficial effect.',
     effect: 'Heat level is frozen during ability duration',
-    targetType: 'Self',
+    targetType: 'self',
     damageType: 'magic',
     energy: 2,
-    castTime: 999999999,
-    cooldown: 999999999,
+    castTime: 0,
+    cooldown: 20,
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: null,
+    recommendedPassive: 'Blast Wave',
     image: flashpoint
   },
   {
@@ -291,15 +297,16 @@ export default [
     description:
       'Channelled: Every second for 3 seconds.\nAffects up to 6 enemies in a 10 metre radius around the targeted point.\nBlast the targeted area with a barrage of elemental energy dealing 20 magical damage per hit.\nThe cold portion of this ability applies Debilitated. The electrical portion of this ability purges 2 beneficial effects.\nCan be used while Overheated to remove the Overheated effect.',
     effect: 'Cold portion: Heat - 30\nFire/electrical portion: Heat +10',
-    targetType: 'Ground target area of effect',
+    targetType: 'gtaoe',
     damageType: 'magic',
     energy: 4,
-    castTime: 999999999,
-    cooldown: 999999999,
-    coefficient: null,
+    castTime: 3,
+    cooldown: 20,
+    coefficient: 8.01,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: null,
-    image: overload
+    recommendedPassive: 'Elemental Force',
+    image: overload,
+    tags: ['debilitated', 'purge']
   }
-]
+];

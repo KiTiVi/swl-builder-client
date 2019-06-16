@@ -15,7 +15,7 @@ export default [
     description:
       'The effects of your "Dread Sigil" linger, cursing affected targets by dealing 1 magical damage every second for 5 seconds.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Dread Sigil'
   },
   {
     index: 403,
@@ -24,7 +24,7 @@ export default [
     description:
       'When you "Reap" enemies you infuse them with your Corruption, causing the damage over time effect to increase to 3 - 3 magical damage per second. The damage dealt increases based on your Corruption level when "Reap" is cast.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Reap'
   },
   {
     index: 404,
@@ -33,7 +33,7 @@ export default [
     description:
       'The magic conjured by your "Maleficium" mercilessly tears at your foes, increasing the damage dealt to 6 on enemies who are affected by any of your Blood Magic damage over time effects.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Maleficium'
   },
   {
     index: 405,
@@ -42,7 +42,7 @@ export default [
     description:
       'When "Sanguine Coalescence" expires or is destroyed, the energy converges inside of you instead of exploding outwards causing your next 4 Blood Magic attacks to deal an additional 10 magical damage.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Sanguine Coalescence'
   },
   {
     index: 406,
@@ -51,7 +51,7 @@ export default [
     description:
       'Power flows from the crushed heart of victims of your "Rupture."\nIf your Corruption level is above 60 you further afflict the target, dealing 2 magical damage every second for 6 seconds.\nIf your Martyrdom level is above 60 you transform the power into healing energy for your defensive target, restoring 2 health every second for 6 seconds.\nThese effects are improved if "Rupture" successfully interrupts a target.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Rupture'
   },
   {
     index: 407,
@@ -60,7 +60,7 @@ export default [
     description:
       'While your "Desecrate" is active, your Blood Magic abilities inflict further defilement, causing you to gain 20% more Corruption. If you are already at maximum Corruption, your Blood Magic abilities deal 16.5% more damage.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Desecrate'
   },
   {
     index: 408,
@@ -69,7 +69,7 @@ export default [
     description:
       'You draw forth more of your energy when you cast "Rejuvenate" improving the healing to 3 per second. In addition, the healing is not reduced by your Martyrdom level.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Rejuvenate'
   },
   {
     index: 409,
@@ -78,7 +78,7 @@ export default [
     description:
       'The runes inscribed by your "Runic Hex" are carved deep, resulting in mass hexing. When "Runic Hex" expires, any enemies damaged by the resulting detonation are afflicted with a lesser version of the Hex which deals 2 magical damage every second for 3 seconds and slows their movement. During this time the target\'s attacks restore 2 health to whomever they attack.\nThe hex explodes one final time when it expires, dealing 2 magical damage to nearby enemies and healing nearby allies for 1.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Runic Hex'
   },
   {
     index: 410,
@@ -87,7 +87,7 @@ export default [
     description:
       'Your "Eldritch Scourge" lays waste to your target\'s soul increasing the damage and healing done by 52%.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Eldritch Scourge'
   },
   {
     index: 411,
@@ -96,7 +96,7 @@ export default [
     description:
       'Your "Sanctuary" ability helps accelerate the restoration process. While an ally is protected by your "Sanctuary" barrier effect, each subsequent use of the ability increases the base healing done by 3.5%. This bonus is removed when the barrier effect is removed.\nIn addition, applying a barrier with "Sanctuary" no longer causes you to take damage from Martyrdom.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Sanctuary'
   },
   {
     index: 412,
@@ -105,7 +105,7 @@ export default [
     description:
       'The barrier applied by "Convalesce" to low health targets amplifies healing energies, increasing incoming healing from all sources by 15%.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Convalesce'
   },
   {
     index: 413,
@@ -114,7 +114,7 @@ export default [
     description:
       'Your "Redemption" grants relief and aid to those who need it most. "Redemption\'s" health restoration is increased to 20.\nIn addition, "Redemption" causes less damage from Martyrdom when used on low health targets and reduces your Martyrdom level more when used on high health targets.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Redemption'
   },
   {
     index: 414,
@@ -123,7 +123,7 @@ export default [
     description:
       'The runic energy which maintains the barriers applied by your "Communion" ability is bound with a powerful charm. Whenever any of your "Communion" barriers are destroyed by incoming damage, your entire group is healed for 6.',
     type: 'passive',
-    recommendedActive: null
+    recommendedActive: 'Communion'
   },
   {
     index: 415,
@@ -197,4 +197,4 @@ export default [
     type: 'passive',
     recommendedActive: null
   }
-]
+];
