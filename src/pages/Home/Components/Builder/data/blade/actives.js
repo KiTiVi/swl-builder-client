@@ -1,4 +1,22 @@
-export const blade_actives = [
+import {
+  flowing_strike,
+  hurricane,
+  hone,
+  tsunami,
+  dancing_blade,
+  spirit_blade,
+  soothing_spring,
+  snakes_bite,
+  rushing_river,
+  supreme_harmony,
+  swallow_cut,
+  crescent_fang,
+  tempest,
+  impale_spirit,
+  typhoon
+} from '../../../../../../images/abilities/blade/actives/index'
+
+export default [
   {
     index: 101,
     weapon: 'Blade',
@@ -14,7 +32,8 @@ export const blade_actives = [
     coefficient: null,
     type: 'active',
     activeType: 'Basic Ability',
-    recommendedPassive: null
+    recommendedPassive: null,
+    image: flowing_strike
   },
   {
     index: 102,
@@ -31,7 +50,8 @@ export const blade_actives = [
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Eye of the Storm'
+    recommendedPassive: 'Eye of the Storm',
+    image: hurricane
   },
   {
     index: 103,
@@ -48,7 +68,8 @@ export const blade_actives = [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Keen Edge'
+    recommendedPassive: 'Keen Edge',
+    image: hone
   },
   {
     index: 104,
@@ -65,7 +86,8 @@ export const blade_actives = [
     coefficient: 5.19,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Storm Surge'
+    recommendedPassive: 'Storm Surge',
+    image: tsunami
   },
   {
     index: 105,
@@ -83,7 +105,8 @@ export const blade_actives = [
     coefficient: 7.58,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: 'Soulforged Blade'
+    recommendedPassive: 'Soulforged Blade',
+    image: dancing_blade
   },
   {
     index: 106,
@@ -107,7 +130,8 @@ export const blade_actives = [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Masterpiece'
+    recommendedPassive: 'Masterpiece',
+    image: spirit_blade
   },
   {
     index: 107,
@@ -126,6 +150,7 @@ export const blade_actives = [
     type: 'active',
     activeType: 'Special Ability',
     recommendedPassive: 'Meditate',
+    image: soothing_spring,
     heal: true,
     tags: ['cleanse']
   },
@@ -145,6 +170,7 @@ export const blade_actives = [
     type: 'active',
     activeType: 'Special Ability',
     recommendedPassive: 'Reversal',
+    image: snakes_bite,
     tags: ['stun']
   },
   {
@@ -163,6 +189,7 @@ export const blade_actives = [
     type: 'active',
     activeType: 'Special Ability',
     recommendedPassive: 'Waterfall',
+    image: rushing_river,
     tags: ['dash']
   },
   {
@@ -183,6 +210,7 @@ export const blade_actives = [
     type: 'active',
     activeType: 'Elite Ability',
     recommendedPassive: "Master's Focus",
+    image: supreme_harmony,
     heal: true,
     tags: ['dmg', 'speed', 'cleanse']
   },
@@ -201,7 +229,8 @@ export const blade_actives = [
     coefficient: 2.525,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Hardened Blade'
+    recommendedPassive: 'Hardened Blade',
+    image: swallow_cut
   },
   {
     index: 112,
@@ -216,7 +245,8 @@ export const blade_actives = [
     castTime: 0,
     cooldown: 0,
     type: 'active',
-    activeType: 'Basic Ability'
+    activeType: 'Basic Ability',
+    image: crescent_fang
   },
   {
     index: 113,
@@ -233,6 +263,7 @@ export const blade_actives = [
     type: 'active',
     activeType: 'Power Ability',
     recommendedPassive: 'Whirlwind',
+    image: tempest,
     tags: ['dot']
   },
   {
@@ -254,6 +285,7 @@ export const blade_actives = [
     type: 'active',
     activeType: 'Special Ability',
     recommendedPassive: 'Sunder Spirit',
+    image: impale_spirit,
     tags: ['hinder', 'dot', 'exposed']
   },
   {
@@ -273,6 +305,7 @@ export const blade_actives = [
     type: 'active',
     activeType: 'Elite Ability',
     recommendedPassive: 'Torrent',
+    image: typhoon,
     tags: ['dmg']
   }
 ]

@@ -34,8 +34,6 @@ const Save = ({
     event.preventDefault()
 
     if (buildID) {
-      console.log(buildID)
-      console.log(name, description, actives, passives, queryString)
       const build = await updateBuild({
         buildID,
         name,
@@ -46,7 +44,9 @@ const Save = ({
         queryString
       })
 
-      console.log(build)
+      if (build) {
+        setShowModal(false)
+      }
     } else {
       const build = await createBuild({
         name,
@@ -57,10 +57,11 @@ const Save = ({
         queryString
       })
 
-      console.log(build)
+      if (build) {
+        setShowModal(false)
+      }
     }
   }
-  console.log(buildID)
 
   return (
     <>

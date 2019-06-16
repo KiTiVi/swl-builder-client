@@ -11,11 +11,11 @@ import AssaultRiflesIcon from './/AssaultRiflesIcon.png'
 export default {
   Blade: BladesIcon,
   Hammer: HammersIcon,
-  Fists: FistsIcon,
-  Blood: BloodIcon,
-  Chaos: ChaosIcon,
+  'Fist Weapons': FistsIcon,
+  'Blood Magic': BloodIcon,
+  'Chaos Magic': ChaosIcon,
   Elementalism: ElementalsIcon,
   Shotgun: ShotgunsIcon,
-  Pistols: PistolsIcon,
-  Rifle: AssaultRiflesIcon
+  'Dual Pistols': PistolsIcon,
+  'Assault Rifle': AssaultRiflesIcon
 }

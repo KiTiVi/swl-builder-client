@@ -32,13 +32,24 @@ export default function AbilityComponent({
           onMouseEnter={handleMouseOver}
           onMouseLeave={handleMouseOut}
         >
-          {!ability.empty && (
-            <IconPlaceholder
-              name={ability.name}
-              type={ability.type}
-              activeType={ability.activeType}
-            />
-          )}
+          {!ability.empty &&
+            (ability.image ? (
+              <img
+                src={ability.image}
+                onMouseEnter={handleMouseOver}
+                onMouseLeave={handleMouseOut}
+                alt={ability.name}
+                className="ability-image"
+              />
+            ) : (
+              <div onMouseEnter={handleMouseOver} onMouseLeave={handleMouseOut}>
+                <IconPlaceholder
+                  name={ability.name}
+                  type={ability.type}
+                  activeType={ability.activeType}
+                />
+              </div>
+            ))}
           {isHovered && ability.type === 'active' && (
             <TooltipAbility ability={ability} up />
           )}

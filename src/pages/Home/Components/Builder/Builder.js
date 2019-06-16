@@ -6,8 +6,7 @@ import Ability from './Ability'
 import HotbarAbility from './HotbarAbility'
 import SaveBuild from './SaveBuild'
 import Search from './Search'
-import { blade_actives } from './data/blade/actives'
-import { blade_passives } from './data/blade/passives'
+import { actives, passives } from './data/index'
 import { reorder } from '../../../../utils/reorder'
 import { generateId } from '../../../../utils/generateId'
 import { groupBy } from '../../../../utils/groupBy'
@@ -29,6 +28,7 @@ export default ({
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
   const [weapons, setWeapons] = useState([])
+  const [abilityIndexes, setAbilityIndexes] = useState([])
   const [selectedActives, setSelectedActives] = useState([
     { empty: true, name: 'active1' },
     { empty: true, name: 'active2' },
@@ -73,15 +73,18 @@ export default ({
     const abilities = [...selectedActives, ...selectedPassives]
 
     const allWeapons = []
+    const abilityIndexes = []
 
     abilities.forEach(ability => {
       if (ability.weapon) {
         allWeapons.push(ability.weapon)
+        abilityIndexes.push(ability.index)
       }
     })
 
     const weapons = [...new Set(allWeapons)]
     setWeapons(weapons)
+    setAbilityIndexes(abilityIndexes)
   }, [selectedActives, selectedPassives])
 
   const selectWeapon = weaponName => {
@@ -218,7 +221,7 @@ export default ({
             />
             {menuOption === 'actives' && (
               <Container>
-                {groupBy(blade_actives, 'path').map((path, i) => {
+                {groupBy(actives[selectedWeapon], 'path').map((path, i) => {
                   return (
                     <div key={i} className="path">
                       <h3 className="pathname">{path.path}</h3>
@@ -229,6 +232,11 @@ export default ({
                               key={i}
                               ability={ability}
                               setAbility={setAbility}
+                              selected={
+                                abilityIndexes.includes(ability.index)
+                                  ? true
+                                  : false
+                              }
                             />
                           )
                         })}
@@ -240,7 +248,7 @@ export default ({
             )}
             {menuOption === 'passives' && (
               <PassivesContainer>
-                {blade_passives.map((passive, i) => {
+                {passives[selectedWeapon].map((passive, i) => {
                   return (
                     <Ability
                       key={i}

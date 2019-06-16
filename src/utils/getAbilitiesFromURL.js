@@ -1,6 +1,8 @@
 import { generateId } from './generateId'
-import { blade_actives } from '../pages/Home/Components/Builder/data/blade/actives'
-import { blade_passives } from '../pages/Home/Components/Builder/data/blade/passives'
+import {
+  allActives,
+  allPassives
+} from '../pages/Home/Components/Builder/data/index'
 
 export const getAbilitiesFromURL = ({ actives, passives }) => {
   const active_1 = actives.substring(0, 3)
@@ -33,7 +35,7 @@ export const getAbilitiesFromURL = ({ actives, passives }) => {
         name: generateId(25)
       })
     } else {
-      blade_actives.forEach(blade_active => {
+      allActives.forEach(blade_active => {
         if (blade_active.index === parseInt(active)) {
           selectedActives.push(blade_active)
         }
@@ -49,7 +51,7 @@ export const getAbilitiesFromURL = ({ actives, passives }) => {
         name: generateId(25)
       })
     } else {
-      blade_passives.forEach(blade_passive => {
+      allPassives.forEach(blade_passive => {
         if (blade_passive.index === parseInt(passive)) {
           selectedPassives.push(blade_passive)
         }

@@ -14,13 +14,13 @@ import IconPlaceholder from './IconPlaceholder'
 const image = {
   Blade: BladesIcon,
   Hammer: HammersIcon,
-  Fist: FistsIcon,
-  Blood: BloodIcon,
-  Chaos: ChaosIcon,
-  Ele: ElementalsIcon,
-  Showtgun: ShotgunsIcon,
+  'Fist Weapons': FistsIcon,
+  'Blood Magic': BloodIcon,
+  'Chaos Magic': ChaosIcon,
+  Elementalism: ElementalsIcon,
+  Shotgun: ShotgunsIcon,
   'Dual Pistols': PistolsIcon,
-  Rifle: AssaultRiflesIcon
+  'Assault Rifle': AssaultRiflesIcon
 }
 
 export default ({ ability, search, up }) => {
@@ -120,12 +120,4 @@ const WeaponIcon = styled.img`
       rgb(153, 128, 74)
     )`
       : `linear-gradient(to right, #444 20%, #222)`};
-
-  &:hover {
-    background: linear-gradient(
-      to right,
-      rgb(243, 211, 131) 20%,
-      rgb(153, 128, 74)
-    );
-  }
 `

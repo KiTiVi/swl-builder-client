@@ -5,7 +5,7 @@ import IconPlaceholder from '../../../../components/IconPlaceholder'
 import { colors } from '../../../../variables/colors'
 import TooltipPassive from '../../../../components/TooltipPassive'
 
-export default function AbilityComponent({ ability, setAbility }) {
+export default function AbilityComponent({ ability, setAbility, selected }) {
   const [isHovered, setIsHovered] = useState(false)
   const handleMouseOver = () => setIsHovered(true)
   const handleMouseOut = () => setIsHovered(false)
@@ -15,6 +15,7 @@ export default function AbilityComponent({ ability, setAbility }) {
       onClick={() => setAbility({ ...ability })}
       active={ability.type === 'active'}
       color={ability.type === 'active' ? colors[ability.activeType] : '#fff'}
+      selected={selected}
     >
       <p className="ability-name">{ability.name}</p>
       {ability.image ? (
@@ -23,6 +24,7 @@ export default function AbilityComponent({ ability, setAbility }) {
           onMouseEnter={handleMouseOver}
           onMouseLeave={handleMouseOut}
           alt={ability.name}
+          className="ability-image"
         />
       ) : (
         <div onMouseEnter={handleMouseOver} onMouseLeave={handleMouseOut}>
@@ -53,5 +55,10 @@ const Ability = styled.div`
 
   .ability-name {
     color: ${({ color }) => color};
+  }
+
+  .ability-image {
+    border-radius: 5px;
+    box-shadow: ${({ selected }) => (selected ? '0 0 5px 3px #fff' : 'none')};
   }
 `

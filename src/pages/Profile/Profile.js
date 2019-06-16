@@ -61,7 +61,7 @@ export default () => {
                   <h4>{build.name}</h4>
                 </Link>
                 {build.weapons.map(weapon => (
-                  <img src={weapons[weapon]} />
+                  <img src={weapons[weapon]} alt={weapon} />
                 ))}
                 <button onClick={() => deleteBuild({ id: build._id })}>
                   del

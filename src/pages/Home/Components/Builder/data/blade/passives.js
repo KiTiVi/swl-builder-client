@@ -1,4 +1,4 @@
-export const blade_passives = [
+export default [
   {
     index: 101,
     weapon: 'Blade',
@@ -181,4 +181,4 @@ export const blade_passives = [
     type: 'passive',
     tags: ['chi']
   }
-];
+]
