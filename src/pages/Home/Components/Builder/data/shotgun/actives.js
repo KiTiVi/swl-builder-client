@@ -14,7 +14,7 @@ import {
   heat_round,
   cqc,
   kneecapper
-} from '../../../../../../images/abilities/shotgun/actives/index';
+} from '../../../../../../images/abilities/shotgun/actives/index'
 
 export default [
   {
@@ -33,7 +33,7 @@ export default [
     coefficient: 1.175,
     type: 'active',
     activeType: 'Basic Ability',
-    recommendedPassive: null,
+    connectedAbility: null,
     image: pump_action
   },
   {
@@ -52,7 +52,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Blast Barrels',
+    connectedAbility: 'Blast Barrels',
     image: both_barrels
   },
   {
@@ -71,7 +71,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Fire at Will',
+    connectedAbility: 'Fire at Will',
     image: opening_shot,
     tags: ['critPower']
   },
@@ -91,7 +91,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Point Blank Shot',
+    connectedAbility: 'Point Blank Shot',
     image: raging_shot
   },
   {
@@ -110,7 +110,7 @@ export default [
     coefficient: 7.55,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: 'Withering Salvo',
+    connectedAbility: 'Withering Salvo',
     image: full_salvo
   },
   {
@@ -129,7 +129,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Fortifying Shells',
+    connectedAbility: 'Fortifying Shells',
     image: reconstituting_shells,
     heal: true,
     tags: ['cleanse']
@@ -150,7 +150,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Hurt Me More',
+    connectedAbility: 'Hurt Me More',
     image: glutton_for_punishment
   },
   {
@@ -169,7 +169,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Salvage Expert',
+    connectedAbility: 'Salvage Expert',
     image: shell_salvage
   },
   {
@@ -188,7 +188,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Cleanup Crew',
+    connectedAbility: 'Cleanup Crew',
     image: cleanup,
     tags: ['cleanse']
   },
@@ -208,7 +208,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: 'Cluster Bombs',
+    connectedAbility: 'Cluster Bombs',
     image: bombardment,
     tags: ['dot', 'exposed']
   },
@@ -228,7 +228,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Reinforced Rockets',
+    connectedAbility: 'Reinforced Rockets',
     image: rocket_pod,
     tags: ['hate']
   },
@@ -248,7 +248,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Basic Ability',
-    recommendedPassive: null,
+    connectedAbility: null,
     image: scattershot,
     tags: ['hate']
   },
@@ -268,7 +268,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Controlled Blasts',
+    connectedAbility: 'Controlled Blasts',
     image: heat_round,
     tags: ['hate']
   },
@@ -288,7 +288,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Fatal Funnel',
+    connectedAbility: 'Fatal Funnel',
     image: cqc,
     tags: ['knock']
   },
@@ -308,8 +308,8 @@ export default [
     coefficient: 4.65,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: 'Stand Firm',
+    connectedAbility: 'Stand Firm',
     image: kneecapper,
     tags: ['knock', 'hate']
   }
-];
+]

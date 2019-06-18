@@ -33,7 +33,8 @@ export default ({ ability, search, up }) => {
     castTime,
     cooldown,
     type,
-    recommendedPassive
+    connectedAbility,
+    image
   } = ability
 
   return (
@@ -45,7 +46,8 @@ export default ({ ability, search, up }) => {
             {weapon} {activeType}
           </p>
         </div>
-        <WeaponIcon src={image[weapon]} alt={weapon} />
+
+        <img src={image} alt={name} />
       </header>
 
       <section className="AbilityTooltip--stats">
@@ -62,10 +64,13 @@ export default ({ ability, search, up }) => {
         </i>
       </section>
       <p>{description}</p>
-      {search && recommendedPassive && (
+      {search && connectedAbility && (
         <div>
-          <p>Connected passive: {recommendedPassive}</p>
-          <IconPlaceholder name={recommendedPassive} type={type} />
+          <p>
+            Connected {type === 'active' ? 'passive' : 'active'}:{' '}
+            {connectedAbility}
+          </p>
+          <IconPlaceholder name={connectedAbility} type={type} />
         </div>
       )}
     </AbilityTooltip>

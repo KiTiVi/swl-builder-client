@@ -14,7 +14,7 @@ import {
   charged_blast,
   riccochet,
   bullet_ballet
-} from '../../../../../../images/abilities/pistols/actives/index';
+} from '../../../../../../images/abilities/pistols/actives/index'
 
 export default [
   {
@@ -32,7 +32,7 @@ export default [
     coefficient: 1.175,
     type: 'active',
     activeType: 'Basic Ability',
-    recommendedPassive: null,
+    connectedAbility: null,
     image: hair_trigger
   },
   {
@@ -50,7 +50,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'High Roller',
+    connectedAbility: 'High Roller',
     image: controlled_shooting
   },
   {
@@ -68,7 +68,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Lethal Aim',
+    connectedAbility: 'Lethal Aim',
     image: flourish,
     tags: ['cleanse']
   },
@@ -86,7 +86,7 @@ export default [
     coefficient: 5.19,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Holdout',
+    connectedAbility: 'Holdout',
     image: unload
   },
   {
@@ -104,7 +104,7 @@ export default [
     coefficient: 8.16,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: 'Royal Flush',
+    connectedAbility: 'Royal Flush',
     image: all_in
   },
   {
@@ -121,7 +121,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Stacked Deck',
+    connectedAbility: 'Stacked Deck',
     image: full_house
   },
   {
@@ -139,7 +139,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Rehabilitation',
+    connectedAbility: 'Rehabilitation',
     image: clean_slate,
     tags: ['cleanse']
   },
@@ -158,7 +158,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Mulligan',
+    connectedAbility: 'Mulligan',
     image: six_line
   },
   {
@@ -176,7 +176,7 @@ export default [
     coefficient: 0.82,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Focused Fire',
+    connectedAbility: 'Focused Fire',
     image: kill_blind,
     tags: ['exposed', 'debilitated']
   },
@@ -195,7 +195,7 @@ export default [
     coefficient: 5.6,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: 'Bamboozle',
+    connectedAbility: 'Bamboozle',
     image: trick_shot,
     tags: ['exposed', 'debilitated']
   },
@@ -214,7 +214,7 @@ export default [
     coefficient: 2.525,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Fatal Shot',
+    connectedAbility: 'Fatal Shot',
     image: dual_shot
   },
   {
@@ -232,7 +232,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Basic Ability',
-    recommendedPassive: null,
+    connectedAbility: null,
     image: seeking_bullet
   },
   {
@@ -250,7 +250,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Blast Crater',
+    connectedAbility: 'Blast Crater',
     image: charged_blast
   },
   {
@@ -268,7 +268,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Bullet Echo',
+    connectedAbility: 'Bullet Echo',
     image: riccochet
   },
   {
@@ -286,7 +286,7 @@ export default [
     coefficient: 7.0,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: null,
+    connectedAbility: 'Deadly Dance',
     image: bullet_ballet
   }
-];
+]

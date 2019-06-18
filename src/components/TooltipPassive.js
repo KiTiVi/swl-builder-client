@@ -24,7 +24,7 @@ const image = {
 }
 
 export default ({ ability, search, up }) => {
-  const { name, description, weapon, type, recommendedActive } = ability
+  const { name, description, weapon, type, connectedAbility } = ability
 
   return (
     <AbilityTooltip className={`${search ? 'search' : ''} ${up ? '-up' : ''}`}>
@@ -36,10 +36,10 @@ export default ({ ability, search, up }) => {
         <WeaponIcon src={image[weapon]} alt={weapon} />
       </header>
       <p>{description}</p>
-      {search && recommendedActive && (
+      {search && connectedAbility && (
         <div>
-          <p>Connected active: {recommendedActive}</p>
-          <IconPlaceholder name={recommendedActive} type={type} />
+          <p>Connected active: {connectedAbility}</p>
+          <IconPlaceholder name={connectedAbility} type={type} />
         </div>
       )}
     </AbilityTooltip>

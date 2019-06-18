@@ -32,6 +32,7 @@ export default function AbilityComponent({ ability, setAbility, selected }) {
             name={ability.name}
             type={ability.type}
             activeType={ability.activeType}
+            selected={selected}
           />
         </div>
       )}

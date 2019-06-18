@@ -14,7 +14,7 @@ import {
   winds_of_change,
   evulsion,
   immutable
-} from '../../../../../../images/abilities/chaos/actives/index';
+} from '../../../../../../images/abilities/chaos/actives/index'
 
 export default [
   {
@@ -32,7 +32,7 @@ export default [
     coefficient: 1.175,
     type: 'active',
     activeType: 'Basic Ability',
-    recommendedPassive: null,
+    connectedAbility: null,
     image: deconstruct
   },
   {
@@ -50,7 +50,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Paradox Control',
+    connectedAbility: 'Paradox Control',
     image: schism
   },
   {
@@ -68,7 +68,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Dissolution',
+    connectedAbility: 'Dissolution',
     image: entropy,
     tags: ['dmg', 'critPower', 'purge']
   },
@@ -87,7 +87,7 @@ export default [
     coefficient: 3.425,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Disintegrate',
+    connectedAbility: 'Disintegrate',
     image: breakdown
   },
   {
@@ -105,7 +105,7 @@ export default [
     coefficient: 5.8,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: 'Fractured Existence',
+    connectedAbility: 'Fractured Existence',
     image: pandemonium,
     tags: ['knock']
   },
@@ -126,7 +126,7 @@ export default [
     coefficient: 0.45,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Duality',
+    connectedAbility: 'Duality',
     image: tumultuous_whisper,
     tags: ['purge']
   },
@@ -145,7 +145,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Flash-back',
+    connectedAbility: 'Flash-back',
     image: rewind,
     heal: true
   },
@@ -165,7 +165,7 @@ export default [
     coefficient: 1.02,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Rend Space',
+    connectedAbility: 'Rend Space',
     image: reality_fracture,
     tags: ['exposed']
   },
@@ -184,7 +184,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Backlash',
+    connectedAbility: 'Backlash',
     image: twist_fate
   },
   {
@@ -204,7 +204,7 @@ export default [
     coefficient: 3.42,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: 'Disorientation',
+    connectedAbility: 'Disorientation',
     image: anomaly,
     tags: ['exposed', 'evade']
   },
@@ -223,7 +223,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Veil of Deformity',
+    connectedAbility: 'Veil of Deformity',
     image: distortion,
     tags: ['hate']
   },
@@ -242,7 +242,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Basic Ability',
-    recommendedPassive: null,
+    connectedAbility: null,
     image: turmoil
   },
   {
@@ -260,7 +260,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Contradiction',
+    connectedAbility: 'Contradiction',
     image: winds_of_change,
     tags: ['hate']
   },
@@ -279,7 +279,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Mass Evulsion',
+    connectedAbility: 'Mass Evulsion',
     image: evulsion,
     tags: ['purge']
   },
@@ -298,8 +298,8 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: 'Incongruity',
+    connectedAbility: 'Incongruity',
     image: immutable,
     heal: true
   }
-];
+]

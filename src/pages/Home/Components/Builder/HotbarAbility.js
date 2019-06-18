@@ -71,5 +71,17 @@ const Ability = styled.div`
   height: 54px;
   width: 54px;
   margin: 0 1px;
-  border: 2px solid #ddd;
+  background: linear-gradient(
+    to bottom right,
+    #555 10%,
+    #000 10% 20%,
+    #555 20% 30%,
+    #000 30% 40%,
+    #555 40% 50%,
+    #000 50% 60%,
+    #555 60% 70%,
+    #000 70% 80%,
+    #555 80% 90%,
+    #000 90%
+  );
 `

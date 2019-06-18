@@ -14,7 +14,7 @@ import {
   burning_wrath,
   blindside,
   raging_volcano
-} from '../../../../../../images/abilities/hammer/actives/index';
+} from '../../../../../../images/abilities/hammer/actives/index'
 
 export default [
   {
@@ -32,7 +32,7 @@ export default [
     coefficient: 1.175,
     type: 'active',
     activeType: 'Basic Ability',
-    recommendedPassive: null,
+    connectedAbility: null,
     image: smash
   },
   {
@@ -51,7 +51,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Shatter',
+    connectedAbility: 'Shatter',
     image: razor_shards
   },
   {
@@ -69,7 +69,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Outrage',
+    connectedAbility: 'Outrage',
     image: seethe
   },
   {
@@ -88,7 +88,7 @@ export default [
     coefficient: 3.425,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Obliterate',
+    connectedAbility: 'Obliterate',
     image: demolish
   },
   {
@@ -107,7 +107,7 @@ export default [
     coefficient: 5.6,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: 'Annihilate',
+    connectedAbility: 'Annihilate',
     image: eruption,
     tags: ['knock', 'purge', 'exposed']
   },
@@ -127,7 +127,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'No Pain, No Gain',
+    connectedAbility: 'No Pain, No Gain',
     image: pain_suppression,
     heal: true
   },
@@ -147,7 +147,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Brawler',
+    connectedAbility: 'Brawler',
     image: enter_the_fray
   },
   {
@@ -166,7 +166,7 @@ export default [
     coefficient: 0.63,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Let Loose',
+    connectedAbility: 'Let Loose',
     image: rampage,
     tags: ['exposed']
   },
@@ -186,7 +186,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Rock Hard',
+    connectedAbility: 'Rock Hard',
     image: thick_skin,
     tags: ['debilitated']
   },
@@ -206,7 +206,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: 'Juggernaut',
+    connectedAbility: 'Juggernaut',
     image: unstoppable_force,
     tags: ['dmg']
   },
@@ -226,7 +226,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Percussive Maintenance',
+    connectedAbility: 'Percussive Maintenance',
     image: pulverise,
     heal: true
   },
@@ -246,7 +246,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Basic Ability',
-    recommendedPassive: null,
+    connectedAbility: null,
     image: ground_pound
   },
   {
@@ -265,7 +265,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Animosity',
+    connectedAbility: 'Animosity',
     image: burning_wrath
   },
   {
@@ -284,7 +284,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Beatdown',
+    connectedAbility: 'Beatdown',
     image: blindside,
     tags: ['purge']
   },
@@ -304,8 +304,8 @@ export default [
     coefficient: 8.46,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: 'Molten Armor',
+    connectedAbility: 'Molten Armor',
     image: raging_volcano,
     tags: ['movement', 'debilitated']
   }
-];
+]

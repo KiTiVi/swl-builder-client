@@ -15,7 +15,7 @@ export default [
     foes with every other hit of this ability for an
     additional 3 physical damage.`,
     type: 'passive',
-    recommendedActive: 'Hurricane'
+    connectedAbility: 'Hurricane'
   },
   {
     index: 103,
@@ -23,7 +23,7 @@ export default [
     name: 'Keen Edge',
     description: `You "Hone" your blade to a razor sharp edge, increasing your Crit Power with Blade abilities while "Hone" is active by 40%.`,
     type: 'passive',
-    recommendedActive: 'Hone',
+    connectedAbility: 'Hone',
     tags: ['critPwr']
   },
   {
@@ -32,7 +32,7 @@ export default [
     name: 'Storm Surge',
     description: `The waves of your "Tsunami" swell whenever Chi is generated, dealing an additional 4 physical damage to the target.`,
     type: 'passive',
-    recommendedActive: 'Tsunami'
+    connectedAbility: 'Tsunami'
   },
   {
     index: 105,
@@ -40,7 +40,7 @@ export default [
     name: 'Soulforged Blade',
     description: `Your "Dancing Blade" harnesses your soul and the soul of your foe and coalesces into a Spirit Blade upon completion which lasts for 3 attacks. If you have already forged your Spirit Blade, the number of attacks remaining is increased by 3.`,
     type: 'passive',
-    recommendedActive: 'Dancing Blade'
+    connectedAbility: 'Dancing Blade'
   },
   {
     index: 106,
@@ -48,7 +48,7 @@ export default [
     name: 'Masterpiece',
     description: `Your forging technique for your "Spirit Blade" is without blemish or imperfection, causing "Spirit Blade" to deal 17% more damage.`,
     type: 'passive',
-    recommendedActive: null,
+    connectedAbility: null,
     tags: ['dmg']
   },
   {
@@ -57,7 +57,7 @@ export default [
     name: 'Meditate',
     description: `You meditate on the essence of a "Soothing Spring." Each time the heal over time effect restores your health, you have an 18% chance to gain 1 Chi.`,
     type: 'passive',
-    recommendedActive: 'Soothing Spring',
+    connectedAbility: 'Soothing Spring',
     tags: ['chi']
   },
   {
@@ -66,7 +66,7 @@ export default [
     name: 'Reversal',
     description: `Whenever you interrupt an enemy's attack with "Snake's Bite", you reverse the flow of harmful energy and gain 2 Chi. You also direct some of the energy back at your target dealing an additional 2 physical damage.`,
     type: 'passive',
-    recommendedActive: "Snake's Bite",
+    connectedAbility: "Snake's Bite",
     tags: ['chi']
   },
   {
@@ -75,7 +75,7 @@ export default [
     name: 'Waterfall',
     description: `Your "Rushing River" cascades like a waterfall into a new flow. If you damage an enemy with "Rushing River" you are able to activate "Rushing River" a second time within 5 seconds. The damage of this second activation is increased to 26 physical damage.`,
     type: 'passive',
-    recommendedActive: 'Rushing River'
+    connectedAbility: 'Rushing River'
   },
   {
     index: 110,
@@ -83,7 +83,7 @@ export default [
     name: "Master's Focus",
     description: `When you gain Chi, you focus your senses reducing the remaining recharge time of "Supreme Harmony" by 5%.`,
     type: 'passive',
-    recommendedActive: 'Supreme Harmony'
+    connectedAbility: 'Supreme Harmony'
   },
   {
     index: 111,
@@ -91,7 +91,7 @@ export default [
     name: 'Hardened Blade',
     description: `Your "Swallow Cut" tempers and hardens your Spirit Blade. Whenever you hit an enemy with ""Swallow Cut"" you have a 30% chance to not consume an attack from your Spirit Blade.`,
     type: 'passive',
-    recommendedActive: 'Swallow Cut'
+    connectedAbility: 'Swallow Cut'
   },
   {
     index: 112,
@@ -99,7 +99,7 @@ export default [
     name: 'Whirlwind',
     description: `You harness the power of the wind while your ""Tempest"" blows furiously around you. While you are inside of the ground area of your ""Tempest"", your Blade attacks deal an additional 2 physical damage to the target and nearby enemies.`,
     type: 'passive',
-    recommendedActive: 'Tempest'
+    connectedAbility: 'Tempest'
   },
   {
     index: 113,
@@ -107,7 +107,7 @@ export default [
     name: 'Sunder Spirit',
     description: `Your "Exhume Spirit" tears at the spirit energy of your foes, causing all affected enemies to be dealt 4 physical damage every second for 5 seconds.`,
     type: 'passive',
-    recommendedActive: 'Impale Spirit',
+    connectedAbility: 'Impale Spirit',
     tags: ['dot']
   },
   {
@@ -116,7 +116,7 @@ export default [
     name: 'Torrent',
     description: `The waves of your "Typhoon" come crashing down on your foes with unrelenting force, increasing the damage bonus for each target hit by "Typhoon" to 9.3% up to a maximum of 46.5%.`,
     type: 'passive',
-    recommendedActive: 'Typhoon',
+    connectedAbility: 'Typhoon',
     tags: ['dmg']
   },
   {
@@ -181,4 +181,4 @@ export default [
     type: 'passive',
     tags: ['chi']
   }
-];
+]

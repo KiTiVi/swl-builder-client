@@ -14,7 +14,7 @@ import {
   feral_regrowth,
   invigorating_wrath,
   regeneration
-} from '../../../../../../images/abilities/fists/actives/index';
+} from '../../../../../../images/abilities/fists/actives/index'
 
 export default [
   {
@@ -33,7 +33,7 @@ export default [
     coefficient: 1.175,
     type: 'active',
     activeType: 'Basic Ability',
-    recommendedPassive: null,
+    connectedAbility: null,
     image: thrash
   },
   {
@@ -52,7 +52,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Rip',
+    connectedAbility: 'Rip',
     image: savage_sweep
   },
   {
@@ -71,7 +71,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Gore',
+    connectedAbility: 'Gore',
     image: frenzied_wrath
   },
   {
@@ -90,7 +90,7 @@ export default [
     coefficient: 3.425,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Maul',
+    connectedAbility: 'Maul',
     image: mangle
   },
   {
@@ -109,7 +109,7 @@ export default [
     coefficient: 7.1,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: 'Rampage',
+    connectedAbility: 'Rampage',
     image: berserk,
     tags: ['exposed']
   },
@@ -129,7 +129,7 @@ export default [
     coefficient: 2.7,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Bloodbath',
+    connectedAbility: 'Bloodbath',
     image: eviscerate,
     heal: true,
     tags: ['exposed']
@@ -150,7 +150,7 @@ export default [
     coefficient: 2.9,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Brutality',
+    connectedAbility: 'Brutality',
     image: ferocity,
     heal: true
   },
@@ -170,7 +170,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Wild Burst',
+    connectedAbility: 'Wild Burst',
     image: wild_surge
   },
   {
@@ -189,7 +189,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Furious Inspiration',
+    connectedAbility: 'Furious Inspiration',
     image: savagery,
     tags: ['dmg']
   },
@@ -209,7 +209,7 @@ export default [
     coefficient: 12.39,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: 'Killer Instinct',
+    connectedAbility: 'Killer Instinct',
     image: primal_instinct,
     tags: ['dmg', 'heal']
   },
@@ -229,7 +229,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Recuperate',
+    connectedAbility: 'Recuperate',
     image: renewal,
     heal: true
   },
@@ -249,7 +249,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Basic Ability',
-    recommendedPassive: null,
+    connectedAbility: null,
     image: nurture,
     heal: true,
     tags: ['hot']
@@ -270,7 +270,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Outgrowth',
+    connectedAbility: 'Outgrowth',
     image: feral_regrowth,
     heal: true,
     tags: ['hot']
@@ -291,7 +291,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Serenity',
+    connectedAbility: 'Serenity',
     image: invigorating_wrath,
     heal: true
   },
@@ -311,9 +311,9 @@ export default [
     coefficient: 5.81,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: 'Natural Remedy',
+    connectedAbility: 'Natural Remedy',
     image: regeneration,
     heal: true,
     tags: ['cleanse', 'hot']
   }
-];
+]

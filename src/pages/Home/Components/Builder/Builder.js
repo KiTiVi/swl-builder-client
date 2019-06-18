@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
+import { UserContext } from '../../../../UserContext'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import WeaponMenu from './WeaponMenu'
 import Ability from './Ability'
@@ -20,6 +21,7 @@ export default ({
   buildID,
   history
 }) => {
+  const userContext = useContext(UserContext)
   const [menuOption, setMenuOption] = useState('actives')
   const [selectedWeapon, setSelectedWeapon] = useState('Blade')
 
@@ -71,16 +73,36 @@ export default ({
   useEffect(() => {
     updateBuildURL({ selectedActives, selectedPassives, history })
     const abilities = [...selectedActives, ...selectedPassives]
+    const abilityIndexes = {
+      actives: [],
+      passives: []
+    }
 
     const allWeapons = []
-    const abilityIndexes = []
+    // const abilityIndexes = []
 
-    abilities.forEach(ability => {
-      if (ability.weapon) {
-        allWeapons.push(ability.weapon)
-        abilityIndexes.push(ability.index)
+    selectedActives.forEach(active => {
+      if (active.weapon) {
+        allWeapons.push(active.weapon)
+        abilityIndexes.actives.push(active.index)
       }
     })
+
+    selectedPassives.forEach(passive => {
+      if (passive.weapon) {
+        allWeapons.push(passive.weapon)
+        abilityIndexes.passives.push(passive.index)
+      }
+    })
+
+    console.log(abilityIndexes)
+
+    // abilities.forEach(ability => {
+    //   if (ability.weapon) {
+    //     allWeapons.push(ability.weapon)
+    //     abilityIndexes.push(ability.index)
+    //   }
+    // })
 
     const weapons = [...new Set(allWeapons)]
     setWeapons(weapons)
@@ -226,14 +248,15 @@ export default ({
                     <div key={i} className="path">
                       <h3 className="pathname">{path.path}</h3>
                       <Abilites>
-                        {path.actives.map((ability, i) => {
+                        {path.actives.map((active, i) => {
                           return (
                             <Ability
                               key={i}
-                              ability={ability}
+                              ability={active}
                               setAbility={setAbility}
                               selected={
-                                abilityIndexes.includes(ability.index)
+                                abilityIndexes.actives &&
+                                abilityIndexes.actives.includes(active.index)
                                   ? true
                                   : false
                               }
@@ -246,6 +269,7 @@ export default ({
                 })}
               </Container>
             )}
+            {console.log(abilityIndexes)}
             {menuOption === 'passives' && (
               <PassivesContainer>
                 {passives[selectedWeapon].map((passive, i) => {
@@ -254,6 +278,12 @@ export default ({
                       key={i}
                       ability={passive}
                       setAbility={setAbility}
+                      selected={
+                        abilityIndexes.passives &&
+                        abilityIndexes.passives.includes(passive.index)
+                          ? true
+                          : false
+                      }
                     />
                   )
                 })}
@@ -314,15 +344,17 @@ export default ({
             </DragDropContext>
           </SelectedAbilities>
           <Buttons>
-            <SaveBuild
-              weapons={weapons}
-              actives={selectedActives}
-              passives={selectedPassives}
-              queryString={queryString}
-              buildID={buildID}
-              oldName={name}
-              oldDescription={description}
-            />
+            {userContext.username && (
+              <SaveBuild
+                weapons={weapons}
+                actives={selectedActives}
+                passives={selectedPassives}
+                queryString={queryString}
+                buildID={buildID}
+                oldName={name}
+                oldDescription={description}
+              />
+            )}
           </Buttons>
         </Flex>
       </Build>

@@ -14,7 +14,7 @@ import {
   unveil_essence,
   energise,
   anima_suffusion
-} from '../../../../../../images/abilities/rifle/actives/index';
+} from '../../../../../../images/abilities/rifle/actives/index'
 
 export default [
   {
@@ -33,7 +33,7 @@ export default [
     coefficient: 1.175,
     type: 'active',
     activeType: 'Basic Ability',
-    recommendedPassive: null,
+    connectedAbility: null,
     image: placed_shot
   },
   {
@@ -52,7 +52,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Extended Magazine',
+    connectedAbility: 'Extended Magazine',
     image: full_auto
   },
   {
@@ -70,7 +70,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Heavy Payload',
+    connectedAbility: 'Heavy Payload',
     image: lock_and_load
   },
   {
@@ -89,7 +89,7 @@ export default [
     coefficient: 3.425,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Stability',
+    connectedAbility: 'Stability',
     image: burst_fire
   },
   {
@@ -108,7 +108,7 @@ export default [
     coefficient: 6.97,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: 'Unerring Accuracy',
+    connectedAbility: 'Unerring Accuracy',
     image: red_mist
   },
   {
@@ -128,7 +128,7 @@ export default [
     coefficient: 8.186,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Slow Burn',
+    connectedAbility: 'Slow Burn',
     image: incendiary_grenade,
     tags: ['purge', 'dot']
   },
@@ -149,7 +149,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Enlarged Canister',
+    connectedAbility: 'Enlarged Canister',
     image: anima_canister,
     heal: true
   },
@@ -169,7 +169,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Withdrawal',
+    connectedAbility: 'Withdrawal',
     image: tactical_retreat,
     tags: ['movement']
   },
@@ -190,7 +190,7 @@ export default [
     coefficient: 1.637,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Lingering Essence',
+    connectedAbility: 'Lingering Essence',
     image: essence_grenades,
     heal: true,
     tags: ['debilitated']
@@ -212,7 +212,7 @@ export default [
     coefficient: 11.9,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: 'Auto-loader',
+    connectedAbility: 'Auto-loader',
     image: high_explosive_grenade,
     tags: ['debilitated', 'dot']
   },
@@ -232,7 +232,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Bolstering Shot',
+    connectedAbility: 'Bolstering Shot',
     image: vital_shot,
     heal: true
   },
@@ -252,7 +252,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Basic Ability',
-    recommendedPassive: null,
+    connectedAbility: null,
     image: leeching_ray,
     heal: true
   },
@@ -272,7 +272,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Reap Essence',
+    connectedAbility: 'Reap Essence',
     image: unveil_essence,
     heal: true
   },
@@ -292,7 +292,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Vivify',
+    connectedAbility: 'Vivify',
     image: energise,
     tags: ['heal', 'purge']
   },
@@ -312,8 +312,8 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: 'Permeate',
+    connectedAbility: 'Permeate',
     image: anima_suffusion,
     tags: ['heal']
   }
-];
+]

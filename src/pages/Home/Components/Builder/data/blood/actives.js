@@ -14,7 +14,7 @@ import {
   convalesce,
   redemption,
   communion
-} from '../../../../../../images/abilities/blood/actives/index';
+} from '../../../../../../images/abilities/blood/actives/index'
 
 export default [
   {
@@ -51,7 +51,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Lingering Curse',
+    connectedAbility: 'Lingering Curse',
     image: dread_sigil
   },
   {
@@ -70,7 +70,7 @@ export default [
     coefficient: 2.1,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Contaminate',
+    connectedAbility: 'Contaminate',
     image: reap,
     heal: true,
     tags: ['dot', 'cleanse']
@@ -91,7 +91,7 @@ export default [
     coefficient: 5.19,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Flay',
+    connectedAbility: 'Flay',
     image: maleficium
   },
   {
@@ -110,7 +110,7 @@ export default [
     coefficient: 5.22,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: 'Convergence',
+    connectedAbility: 'Convergence',
     heal: true,
     image: sanguine_coalescence,
     tags: ['barrier']
@@ -131,7 +131,7 @@ export default [
     coefficient: 5.77,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Blood Flow',
+    connectedAbility: 'Blood Flow',
     image: rupture,
     tags: ['stun']
   },
@@ -151,7 +151,7 @@ export default [
     coefficient: 2.28,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Defilement',
+    connectedAbility: 'Defilement',
     image: desecrate,
     tags: ['dot']
   },
@@ -171,7 +171,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Resurgence',
+    connectedAbility: 'Resurgence',
     heal: true,
     image: rejuvenate
   },
@@ -191,7 +191,7 @@ export default [
     coefficient: 1.5,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Paroxysm',
+    connectedAbility: 'Paroxysm',
     image: runic_hex,
     heaL: true,
     tags: ['dot', 'debilitated']
@@ -212,7 +212,7 @@ export default [
     coefficient: 4.11,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: 'Desolate',
+    connectedAbility: 'Desolate',
     image: eldritch_scourge,
     heaL: true,
     tags: ['dot', 'debilitated']
@@ -233,7 +233,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Restorative Ward',
+    connectedAbility: 'Restorative Ward',
     image: sanctuary,
     heaL: true,
     tags: ['barrier']
@@ -254,7 +254,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Basic Ability',
-    recommendedPassive: null,
+    connectedAbility: null,
     image: mend,
     heaL: true
   },
@@ -274,7 +274,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Soothe',
+    connectedAbility: 'Soothe',
     image: convalesce,
     heaL: true,
     tags: ['barrier']
@@ -295,7 +295,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Mercy',
+    connectedAbility: 'Mercy',
     image: redemption,
     heaL: true,
     tags: ['cleanse']
@@ -316,9 +316,9 @@ export default [
     coefficient: 8.313,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: 'Sacrament',
+    connectedAbility: 'Sacrament',
     image: communion,
     heaL: true,
     tags: ['barrier', 'cleanse']
   }
-];
+]

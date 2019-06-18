@@ -14,7 +14,7 @@ import {
   inferno,
   flashpoint,
   overload
-} from '../../../../../../images/abilities/elementalism/actives/index';
+} from '../../../../../../images/abilities/elementalism/actives/index'
 
 export default [
   {
@@ -33,7 +33,7 @@ export default [
     coefficient: 1.175,
     type: 'active',
     activeType: 'Basic Ability',
-    recommendedPassive: null,
+    connectedAbility: null,
     image: fireball
   },
   {
@@ -52,7 +52,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Static Charge',
+    connectedAbility: 'Static Charge',
     image: chain_lightning
   },
   {
@@ -71,7 +71,7 @@ export default [
     coefficient: 1.45,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Cryoblast',
+    connectedAbility: 'Cryoblast',
     image: flash_freeze,
     tags: ['debilitated']
   },
@@ -91,7 +91,7 @@ export default [
     coefficient: 3.425,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Superconductor',
+    connectedAbility: 'Superconductor',
     image: mjolnir
   },
   {
@@ -110,7 +110,7 @@ export default [
     coefficient: 6.98,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: 'Glaciate',
+    connectedAbility: 'Glaciate',
     image: ice_beam,
     tags: ['movement', 'debilitated']
   },
@@ -130,7 +130,7 @@ export default [
     coefficient: 1.08,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Icy Steps',
+    connectedAbility: 'Icy Steps',
     image: crystallised_frost,
     tags: ['dot', 'debilitated']
   },
@@ -150,7 +150,7 @@ export default [
     coefficient: 3.4,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Crystallised Blaze',
+    connectedAbility: 'Crystallised Blaze',
     image: crystallised_flame,
     tags: ['dot']
   },
@@ -170,7 +170,7 @@ export default [
     coefficient: 1.3,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Discharge',
+    connectedAbility: 'Discharge',
     image: crystallised_storm,
     tags: ['dot']
   },
@@ -190,7 +190,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Volatile Current',
+    connectedAbility: 'Volatile Current',
     image: flicker
   },
   {
@@ -209,7 +209,7 @@ export default [
     coefficient: 5.44,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: 'Frigid Tempest',
+    connectedAbility: 'Frigid Tempest',
     image: blizzard,
     tags: ['dot', 'debilitated']
   },
@@ -229,7 +229,7 @@ export default [
     coefficient: 2.525,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Blazing Bolts',
+    connectedAbility: 'Blazing Bolts',
     image: fire_bolt
   },
   {
@@ -248,7 +248,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Basic Ability',
-    recommendedPassive: null,
+    connectedAbility: null,
     image: shock
   },
   {
@@ -267,7 +267,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Scorched Earth',
+    connectedAbility: 'Scorched Earth',
     image: inferno
   },
   {
@@ -286,7 +286,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Blast Wave',
+    connectedAbility: 'Blast Wave',
     image: flashpoint
   },
   {
@@ -305,8 +305,8 @@ export default [
     coefficient: 8.01,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: 'Elemental Force',
+    connectedAbility: 'Elemental Force',
     image: overload,
     tags: ['debilitated', 'purge']
   }
-];
+]

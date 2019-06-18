@@ -32,7 +32,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Basic Ability',
-    recommendedPassive: null,
+    connectedAbility: null,
     image: flowing_strike
   },
   {
@@ -50,7 +50,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Eye of the Storm',
+    connectedAbility: 'Eye of the Storm',
     image: hurricane
   },
   {
@@ -68,7 +68,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Keen Edge',
+    connectedAbility: 'Keen Edge',
     image: hone
   },
   {
@@ -86,7 +86,7 @@ export default [
     coefficient: 5.19,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Storm Surge',
+    connectedAbility: 'Storm Surge',
     image: tsunami
   },
   {
@@ -105,7 +105,7 @@ export default [
     coefficient: 7.58,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: 'Soulforged Blade',
+    connectedAbility: 'Soulforged Blade',
     image: dancing_blade
   },
   {
@@ -130,7 +130,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Masterpiece',
+    connectedAbility: 'Masterpiece',
     image: spirit_blade
   },
   {
@@ -149,7 +149,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Meditate',
+    connectedAbility: 'Meditate',
     image: soothing_spring,
     heal: true,
     tags: ['cleanse']
@@ -169,7 +169,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Reversal',
+    connectedAbility: 'Reversal',
     image: snakes_bite,
     tags: ['stun']
   },
@@ -188,7 +188,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Waterfall',
+    connectedAbility: 'Waterfall',
     image: rushing_river,
     tags: ['dash']
   },
@@ -209,7 +209,7 @@ export default [
     coefficient: null,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: "Master's Focus",
+    connectedAbility: "Master's Focus",
     image: supreme_harmony,
     heal: true,
     tags: ['dmg', 'speed', 'cleanse']
@@ -229,7 +229,7 @@ export default [
     coefficient: 2.525,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Hardened Blade',
+    connectedAbility: 'Hardened Blade',
     image: swallow_cut
   },
   {
@@ -262,7 +262,7 @@ export default [
     cooldown: 0,
     type: 'active',
     activeType: 'Power Ability',
-    recommendedPassive: 'Whirlwind',
+    connectedAbility: 'Whirlwind',
     image: tempest,
     tags: ['dot']
   },
@@ -284,7 +284,7 @@ export default [
     cooldown: 20,
     type: 'active',
     activeType: 'Special Ability',
-    recommendedPassive: 'Sunder Spirit',
+    connectedAbility: 'Sunder Spirit',
     image: impale_spirit,
     tags: ['hinder', 'dot', 'exposed']
   },
@@ -304,7 +304,7 @@ export default [
     coefficient: 1.28,
     type: 'active',
     activeType: 'Elite Ability',
-    recommendedPassive: 'Torrent',
+    connectedAbility: 'Torrent',
     image: typhoon,
     tags: ['dmg']
   }

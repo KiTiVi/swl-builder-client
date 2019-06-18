@@ -6,7 +6,7 @@ export default [
     description:
       'Whenever you reload your shotgun you salvage a portion of your power, healing you for 6% of your maximum health.',
     type: 'passive',
-    recommendedActive: null
+    connectedAbility: null
   },
   {
     index: 702,
@@ -15,7 +15,7 @@ export default [
     description:
       'Concentrate additional power into your "Both Barrels" ability, causing this ability to perform an additional hit dealing 2 physical damage to each target.',
     type: 'passive',
-    recommendedActive: 'Both Barrels'
+    connectedAbility: 'Both Barrels'
   },
   {
     index: 703,
@@ -24,7 +24,7 @@ export default [
     description:
       'Keep firing! When you activate "Opening Shot" you gain a beneficial effect that causes your Shotgun attacks to deal 1 additional physical damage until an enemy deals damage to you. Also, when you critically hit with a Shotgun ability while "Opening Shot" is active you reload 1 shell.',
     type: 'passive',
-    recommendedActive: 'Opening Shot'
+    connectedAbility: 'Opening Shot'
   },
   {
     index: 704,
@@ -33,7 +33,7 @@ export default [
     description:
       'Get up close and personal with "Raging Shot," increasing the damage dealt to 18 physical damage to targets within 3 metres.',
     type: 'passive',
-    recommendedActive: 'Raging Shot'
+    connectedAbility: 'Raging Shot'
   },
   {
     index: 705,
@@ -42,7 +42,7 @@ export default [
     description:
       'Pour your full force into your "Full Salvo" ability, causing each successive hit to deal 40% more base damage.',
     type: 'passive',
-    recommendedActive: 'Full Salvo'
+    connectedAbility: 'Full Salvo'
   },
   {
     index: 706,
@@ -51,7 +51,7 @@ export default [
     description:
       'Fortify yourself and your group members with your "Reconstituting Shells" ability, improving Protection by 2045 for 10 seconds. This bonus stacks for each shell spent and group members receive half that amount.',
     type: 'passive',
-    recommendedActive: 'Reconstituting Shells'
+    connectedAbility: 'Reconstituting Shells'
   },
   {
     index: 707,
@@ -60,7 +60,7 @@ export default [
     description:
       'While "Glutton for Punishment" is active, your enemies failed attacks strengthen your resolve. Attacks which glance you heal you for 10% of your maximum health.',
     type: 'passive',
-    recommendedActive: 'Glutton for Punishment'
+    connectedAbility: 'Glutton for Punishment'
   },
   {
     index: 708,
@@ -69,7 +69,7 @@ export default [
     description:
       'When using "Shell Salvage," your expertise at salvaging allows you to cause this ability to always offer the option to reload the same type of shell you just salvaged. In addition, you also gain 5 Energy for your other weapon.',
     type: 'passive',
-    recommendedActive: 'Shell Salvage'
+    connectedAbility: 'Shell Salvage'
   },
   {
     index: 709,
@@ -78,7 +78,7 @@ export default [
     description:
       'Whenever "Cleanup" purifies you or a group member of a detrimental effect, they are empowered. For the next 6 seconds, all of their attacks deal an additional 2 physical damage.',
     type: 'passive',
-    recommendedActive: 'Cleanup'
+    connectedAbility: 'Cleanup'
   },
   {
     index: 710,
@@ -87,7 +87,7 @@ export default [
     description:
       'When the shells you launched with "Bombardment" strike an enemy, they break off randomly into 3 additional smaller explosives dealing 2 physical damage.',
     type: 'passive',
-    recommendedActive: 'Bombardment'
+    connectedAbility: 'Bombardment'
   },
   {
     index: 711,
@@ -96,7 +96,7 @@ export default [
     description:
       'Whenever you fire a "Rocket Pod" you also bolster your defences, increasing your Protection by 2860 for 5 seconds. This effect can stack up to 3 times.',
     type: 'passive',
-    recommendedActive: 'Rocket Pod'
+    connectedAbility: 'Rocket Pod'
   },
   {
     index: 712,
@@ -105,7 +105,7 @@ export default [
     description:
       'When launching your "HEAT Round" at enemies, you draw strength from those affected by the blast. You gain 140 Protection for each enemy caught in the blast.\nAdditionally, any allies within the blast radius gain 140 Protection. This effect lasts 10 seconds and can stack up to 10 times.',
     type: 'passive',
-    recommendedActive: 'HEAT Round'
+    connectedAbility: 'HEAT Round'
   },
   {
     index: 713,
@@ -114,7 +114,7 @@ export default [
     description:
       'Your mastery of "CQC" allows you to deal with crowds more effectively. Enemies within 5 metres of the target are also fully affected by this ability. Additionally, any target who is successfully interrupted by this attack is dealt 5 physical damage.',
     type: 'passive',
-    recommendedActive: 'CQC'
+    connectedAbility: 'CQC'
   },
   {
     index: 714,
@@ -123,7 +123,7 @@ export default [
     description:
       'When using "Kneecapper" your sturdy footing allows you to improve the duration of the effect to 10 seconds. In addition, the bonus granted is always the maximum possible, regardless of the number of shells consumed.',
     type: 'passive',
-    recommendedActive: 'Kneecapper'
+    connectedAbility: 'Kneecapper'
   },
   {
     index: 715,
@@ -132,7 +132,7 @@ export default [
     description:
       'When you have an odd number of shells loaded, your Shotgun basic abilities deal 70% more damage. When you have an even number of shells loaded, your Shotgun power abilities deal 15% more damage.',
     type: 'passive',
-    recommendedActive: null
+    connectedAbility: null
   },
   {
     index: 716,
@@ -141,7 +141,7 @@ export default [
     description:
       "Pack additional incendiaries into your Dragon's Breath Shells, improving the damage they deal by 12%.",
     type: 'passive',
-    recommendedActive: null
+    connectedAbility: null
   },
   {
     index: 717,
@@ -150,7 +150,7 @@ export default [
     description:
       'Whenever you load Depleted Uranium Shells, you feed in 2 extra shells.',
     type: 'passive',
-    recommendedActive: null
+    connectedAbility: null
   },
   {
     index: 718,
@@ -159,7 +159,7 @@ export default [
     description:
       "You are an expert with all manner of munitions, allowing you to have more opportunities to load Dragon's Breath Shells, Depleted Uranium Shells, and Armor-Piercing Shells.",
     type: 'passive',
-    recommendedActive: null
+    connectedAbility: null
   },
   {
     index: 719,
@@ -168,7 +168,7 @@ export default [
     description:
       'You condense the anima in your Anima-Infused Shells, improving their healing power. You now regain 4.5% of your maximum health when firing these shells.',
     type: 'passive',
-    recommendedActive: null
+    connectedAbility: null
   },
   {
     index: 720,
@@ -177,7 +177,7 @@ export default [
     description:
       'Whenever you reload your Shotgun, you gather your resolve and shield yourself. For the next 4 seconds, your Protection is increased by 1500.',
     type: 'passive',
-    recommendedActive: null
+    connectedAbility: null
   },
   {
     index: 721,
@@ -186,7 +186,7 @@ export default [
     description:
       'While in combat, if you still have shells loaded in your shotgun, you load an additional shell every 5 seconds.',
     type: 'passive',
-    recommendedActive: null
+    connectedAbility: null
   },
   {
     index: 722,
@@ -195,6 +195,6 @@ export default [
     description:
       'Whenever an attack glances you, you shrug off the attack and focus on pushing onward. Your next Shotgun attack after being glanced will heal you for 3% of your maximum health.',
     type: 'passive',
-    recommendedActive: null
+    connectedAbility: null
   }
-];
+]
