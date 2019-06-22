@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import TooltipAbility from '../../../../components/TooltipAbility'
+import FilteredAbility from './FilteredAbility'
 import { allAbilities } from './data/index'
 import weapons from '../../../../images/weapons/index'
 import { allFilters } from './filters'
 
-export default ({ clickedAbility }) => {
+export default ({ clickedAbility, showAbility }) => {
   const [showFilters, setShowFilters] = useState(false)
   const [tagsExpanded, setTagsExpanded] = useState(false)
   const [filters, setFilters] = useState({
@@ -18,8 +19,6 @@ export default ({ clickedAbility }) => {
   const [filteredAbilities, setFilteredAbilities] = useState(allAbilities)
 
   useEffect(() => {
-    console.log(filters)
-
     let filteredAbilities = allAbilities
 
     for (const filter in filters) {
@@ -127,12 +126,22 @@ export default ({ clickedAbility }) => {
           onChange={e => setFilters({ ...filters, search: e.target.value })}
         />
       </label>
-      <span onClick={() => setShowFilters(!showFilters)}>Filters</span>
+      <div
+        className="Search-filters-btn"
+        onClick={() => setShowFilters(!showFilters)}
+      >
+        <i className="fas fa-filter" />
+        <p>FILTERS</p>
+      </div>
+
       {(showFilters || filters.search.length > 0) && (
         <>
           <Filters tagsExpanded={tagsExpanded}>
             {allFilters.map(filter => (
-              <>
+              <div
+                key={filter.name}
+                style={{ display: 'inline-block', width: '50%' }}
+              >
                 <h3>{filter.name}</h3>
                 <select
                   onChange={e => handleDropdown(filter.key, e.target.value)}
@@ -143,7 +152,7 @@ export default ({ clickedAbility }) => {
                     </option>
                   ))}
                 </select>
-              </>
+              </div>
             ))}
             <h3>Tags</h3>
             <ul className="tags">{renderFilters()}</ul>
@@ -171,19 +180,26 @@ export default ({ clickedAbility }) => {
           </Filters>
           <FilteredAbilities>
             {filteredAbilities.map((ability, i) => (
-              <li key={i} className="list-item">
-                {ability.name}{' '}
-                <img
-                  className="ability-image"
-                  src={weapons[ability.weapon]}
-                  alt={ability.weapon}
-                />
-              </li>
+              <FilteredAbility key={i} ability={ability} />
+              // <li
+              //   key={i}
+              //   className="list-item"
+              //   onClick={() => showAbility(ability)}
+              // >
+              //   {ability.name}{' '}
+              //   <img
+              //     className="ability-image"
+              //     src={weapons[ability.weapon]}
+              //     alt={ability.weapon}
+              //   />
+              // </li>
             ))}
           </FilteredAbilities>
         </>
       )}
-      {clickedAbility && <TooltipAbility ability={clickedAbility} search />}
+      {!showFilters && filters.search.length === 0 && clickedAbility && (
+        <TooltipAbility ability={clickedAbility} search />
+      )}
     </Search>
   )
 }
@@ -192,13 +208,13 @@ const Search = styled.aside`
   flex: 1;
   margin-top: 43px;
   background: #000;
-  border-radius: 20px 20px 0 0;
   position: relative;
 
   .Search-input-label {
     display: block;
     padding: 14px;
     background: linear-gradient(to bottom, #444 20%, #222);
+    border-radius: 20px 20px 0 0;
     position: relative;
 
     &::after {
@@ -229,22 +245,31 @@ const Search = styled.aside`
       0 2px hsla(0, 0%, 100%, 0.15);
     border: none;
   }
+
+  .Search-filters-btn {
+    display: inline-flex;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    background: #444;
+    border: 1px solid #73777d;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+
+    p {
+      margin: 0 0 0 5px;
+    }
+  }
 `
 
 const Filters = styled.form`
   position: absolute;
+  top: 56px;
   left: 0;
   transform: translateX(-100%);
+  padding: 10px;
   background: #000;
-  z-index: 2000;
-
-  div.abilityType {
-    display: flex;
-
-    label {
-      flex: 1;
-    }
-  }
+  z-index: 1000;
 
   ul.tags {
     display: flex;
@@ -283,6 +308,11 @@ const FilteredAbilities = styled.ul`
     background: #222;
     padding: 5px 10px;
     margin-bottom: 10px;
+    position: relative;
+
+    &:hover {
+      background: #333;
+    }
 
     img.ability-image {
       height: 40px;

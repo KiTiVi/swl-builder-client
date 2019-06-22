@@ -1,29 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import BladesIcon from '../images/weapons/BladesIcon.png'
-import HammersIcon from '../images/weapons/HammersIcon.png'
-import FistsIcon from '../images/weapons/FistsIcon.png'
-import BloodIcon from '../images/weapons/BloodIcon.png'
-import ChaosIcon from '../images/weapons/ChaosIcon.png'
-import ElementalsIcon from '../images/weapons/ElementalsIcon.png'
-import ShotgunsIcon from '../images/weapons/ShotgunsIcon.png'
-import PistolsIcon from '../images/weapons/PistolsIcon.png'
-import AssaultRiflesIcon from '../images/weapons/AssaultRiflesIcon.png'
 import IconPlaceholder from './IconPlaceholder'
 
-const image = {
-  Blade: BladesIcon,
-  Hammer: HammersIcon,
-  'Fist Weapons': FistsIcon,
-  'Blood Magic': BloodIcon,
-  'Chaos Magic': ChaosIcon,
-  Elementalism: ElementalsIcon,
-  Shotgun: ShotgunsIcon,
-  'Dual Pistols': PistolsIcon,
-  'Assault Rifle': AssaultRiflesIcon
-}
-
-export default ({ ability, search, up }) => {
+export default ({ ability, search, up, list }) => {
   const {
     name,
     activeType,
@@ -38,7 +17,11 @@ export default ({ ability, search, up }) => {
   } = ability
 
   return (
-    <AbilityTooltip className={`${search ? 'search' : ''} ${up ? '-up' : ''}`}>
+    <AbilityTooltip
+      className={`${search ? 'search' : ''} ${up ? '-up' : ''} ${
+        list ? '-list' : ''
+      }`}
+    >
       <header className="AbilityTooltip--header">
         <div className="AbilityTooltip--type-and-weapon">
           <h3>{name}</h3>
@@ -83,7 +66,7 @@ const AbilityTooltip = styled.div`
   left: 0;
   width: 300px;
   padding: 20px 10px;
-  z-index: 1000;
+  z-index: 2000;
   white-space: pre-line;
 
   background: #000;
@@ -94,6 +77,7 @@ const AbilityTooltip = styled.div`
     &--header {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       margin-bottom: 20px;
 
       h3 {
@@ -137,18 +121,12 @@ const AbilityTooltip = styled.div`
     top: auto;
     bottom: 100%;
   }
-`
 
-const WeaponIcon = styled.img`
-  height: 50px;
-  width: 50px;
-  margin-bottom: 2px;
-  border-radius: 10px 0 0 10px;
-  background: ${props =>
-    props.selected
-      ? `linear-gradient(to right,
-      rgb(243, 211, 131) 20%,
-      rgb(153, 128, 74)
-    )`
-      : `linear-gradient(to right, #444 20%, #222)`};
+  &.-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    z-index: 2000;
+  }
 `

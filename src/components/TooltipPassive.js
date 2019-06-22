@@ -23,7 +23,7 @@ const image = {
   'Assault Rifle': AssaultRiflesIcon
 }
 
-export default ({ ability, search, up }) => {
+export default ({ ability, search, up, list }) => {
   const { name, description, weapon, type, connectedAbility } = ability
 
   return (
@@ -52,7 +52,7 @@ const AbilityTooltip = styled.div`
   left: 0;
   width: 300px;
   padding: 20px 10px;
-  z-index: 1000;
+  z-index: 2000;
   white-space: pre-line;
 
   background: #000;

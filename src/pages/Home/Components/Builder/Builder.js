@@ -72,14 +72,12 @@ export default ({
 
   useEffect(() => {
     updateBuildURL({ selectedActives, selectedPassives, history })
-    const abilities = [...selectedActives, ...selectedPassives]
     const abilityIndexes = {
       actives: [],
       passives: []
     }
 
     const allWeapons = []
-    // const abilityIndexes = []
 
     selectedActives.forEach(active => {
       if (active.weapon) {
@@ -95,15 +93,6 @@ export default ({
       }
     })
 
-    // console.log(abilityIndexes)
-
-    // abilities.forEach(ability => {
-    //   if (ability.weapon) {
-    //     allWeapons.push(ability.weapon)
-    //     abilityIndexes.push(ability.index)
-    //   }
-    // })
-
     const weapons = [...new Set(allWeapons)]
     setWeapons(weapons)
     setAbilityIndexes(abilityIndexes)
@@ -113,8 +102,16 @@ export default ({
     setSelectedWeapon(weaponName)
   }
 
+  const showAbility = ability => {
+    if (clickedAbility && ability.index === clickedAbility.index) {
+      setClickedAbility(null)
+    } else {
+      setClickedAbility(ability)
+    }
+  }
+
   const setAbility = ability => {
-    setClickedAbility(ability)
+    showAbility(ability)
 
     if (
       selectedActives.some(
@@ -291,7 +288,7 @@ export default ({
           </SelectContainer>
         </Builder>
 
-        <Search clickedAbility={clickedAbility} />
+        <Search clickedAbility={clickedAbility} showAbility={showAbility} />
       </Content>
 
       <Build>

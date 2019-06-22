@@ -1,14 +1,14 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import Login from './Login'
-import UserMenu from './UserMenu'
+// import Login from './Login'
+// import UserMenu from './UserMenu'
 import logo from '../images/SWL_LOGO_RASTER_DARKBKG_032717.png'
-import { UserContext } from '../UserContext'
-import Signup from './Signup'
+// import { UserContext } from '../UserContext'
+// import Signup from './Signup'
 
 export default () => {
-  const userContext = useContext(UserContext)
+  // const userContext = useContext(UserContext)
 
   return (
     <Header>
