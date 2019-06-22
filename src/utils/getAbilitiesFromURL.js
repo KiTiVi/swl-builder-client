@@ -5,6 +5,15 @@ import {
 } from '../pages/Home/Components/Builder/data/index'
 
 export const getAbilitiesFromURL = ({ actives, passives }) => {
+  // let allSomething = []
+
+  // allActives.forEach(element => {
+  //   allSomething.push(element.activeType)
+  // })
+
+  // let bajs = [...new Set(allSomething)]
+  // console.log(bajs)
+
   const active_1 = actives.substring(0, 3)
   const active_2 = actives.substring(3, 6)
   const active_3 = actives.substring(6, 9)

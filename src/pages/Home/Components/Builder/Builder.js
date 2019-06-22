@@ -95,7 +95,7 @@ export default ({
       }
     })
 
-    console.log(abilityIndexes)
+    // console.log(abilityIndexes)
 
     // abilities.forEach(ability => {
     //   if (ability.weapon) {
@@ -269,7 +269,6 @@ export default ({
                 })}
               </Container>
             )}
-            {console.log(abilityIndexes)}
             {menuOption === 'passives' && (
               <PassivesContainer>
                 {passives[selectedWeapon].map((passive, i) => {

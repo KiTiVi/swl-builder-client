@@ -191,7 +191,7 @@ export default [
     activeType: 'Special Ability',
     connectedAbility: 'Furious Inspiration',
     image: savagery,
-    tags: ['dmg']
+    tags: ['damage']
   },
   {
     index: 310,
@@ -211,7 +211,7 @@ export default [
     activeType: 'Elite Ability',
     connectedAbility: 'Killer Instinct',
     image: primal_instinct,
-    tags: ['dmg', 'heal']
+    tags: ['damage', 'heal']
   },
   {
     index: 311,

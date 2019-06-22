@@ -73,7 +73,7 @@ export default [
     activeType: 'Special Ability',
     connectedAbility: 'Fire at Will',
     image: opening_shot,
-    tags: ['critPower']
+    tags: ['Crit. Power']
   },
   {
     index: 704,

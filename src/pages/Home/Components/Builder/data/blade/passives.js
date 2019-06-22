@@ -24,7 +24,7 @@ export default [
     description: `You "Hone" your blade to a razor sharp edge, increasing your Crit Power with Blade abilities while "Hone" is active by 40%.`,
     type: 'passive',
     connectedAbility: 'Hone',
-    tags: ['critPwr']
+    tags: ['Crit. Power']
   },
   {
     index: 104,
@@ -49,7 +49,7 @@ export default [
     description: `Your forging technique for your "Spirit Blade" is without blemish or imperfection, causing "Spirit Blade" to deal 17% more damage.`,
     type: 'passive',
     connectedAbility: null,
-    tags: ['dmg']
+    tags: ['damage']
   },
   {
     index: 107,
@@ -117,7 +117,7 @@ export default [
     description: `The waves of your "Typhoon" come crashing down on your foes with unrelenting force, increasing the damage bonus for each target hit by "Typhoon" to 9.3% up to a maximum of 46.5%.`,
     type: 'passive',
     connectedAbility: 'Typhoon',
-    tags: ['dmg']
+    tags: ['damage']
   },
   {
     index: 115,
@@ -147,7 +147,7 @@ export default [
     name: 'Draw Sword, Draw Blood',
     description: `When you draw your Blade it thirsts to spill blood before being sheathed. Whenever you enter combat, your next 3 Blade attacks deal 20% more damage. While in combat, you gain 1 use of this bonus effect every 10 seconds.`,
     type: 'passive',
-    tags: ['dmg']
+    tags: ['damage']
   },
   {
     index: 119,

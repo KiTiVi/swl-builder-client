@@ -208,7 +208,7 @@ export default [
     activeType: 'Elite Ability',
     connectedAbility: 'Juggernaut',
     image: unstoppable_force,
-    tags: ['dmg']
+    tags: ['damage']
   },
   {
     index: 211,

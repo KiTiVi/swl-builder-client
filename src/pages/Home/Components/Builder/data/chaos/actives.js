@@ -70,7 +70,7 @@ export default [
     activeType: 'Special Ability',
     connectedAbility: 'Dissolution',
     image: entropy,
-    tags: ['dmg', 'critPower', 'purge']
+    tags: ['damage', 'Crit. Power', 'purge']
   },
   {
     index: 504,

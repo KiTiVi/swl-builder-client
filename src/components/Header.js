@@ -23,14 +23,14 @@ export default () => {
       </div>
       <h2>A FANMADE DECK BUILDER</h2>
       <div style={{ flex: '1', textAlign: 'right' }}>
-        {userContext.username ? (
+        {/* {userContext.username ? (
           <UserMenu />
         ) : (
           <>
             <Login />
             <Signup />
           </>
-        )}
+        )} */}
       </div>
     </Header>
   )

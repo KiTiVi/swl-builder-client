@@ -65,3 +65,5 @@ export const allPassives = [
   ...pistols_passives,
   ...rifle_passives
 ]
+
+export const allAbilities = [...allActives, ...allPassives]

@@ -212,7 +212,7 @@ export default [
     connectedAbility: "Master's Focus",
     image: supreme_harmony,
     heal: true,
-    tags: ['dmg', 'speed', 'cleanse']
+    tags: ['damage', 'speed', 'cleanse']
   },
   {
     index: 111,
@@ -306,6 +306,6 @@ export default [
     activeType: 'Elite Ability',
     connectedAbility: 'Torrent',
     image: typhoon,
-    tags: ['dmg']
+    tags: ['damage']
   }
 ]
