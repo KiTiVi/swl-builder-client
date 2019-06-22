@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import IconPlaceholder from './IconPlaceholder'
+import { allAbilities } from '../pages/Home/Components/Builder/data/index'
 
 export default ({ ability, search, up, list }) => {
   const {
@@ -15,6 +16,19 @@ export default ({ ability, search, up, list }) => {
     connectedAbility,
     image
   } = ability
+
+  const getImg = connectedAbility => {
+    let image = null
+    allAbilities.forEach(ability => {
+      if (
+        ability.name === connectedAbility &&
+        ability.weapon === ability.weapon
+      ) {
+        image = ability.image
+      }
+    })
+    return image
+  }
 
   return (
     <AbilityTooltip
@@ -53,7 +67,19 @@ export default ({ ability, search, up, list }) => {
             Connected {type === 'active' ? 'passive' : 'active'}:{' '}
             {connectedAbility}
           </p>
-          <IconPlaceholder name={connectedAbility} type={type} />
+          {type === 'passive' ? (
+            <img
+              src={getImg(connectedAbility)}
+              alt={connectedAbility}
+              className="ability-image"
+            />
+          ) : (
+            <IconPlaceholder
+              name={connectedAbility}
+              type={type}
+              connectedAbility
+            />
+          )}
         </div>
       )}
     </AbilityTooltip>

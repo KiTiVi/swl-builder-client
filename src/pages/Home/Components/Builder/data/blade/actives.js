@@ -237,8 +237,8 @@ export default [
     weapon: 'Blade',
     path: 'Technique',
     name: 'Crescent Fang',
-    description: `"PBAoE: Affects up to 6 enemies in a 5 metre radius around you.Cut a crescent-shaped arc in front of you with your blade dealing 5 physical damage to nearby enemies.
-    Requires a Blade in your Primary Weapon slot."`,
+    description: `PBAoE: Affects up to 6 enemies in a 5 metre radius around you.Cut a crescent-shaped arc in front of you with your blade dealing 5 physical damage to nearby enemies.
+    Requires a Blade in your Primary Weapon slot.`,
     targetType: 'pbaoe',
     damageType: 'melee',
     energy: 0,

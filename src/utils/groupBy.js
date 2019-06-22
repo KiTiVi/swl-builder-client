@@ -1,6 +1,6 @@
 export const groupBy = (objectArray, property) => {
   return objectArray.reduce(function(acc, obj) {
-    var key = obj[property]
+    const key = obj[property]
 
     const alreadyCreated = acc.map(obj => obj[property])
 

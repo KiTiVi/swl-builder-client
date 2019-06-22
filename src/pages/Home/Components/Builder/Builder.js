@@ -472,6 +472,12 @@ const PassivesContainer = styled.div`
   flex: 1;
   display: flex;
   flex-wrap: wrap;
+  padding-top: 14px;
+  background: linear-gradient(
+    to right,
+    rgba(70, 70, 70, 0.75),
+    rgba(13, 13, 13, 0.75)
+  );
 `
 
 const Build = styled.div`

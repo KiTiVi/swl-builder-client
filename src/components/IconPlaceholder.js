@@ -2,9 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import { colors } from '../variables/colors'
 
-export default ({ name, type, activeType, selected }) => {
+export default ({ name, type, activeType, selected, connectedAbility }) => {
   return (
     <IconPlaceholder
+      className={connectedAbility && 'connectedAbility'}
       color={type === 'active' ? colors[activeType] : ''}
       passive={type === 'passive' && true}
       selected={selected}
@@ -29,4 +30,8 @@ const IconPlaceholder = styled.div`
   background: ${({ passive }) => (passive ? '#7b3266' : 'none')};
   box-shadow: ${({ selected }) => (selected ? '0 0 5px 3px #fff' : 'none')};
   border: 2px solid #ddd;
+
+  &.connectedAbility {
+    background: ${({ passive }) => (passive ? 'none' : '#7b3266')};
+  }
 `
