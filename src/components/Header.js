@@ -41,4 +41,10 @@ const Header = styled.header`
   align-items: center;
   padding: 0 30px;
   background: rgba(0, 0, 0, 0.75);
+
+  @media only screen and (max-width: 500px) {
+    img {
+      display: none;
+    }
+  }
 `

@@ -57,10 +57,15 @@ const Ability = styled.div`
 
   .ability-name {
     color: ${({ color }) => color};
+    text-align: center;
   }
 
   .ability-image {
     border-radius: 5px;
     box-shadow: ${({ selected }) => (selected ? '0 0 5px 3px #fff' : 'none')};
+  }
+
+  @media only screen and (max-width: 500px) {
+    flex: ${({ active }) => (active ? '0 1 33%' : '0 1 33%')};
   }
 `

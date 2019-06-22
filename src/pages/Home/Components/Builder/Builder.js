@@ -377,7 +377,7 @@ const Builder = styled.div`
 
 const Menu = styled.div`
   margin-left: 50px;
-  padding-left: 14px;
+  padding: 0 14px;
 
   button {
     position: relative;
@@ -399,10 +399,23 @@ const Menu = styled.div`
     &.active {
       z-index: 2;
     }
+
+    @media only screen and (max-width: 500px) {
+      border-radius: 60px 0 0 0;
+    }
   }
 
   button:last-child {
     margin-left: -20px;
+
+    @media only screen and (max-width: 500px) {
+      margin: 0;
+      border-radius: 0 60px 0 0;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    margin-left: 0;
   }
 `
 
@@ -422,10 +435,18 @@ const SelectedWeapon = styled.h2`
     left: 14px;
     right: 14px;
   }
+
+  @media only screen and (max-width: 500px) {
+    margin: 0;
+  }
 `
 
 const SelectContainer = styled.div`
   display: flex;
+
+  @media only screen and (max-width: 500px) {
+    flex-direction: column;
+  }
 `
 
 const Container = styled.div`
@@ -466,6 +487,10 @@ const Abilites = styled.div`
     rgba(70, 70, 70, 0.75),
     rgba(13, 13, 13, 0.75)
   );
+
+  @media only screen and (max-width: 500px) {
+    flex-wrap: wrap;
+  }
 `
 
 const PassivesContainer = styled.div`

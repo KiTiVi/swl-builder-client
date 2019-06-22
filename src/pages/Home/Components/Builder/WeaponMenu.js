@@ -10,63 +10,31 @@ import ShotgunsIcon from '../../../../images/weapons/ShotgunsIcon.png'
 import PistolsIcon from '../../../../images/weapons/PistolsIcon.png'
 import AssaultRiflesIcon from '../../../../images/weapons/AssaultRiflesIcon.png'
 
+const image = {
+  Blade: BladesIcon,
+  Hammer: HammersIcon,
+  'Fist Weapons': FistsIcon,
+  'Blood Magic': BloodIcon,
+  'Chaos Magic': ChaosIcon,
+  Elementalism: ElementalsIcon,
+  Shotgun: ShotgunsIcon,
+  'Dual Pistols': PistolsIcon,
+  'Assault Rifle': AssaultRiflesIcon
+}
+
 export default function WeaponMenu({ selectWeapon, selectedWeapon }) {
   return (
     <Menu>
-      <WeaponIcon
-        src={BladesIcon}
-        alt="Blade"
-        onClick={() => selectWeapon('Blade')}
-        selected={selectedWeapon === 'Blade'}
-      />
-      <WeaponIcon
-        src={HammersIcon}
-        alt="Hammer"
-        onClick={() => selectWeapon('Hammer')}
-        selected={selectedWeapon === 'Hammer'}
-      />
-      <WeaponIcon
-        src={FistsIcon}
-        alt="Fist Weapons"
-        onClick={() => selectWeapon('Fist Weapons')}
-        selected={selectedWeapon === 'Fist Weapons'}
-      />
-      <WeaponIcon
-        src={BloodIcon}
-        alt="Blood Magic"
-        onClick={() => selectWeapon('Blood Magic')}
-        selected={selectedWeapon === 'Blood Magic'}
-      />
-      <WeaponIcon
-        src={ChaosIcon}
-        alt="Chaos Magic"
-        onClick={() => selectWeapon('Chaos Magic')}
-        selected={selectedWeapon === 'Chaos Magic'}
-      />
-      <WeaponIcon
-        src={ElementalsIcon}
-        alt="Elementalism"
-        onClick={() => selectWeapon('Elementalism')}
-        selected={selectedWeapon === 'Elementalism'}
-      />
-      <WeaponIcon
-        src={ShotgunsIcon}
-        alt="Shotgun"
-        onClick={() => selectWeapon('Shotgun')}
-        selected={selectedWeapon === 'Shotgun'}
-      />
-      <WeaponIcon
-        src={PistolsIcon}
-        alt="Dual Pistols"
-        onClick={() => selectWeapon('Dual Pistols')}
-        selected={selectedWeapon === 'Dual Pistols'}
-      />
-      <WeaponIcon
-        src={AssaultRiflesIcon}
-        alt="Assault Rifle"
-        onClick={() => selectWeapon('Assault Rifle')}
-        selected={selectedWeapon === 'Assault Rifle'}
-      />
+      {Object.keys(image).map(weapon => {
+        console.log(image, weapon, image[weapon])
+        return (
+          <WeaponIcon
+            imageSrc={image[weapon]}
+            onClick={() => selectWeapon(weapon)}
+            selected={selectedWeapon === weapon}
+          />
+        )
+      })}
     </Menu>
   )
 }
@@ -74,26 +42,40 @@ export default function WeaponMenu({ selectWeapon, selectedWeapon }) {
 const Menu = styled.div`
   display: flex;
   flex-direction: column;
+
+  @media only screen and (max-width: 500px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
 `
 
-const WeaponIcon = styled.img`
+const WeaponIcon = styled.div`
   height: 50px;
   width: 50px;
   margin-bottom: 2px;
   border-radius: 10px 0 0 10px;
   background: ${props =>
-    props.selected
-      ? `linear-gradient(to right,
+    `url(${props.imageSrc}) center/contain no-repeat, ${
+      props.selected
+        ? `linear-gradient(to right,
       rgb(243, 211, 131) 20%,
       rgb(153, 128, 74)
     )`
-      : `linear-gradient(to right, #444 20%, #222)`};
+        : `linear-gradient(to right, #444 20%, #222)`
+    }`};
 
   &:hover {
-    background: linear-gradient(
+    background: ${props => `url(${
+      props.imageSrc
+    }) center/contain no-repeat, linear-gradient(
       to right,
       rgb(243, 211, 131) 20%,
       rgb(153, 128, 74)
-    );
+    )`};
+  }
+
+  @media only screen and (max-width: 500px) {
+    flex: 33%;
   }
 `
