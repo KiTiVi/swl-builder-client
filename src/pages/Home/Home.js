@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { getAbilitiesFromURL } from '../../utils/getAbilitiesFromURL'
 import Builder from './Components/Builder/Builder'
+import ReactGA from 'react-ga'
 
 const Home = ({ history, location }) => {
   const [buildID, setBuildID] = useState(null)
@@ -8,6 +9,9 @@ const Home = ({ history, location }) => {
   const [preselectedPassives, setPreselectedPassives] = useState(null)
 
   useEffect(() => {
+    ReactGA.initialize('UA-142572923-1')
+    ReactGA.pageview(window.location.pathname + window.location.search)
+
     const params = new URLSearchParams(location.search)
     const actives = params.get('a')
     const passives = params.get('p')
