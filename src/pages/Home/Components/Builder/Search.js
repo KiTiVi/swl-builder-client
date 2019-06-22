@@ -181,18 +181,6 @@ export default ({ clickedAbility, showAbility }) => {
           <FilteredAbilities>
             {filteredAbilities.map((ability, i) => (
               <FilteredAbility key={i} ability={ability} />
-              // <li
-              //   key={i}
-              //   className="list-item"
-              //   onClick={() => showAbility(ability)}
-              // >
-              //   {ability.name}{' '}
-              //   <img
-              //     className="ability-image"
-              //     src={weapons[ability.weapon]}
-              //     alt={ability.weapon}
-              //   />
-              // </li>
             ))}
           </FilteredAbilities>
         </>

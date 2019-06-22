@@ -44,7 +44,15 @@ export default ({ ability, search, up, list }) => {
           </p>
         </div>
 
-        <img src={image} alt={name} />
+        {image ? (
+          <img src={image} alt={name} />
+        ) : (
+          <IconPlaceholder
+            name={ability.name}
+            type={ability.type}
+            activeType={ability.activeType}
+          />
+        )}
       </header>
 
       <section className="AbilityTooltip--stats">
@@ -64,8 +72,8 @@ export default ({ ability, search, up, list }) => {
       {search && connectedAbility && (
         <div>
           <p>
-            Connected {type === 'active' ? 'passive' : 'active'}:{' '}
-            {connectedAbility}
+            Connected {type === 'active' ? 'passive' : 'active'}:{'\n'}
+            <span style={{ fontWeight: '700' }}>{connectedAbility}</span>
           </p>
           {type === 'passive' ? (
             <img
