@@ -84,4 +84,8 @@ const Ability = styled.div`
     #555 80% 90%,
     #000 90%
   );
+
+  img.ability-image {
+    height: 54px;
+  }
 `

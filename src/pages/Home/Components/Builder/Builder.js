@@ -364,6 +364,10 @@ const Content = styled.main`
   margin: 30px auto;
   padding: 20px;
   background: rgba(0, 0, 0, 0.75);
+
+  @media only screen and (max-width: 765px) {
+    flex-direction: column;
+  }
 `
 
 const Builder = styled.div`
