@@ -286,60 +286,61 @@ export default ({
               </PassivesContainer>
             )}
           </SelectContainer>
-        </Builder>
-
-        <Search clickedAbility={clickedAbility} showAbility={showAbility} />
-      </Content>
-
-      <Build>
-        {name && <h3>{name}</h3>}
-        {description && <p>{description}</p>}
-        <Flex>
-          <SelectedAbilities>
-            <DragDropContext onDragEnd={onPassiveDragEnd}>
-              <Droppable droppableId="selected-passives" direction="horizontal">
-                {provided => (
-                  <HotbarAbilityContainer
-                    ref={provided.innerRef}
-                    {...provided.droppableProps}
+          <Build>
+            {name && <h3>{name}</h3>}
+            {description && <p>{description}</p>}
+            <Flex>
+              <SelectedAbilities>
+                <DragDropContext onDragEnd={onPassiveDragEnd}>
+                  <Droppable
+                    droppableId="selected-passives"
+                    direction="horizontal"
                   >
-                    {selectedPassives.map((ability, i) => (
-                      <HotbarAbility
-                        key={i}
-                        draggableIndex={i}
-                        draggableId={ability.name}
-                        ability={ability}
-                      />
-                    ))}
-                    {provided.placeholder}
-                  </HotbarAbilityContainer>
-                )}
-              </Droppable>
-            </DragDropContext>
+                    {provided => (
+                      <HotbarAbilityContainer
+                        ref={provided.innerRef}
+                        {...provided.droppableProps}
+                      >
+                        {selectedPassives.map((ability, i) => (
+                          <HotbarAbility
+                            key={i}
+                            draggableIndex={i}
+                            draggableId={ability.name}
+                            ability={ability}
+                          />
+                        ))}
+                        {provided.placeholder}
+                      </HotbarAbilityContainer>
+                    )}
+                  </Droppable>
+                </DragDropContext>
 
-            <DragDropContext onDragEnd={onActiveDragEnd}>
-              <Droppable droppableId="selected-actives" direction="horizontal">
-                {provided => (
-                  <HotbarAbilityContainer
-                    ref={provided.innerRef}
-                    {...provided.droppableProps}
-                    actives={true}
+                <DragDropContext onDragEnd={onActiveDragEnd}>
+                  <Droppable
+                    droppableId="selected-actives"
+                    direction="horizontal"
                   >
-                    {selectedActives.map((ability, i) => (
-                      <HotbarAbility
-                        key={i}
-                        draggableIndex={i}
-                        draggableId={ability.name}
-                        ability={ability}
-                      />
-                    ))}
-                    {provided.placeholder}
-                  </HotbarAbilityContainer>
-                )}
-              </Droppable>
-            </DragDropContext>
-          </SelectedAbilities>
-          <Buttons>
+                    {provided => (
+                      <HotbarAbilityContainer
+                        ref={provided.innerRef}
+                        {...provided.droppableProps}
+                        actives={true}
+                      >
+                        {selectedActives.map((ability, i) => (
+                          <HotbarAbility
+                            key={i}
+                            draggableIndex={i}
+                            draggableId={ability.name}
+                            ability={ability}
+                          />
+                        ))}
+                        {provided.placeholder}
+                      </HotbarAbilityContainer>
+                    )}
+                  </Droppable>
+                </DragDropContext>
+              </SelectedAbilities>
+              {/* <Buttons>
             {userContext.username && (
               <SaveBuild
                 weapons={weapons}
@@ -351,9 +352,13 @@ export default ({
                 oldDescription={description}
               />
             )}
-          </Buttons>
-        </Flex>
-      </Build>
+          </Buttons> */}
+            </Flex>
+          </Build>
+        </Builder>
+
+        <Search clickedAbility={clickedAbility} showAbility={showAbility} />
+      </Content>
     </>
   )
 }
@@ -364,6 +369,10 @@ const Content = styled.main`
   margin: 30px auto;
   padding: 20px;
   background: rgba(0, 0, 0, 0.75);
+
+  @media only screen and (max-width: 1920px) {
+    margin: 0 auto;
+  }
 
   @media only screen and (max-width: 765px) {
     flex-direction: column;
@@ -454,6 +463,10 @@ const Container = styled.div`
 
   .path:not(:last-child) {
     margin-bottom: 25px;
+
+    @media only screen and (max-width: 1920px) {
+      margin-bottom: 15px;
+    }
   }
 
   .pathname {
@@ -488,6 +501,10 @@ const Abilites = styled.div`
     rgba(13, 13, 13, 0.75)
   );
 
+  @media only screen and (max-width: 1920px) {
+    padding: 10px 0 15px;
+  }
+
   @media only screen and (max-width: 500px) {
     flex-wrap: wrap;
   }
@@ -510,6 +527,10 @@ const Build = styled.div`
   margin: 0 auto;
   padding: 20px;
   background: rgba(0, 0, 0, 0.75);
+
+  @media only screen and (max-width: 1920px) {
+    padding: 0 20px 20px;
+  }
 `
 
 const SelectedAbilities = styled.div`

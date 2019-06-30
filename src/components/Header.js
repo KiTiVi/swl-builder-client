@@ -14,11 +14,7 @@ export default () => {
     <Header>
       <div style={{ flex: '1' }}>
         <Link to="/">
-          <img
-            src={logo}
-            alt="Secret World Legends"
-            style={{ height: '50px' }}
-          />
+          <img src={logo} alt="Secret World Legends" />
         </Link>
       </div>
       <h2>A FANMADE DECK BUILDER</h2>
@@ -41,6 +37,20 @@ const Header = styled.header`
   align-items: center;
   padding: 0 30px;
   background: rgba(0, 0, 0, 0.75);
+
+  img {
+    height: 50px;
+  }
+
+  @media only screen and (max-width: 1920px) {
+    h2 {
+      margin: 0;
+    }
+
+    img {
+      height: 40px;
+    }
+  }
 
   @media only screen and (max-width: 500px) {
     img {

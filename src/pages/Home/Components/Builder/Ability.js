@@ -55,6 +55,10 @@ const Ability = styled.div`
   align-items: center;
   margin-bottom: ${({ active }) => (active ? '0' : '20px')};
 
+  @media only screen and (max-width: 1920px) {
+    flex: ${({ active }) => (active ? '1' : '0 1 20%')};
+  }
+
   .ability-name {
     color: ${({ color }) => color};
     text-align: center;
