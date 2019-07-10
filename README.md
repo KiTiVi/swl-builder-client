@@ -1,3 +1,34 @@
+# Secret World Legends deck builder
+
+## https://www.swl-builder.com
+
+![https://www.swl-builder.com/?a=901205211904902213&p=902904915211205](./swl-builder.png)
+
+### Thanks to
+
+I relied on two google sheets and therefor I want to thank the people behind the following sheets:
+
+SWL Gear and Theorycraft 1
+
+SWL Skills List (Live Version 2.1.5)
+
+Thank you! You have done a great job and saved me so much time!
+
+### How to use
+
+Add abilities by clicking on them
+
+Rearrange abilities by dragging and dropping them inside the ability bars
+
+Remove abilities by dropping them outside of the ability bars
+
+Save builds by bookmarking or writing down URL
+
+Known issues
+Dragging and dropping abilities is a little bit wonky
+
+Tooltips can make scroll appear causing “jumps”
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
